@@ -15,7 +15,7 @@
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="" method="post">
+                        <form id="login-form" class="form" action="Pagina_Principal_Trabajador.html" method="get">
                             <h3 class="text-center text-info">Iniciar sesión</h3>
                             <div class="form-group">
                                 <label for="email" class="text-info">Email:</label><br>
@@ -29,7 +29,7 @@
 
                                 <!-- <label for="remember-me" class="text-info"><span>Recordarme</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br> -->
                                 <input type="submit" id="RegistroSubmit" name="submit" class="btn btn-info btn-md"
-                                value="Enviar">
+                                value="Enviar" >
                                     <!--href = "PaginaPrincipal.html"-->
                             </div>
                         </form>
@@ -63,13 +63,14 @@ let submit = document.getElementById('RegistroSubmit')
 
         // mandar informacion cuando se haga click a enviar
         submit.addEventListener("click",  function(event){
-            //event.preventDefault()
+           // event.preventDefault()
 
             let email = document.getElementById('email').value
             let name = document.getElementById('nombre').value
             let password = document.getElementById('password').value
       
            //aqui se añade codigo para mandar informacion a backend
+           
         });
 
 

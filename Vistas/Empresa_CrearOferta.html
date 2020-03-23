@@ -19,8 +19,8 @@
                         <form id="login-form" class="form" action="" method="post">
                             <h3 class="text-center text-info">Crear Oferta</h3>
                             <div class="form-group">
-                                <label for="nombre" class="text-info">Nombre de la Empresa: Telcel</label><br>
-                                <!-- <input type="text" name="nombre" id="nombre" class="form-control" required> -->
+                                <label for="email" class="text-info">Email del trabajador:</label><br>
+                                <input type="email" name="email" id="email" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="Salario" class="text-info">Salario:</label><br>
@@ -74,9 +74,7 @@ let submit = document.getElementById('RegistroSubmit')
         submit.addEventListener("click",  function(event){
             //event.preventDefault()
 
-            let email = document.getElementById('email').value
-            let name = document.getElementById('nombre').value
-            let password = document.getElementById('password').value
+            
       
            //aqui se añade codigo para mandar informacion a backend
         });
