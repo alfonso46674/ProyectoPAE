@@ -1,13 +1,28 @@
 const router = require('express').Router()
 const usuarioController = require('../controllers/usuario.controller')
 
-router.get('/', (req,res)=>{
-    res.send("GET / usuario")
-})
+let usuarioPrueba2 = {
+    uid: 2,
+    nombre: "Juan",
+    apellido: "Doe",
+    email: "Juan@1",
+    tipo: "Trabajador",
+    ofertasActuales: 0,
+    estado: "Disponible"
+}
 
 
-router.get('/:id', (req,res)=>{
-    res.send("GET /usuario:id")
-})
+
+router.get('/', usuarioController.MostarUsuarios)
+
+
+router.get('/:email', usuarioController.MostrarUsuarioEmail)
+
+
+router.post('/', usuarioController.CrearUsuario)
+
+router.put('/', usuarioController.ActualizarUsuario)
+
+router.delete('/', usuarioController.EliminarUsuario)
 
 module.exports = router;

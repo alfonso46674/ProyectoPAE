@@ -1,0 +1,37 @@
+@host = http://localhost:3000
+
+## Pruebas para Usuarios
+POST {{host}}/usuarios/
+Content-Type: application/json
+
+{
+    "nombre":"Juan",
+    "apellido":"Doe",
+    "email":"Juan@1266688"  
+}
+
+###
+GET {{host}}/usuarios
+
+###
+PUT {{host}}/usuarios/
+Content-Type: application/json
+
+{
+    "nombre":"Juan",
+    "apellido":"Doe",
+    "email":"Carlos@1",
+    "tipo":"Trabajador",
+    "ofertasActuales": 0,
+    "estado":"Disponible"  
+}
+
+###
+DELETE {{host}}/usuarios/
+Content-Type: application/json
+
+{
+    "email":"Juan@12"
+}
+
+

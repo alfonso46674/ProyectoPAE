@@ -20,7 +20,7 @@ class Usuario extends DB{
             },
             email:{
                 type: String,
-                required: true
+                unique: true
             },
             tipo:{
                 type: String,
@@ -39,44 +39,77 @@ class Usuario extends DB{
     }
 
     
-    async getUsers(query, projection="", options={}){ // regresa todos los usuarios
+    async getUsers(query, projection={}, options={}){ // regresa todos los usuarios
         return await super.query(query, projection, options);
         // let doc = await super.query(query, projection, options)
         // console.log(doc);
         // return doc
     }
 
-    async getUserById(email){ // regresa usuario por id
-        return await super.queryOne(email,{},{})
+    async getUserByEmail(email){ // regresa usuario por email
+        let doc =  await super.queryOne({email},{},{})
+        return doc
     }
 
     //revisa si existe el usuario, sino existe lo crea
     async createUser(User){ 
-        let doc = await super.exists(User)
-        if(doc == false){
+        let doc = await this.getUserByEmail(User.email)
+        // console.log(doc);
+        if(doc == null){
             super.add(User);
-            console.log("Usuario creado");
+            // console.log("Usuario creado");
+            return true;
         }  
         else{
-            console.log({"Error al crear al usuario":doc});
+            // console.log({"Error al crear al usuario":doc});
+            return false;
         }
 
     }
 
-    async deleteUser(User){
-        let doc = await super.delete(User)
-        if(doc) console.log({"Usuario eliminado":doc});
-        else console.log("Usuario no encontrado");
-    }
+    async deleteUser(email){
+        let User = await this.getUserByEmail(email)
 
-    async updateUser(email,User){
-        let doc = await super.exists({email})
-        if(doc != false){
-            let doc2 = await super.update({email},User)
-            console.log({"Usuario actualizado":doc2});
+        if(User != null){
+
+            let doc = await super.delete({"email":email})
+            if(doc) {
+                console.log({"Usuario eliminado":doc});
+                return true
+                }
+            else {
+                console.log({"Error al eliminar":email});
+                return false
+                }
+
+        }else{
+            console.log({"Usuario no encontrado":email});
+            return false
         }
         
     }
+
+    async updateUser(email,User){
+        let doc = await this.getUserByEmail(email)
+
+        if(doc != null){
+            let doc2 = await super.update({email},User)
+            console.log({"Usuario actualizado":doc2});
+            return true
+        }else{
+            console.log({"Usuario no actualizado":email});
+            return false
+        }
+        
+    }
+
+    async getUsersCount(){ // regresa el ultimo uid
+        let users = await this.getUsers()
+        let value = users[users.length-1].uid
+        // console.log(users[users.length-1].uid);
+        return value
+    }
+
 };
 
 let usuario = new Usuario()
@@ -91,6 +124,9 @@ let usuarioPrueba = {
     estado: "Disponible"
 }
 
+// usuario.getUserByEmail("Carlos@132")
+
+
 // usuario.createUser(usuarioPrueba)
 // usuario.createUser(usuarioPrueba)
 
@@ -102,5 +138,6 @@ let usuarioPrueba = {
 
 // usuario.updateUser("Carlos@1",usuarioPrueba)
 
+// usuario.getUsersCount()
 
 module.exports = usuario
