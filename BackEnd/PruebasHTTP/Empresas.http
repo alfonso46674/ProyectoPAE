@@ -1,0 +1,38 @@
+@host = http://localhost:3000
+
+##Pruebas para empresas
+GET {{host}}/empresas
+
+###
+GET {{host}}/empresas/Telcel@1
+
+###
+POST {{host}}/empresas
+Content-Type: application/json
+
+{
+    "nombre": "Apple",
+    "password":"23456",
+    "email": "Ap@Store"
+}
+
+###
+PUT {{host}}/empresas
+Content-Type: application/json
+
+{
+    "nombre": "Apple",
+    "password":"23456",
+    "email": "Ap@Store",
+    "tipo": "Empresa",
+    "ofertasEnProgreso": 0
+}
+
+
+###
+DELETE {{host}}/empresas
+Content-Type: application/json
+
+{
+    "email":"Ap@Store"
+}

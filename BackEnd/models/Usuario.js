@@ -33,6 +33,10 @@ class Usuario extends DB{
             estado:{
                 type: String,
                 required: true
+            },
+            password:{
+                type: String,
+                required: true
             }
         });
         this._model = mongoose.model('usuarios', this.schema)
@@ -41,9 +45,6 @@ class Usuario extends DB{
     
     async getUsers(query, projection={}, options={}){ // regresa todos los usuarios
         return await super.query(query, projection, options);
-        // let doc = await super.query(query, projection, options)
-        // console.log(doc);
-        // return doc
     }
 
     async getUserByEmail(email){ // regresa usuario por email
@@ -54,14 +55,12 @@ class Usuario extends DB{
     //revisa si existe el usuario, sino existe lo crea
     async createUser(User){ 
         let doc = await this.getUserByEmail(User.email)
-        // console.log(doc);
-        if(doc == null){
+        
+        if(doc == null){ // si no hay usuario registrado con ese email
             super.add(User);
-            // console.log("Usuario creado");
             return true;
         }  
         else{
-            // console.log({"Error al crear al usuario":doc});
             return false;
         }
 
@@ -103,11 +102,14 @@ class Usuario extends DB{
         
     }
 
-    async getUsersCount(){ // regresa el ultimo uid
+    async getUsersCount(){ // regresa el ultimo uid registrado
         let users = await this.getUsers()
-        let value = users[users.length-1].uid
-        // console.log(users[users.length-1].uid);
-        return value
+        if(users.length != 0){
+            let value = users[users.length-1].uid
+            // console.log(users[users.length-1].uid);
+            return value
+        }else return 0
+        
     }
 
 };

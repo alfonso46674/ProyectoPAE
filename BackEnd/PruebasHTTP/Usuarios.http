@@ -1,17 +1,28 @@
 @host = http://localhost:3000
 
+
 ## Pruebas para Usuarios
+
+
+GET {{host}}/usuarios
+
+###
+
+GET {{host}}/usuarios/Juan@1266688
+
+###
+
 POST {{host}}/usuarios/
 Content-Type: application/json
 
 {
     "nombre":"Juan",
     "apellido":"Doe",
-    "email":"Juan@1266688"  
+    "email":"Juan@1266688",
+    "password":"123"  
 }
 
-###
-GET {{host}}/usuarios
+
 
 ###
 PUT {{host}}/usuarios/
@@ -20,10 +31,11 @@ Content-Type: application/json
 {
     "nombre":"Juan",
     "apellido":"Doe",
-    "email":"Carlos@1",
+    "email":"Juan@1266688",
     "tipo":"Trabajador",
     "ofertasActuales": 0,
-    "estado":"Disponible"  
+    "estado":"Disponible",
+    "password":"12345ds"  
 }
 
 ###

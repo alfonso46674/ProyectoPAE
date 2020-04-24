@@ -25,10 +25,10 @@ class UsuarioController{
 
      async CrearUsuario(req,res){
         
-        let {nombre, apellido, email} = req.body
+        let {nombre, apellido, email,password} = req.body
         
             let uid = await usuario.getUsersCount() + 1 // obtiene el uid el ultimo usuario agregado, y le suma 1
-        
+           
             let User={
                 uid:uid,
                 nombre: nombre,
@@ -36,10 +36,11 @@ class UsuarioController{
                 email:email,
                 tipo: "Trabajador",
                 ofertasActuales: 0,
-                estado: "Disponible"
+                estado: "Disponible",
+                password: password
             }
     
-            if( nombre && apellido && email){
+            if( nombre && apellido && email && password){
                 let doc = await usuario.createUser(User);
                 if(doc){
                     res.status(200).send({"Usuario creado":User})
@@ -80,6 +81,9 @@ class UsuarioController{
             }
             if(req.body.estado != undefined){
                 datos.estado = req.body.estado
+            }
+            if(req.body.password != undefined){
+                datos.password = req.body.password
             }
             // console.log({"Objeto datos": datos})
         }
