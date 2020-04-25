@@ -7,9 +7,27 @@ GET {{host}}/ofertas
 GET {{host}}/ofertas/1
 
 ###
+POST {{host}}/ofertas
+Content-Type: application/json
 
+{
+    "emailUsuario":"Juan@1266688",
+    "emailEmpresa":"Telcel@1",
+    "salario":30000,
+    "tiempoContratacion":3
+}
 ###
 
+PUT {{host}}/ofertas
+Content-Type: application/json
+
+{
+    "emailUsuario":"Juan@1266688",
+    "emailEmpresa":"Telcel@1",
+    "salario":300003,
+    "tiempoContratacion":3,
+    "estado":"Terminada"
+}
 ###
 DELETE {{host}}/ofertas
 Content-Type: application/json

@@ -43,10 +43,10 @@ class Usuario extends DB{
     }
 
     
-    async getUsers(query, projection={}, options={}){ // regresa todos los usuarios
-        return await super.query(query, projection, options);
+    async getUsers(){ // regresa todos los usuarios
+        return await super.query({},{},{});
     }
-
+    
     async getUserByEmail(email){ // regresa usuario por email
         let doc =  await super.queryOne({email},{},{})
         return doc

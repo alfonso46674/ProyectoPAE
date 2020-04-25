@@ -34,8 +34,8 @@ class Empresa extends DB{
         this._model = mongoose.model('empresas', this.schema)
     }
 
-    async getCompanies(query, projection={}, options={}){
-        return await super.query(query, projection, options)
+    async getCompanies(){
+        return await super.query({},{},{})
     }
 
     async getCompanyByEmail(email){

@@ -10,13 +10,13 @@ class Oferta extends DB{
                 type: Number,
                 unique: true
             },
-            idUsuario:{
-                type: Number,
-                unique: true
+            emailUsuario:{
+                type: String,
+                required: true
             },
-            idEmpresa:{
-                type: Number,
-                unique: true
+            emailEmpresa:{
+                type: String,
+                required: true
             },
             salario:{
                 type: Number,
@@ -36,22 +36,22 @@ class Oferta extends DB{
         this._model = mongoose.model('ofertas', this.schema)
     }
 
-    async getDeals(){
-        let doc = await super.query({}, {}, {})
-        console.log({"Ofertas":doc});
+    async getDeals(query){
+        let doc = await super.query(query, {}, {})
+        // console.log({"Ofertas":doc});
         return doc
     }
 
     async getDealById(uid){
         let doc =  await super.queryOne({uid},{},{})
-        console.log({"Oferta especifica":doc});
+        console.log({"Oferta especificamente buscada":uid});
         return doc
     }
 
     
     async createDeal(Deal){
         let doc = await this.getDealById(Deal.uid)
-
+        console.log({"Create deal":doc});
         if(doc == null){ // si no existe la oferta se puede crear
             super.add(Deal);
             console.log({"Oferta creada":Deal});
@@ -67,7 +67,7 @@ class Oferta extends DB{
 
         if(busquedaDeal != null){
             let doc = await super.update({uid},deal)
-            console.log({"Oferta actualizada":deal});
+            console.log({"Oferta actualizada":doc});
             return true
         }else{
             console.log({"Oferta no actualizada":uid});
@@ -103,19 +103,22 @@ class Oferta extends DB{
         } else return 0
     }
 
+    async getDealByUserAndCompany(emailUser, emailCompany){
+        return await this.getDeals({emailUsuario:emailUser, emailEmpresa:emailCompany})
+    }
 }
 
 let oferta = new Oferta()
 
 
-let ofertaPrueba = {
-    uid:1,
-    idUsuario:1,
-    idEmpresa:1,
-    salario: 30000,
-    tiempoContratacion: 2,
-    estado: "Activa"
-}
+// let ofertaPrueba = {
+//     uid:1,
+//     idUsuario:1,
+//     idEmpresa:1,
+//     salario: 30000,
+//     tiempoContratacion: 2,
+//     estado: "Activa"
+// }
 
 // oferta.add(ofertaPrueba)
 // oferta.getDeals()
