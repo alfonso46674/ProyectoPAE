@@ -5,14 +5,14 @@ class EmpresaController{
     async MostrarEmpresas(req,res){
         let doc = await empresa.getCompanies({},{},{})
         if(doc) res.status(200).send(doc)
-        else res.status(401).send("Error al buscar usuarios")
+        else res.status(401).send("Error al buscar empresas")
     }
 
     async MostrarEmpresaPorEmail(req,res){
         let query = req.params.email
         let doc = await empresa.getCompanyByEmail(query)
         if(doc) res.status(200).send(doc)
-        else res.status(401).send("Error al buscar usuario")
+        else res.status(401).send("Error al buscar empresas")
     }
 
     async CrearEmpresa(req,res){
@@ -67,7 +67,7 @@ class EmpresaController{
             if(doc) res.status(200).send({"Empesa actualizada":datos})
             else res.status(401).send({"Empresa no encontrada / Error":datos})
         }else{
-            res.status(400).send("Falta email de usuario para poder actualizar")
+            res.status(400).send("Falta email de empresa para poder actualizar")
         }
     }
 
@@ -78,7 +78,7 @@ class EmpresaController{
             if(doc){
                 res.status(200).send({"Empresa eliminada":req.body.email})
             }else{
-                res.status(401).send({"Empresa no econtrada":req.body.email})
+                res.status(401).send({"Empresa no encontrada":req.body.email})
             }
         }else{
             res.status(400).send({"Falta email":req.body.email})

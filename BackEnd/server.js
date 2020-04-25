@@ -12,6 +12,7 @@ const path = require('path')
 
 const routerUsuario = require('./routes/usuario.route')
 const routerEmpresa = require("./routes/empresa.route")
+const routerOferta = require('./routes/oferta.router')
 
 app.use(express.json())
 
@@ -33,7 +34,7 @@ app.get('/',(req,res)=>{
     
     app.use('/usuarios', routerUsuario)
     app.use('/empresas', routerEmpresa)
-
+    app.use('/ofertas',routerOferta)
 
 
 

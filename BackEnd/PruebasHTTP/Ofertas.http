@@ -1,0 +1,19 @@
+@host = http://localhost:3000
+##Pruebas para ofertas
+
+GET {{host}}/ofertas
+
+###
+GET {{host}}/ofertas/1
+
+###
+
+###
+
+###
+DELETE {{host}}/ofertas
+Content-Type: application/json
+
+{
+    "uid":1
+}
