@@ -15,6 +15,14 @@ class OfertaController {
         else res.status(401).send({"Error al buscar oferta":req.params.id})
     }
 
+
+    async MostrarOfertasdeEmpresa(req,res){
+        let doc = await oferta.getDeals({emailEmpresa:req.params.correo})
+        if(doc) res.status(200).send(doc)
+        else res.status(401).send({"Error al buscar ofertas de la empresa": req.params.correo})
+    }
+
+
     async CrearOferta(req,res){
         let user = await usuario.getUserByEmail(req.body.emailUsuario);
         let company = await empresa.getCompanyByEmail(req.body.emailEmpresa); 
