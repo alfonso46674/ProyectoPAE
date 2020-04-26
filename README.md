@@ -10,5 +10,6 @@ cross-env
 ngx-socket-io
 socket.io
 axios
+
 ¿Cómo instalarlas?
  Ejemplo: npm i dotenv --save
