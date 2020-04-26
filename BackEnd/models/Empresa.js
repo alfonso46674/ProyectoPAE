@@ -15,7 +15,7 @@ class Empresa extends DB{
                 required: true
             },
             password:{
-                type: Number,
+                type: String,
                 required: true
             },
             email:{

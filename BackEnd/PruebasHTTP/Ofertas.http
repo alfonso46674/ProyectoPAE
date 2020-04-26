@@ -11,7 +11,7 @@ POST {{host}}/ofertas
 Content-Type: application/json
 
 {
-    "emailUsuario":"Juan@1266688",
+    "emailUsuario":"ARC@1",
     "emailEmpresa":"Telcel@1",
     "salario":30000,
     "tiempoContratacion":3

@@ -37,7 +37,15 @@ class OfertaController {
              
              if(DealsEnExistencia.length == 0){ // si no hay ninguna oferta con la combinacion del email del usuario y la compañia, se puede crear la oferta
                 let doc = await oferta.createDeal(Oferta)
-                if(doc) res.status(200).send({"Oferta creada": Oferta})
+
+                if(doc) { // si se creo la oferta, se deben actualizar los contadores de ofertas del usuario y la empresa
+
+                    let userActualizado = await usuario.updateUser(req.body.emailUsuario, {ofertasActuales:user.ofertasActuales + 1});
+                    let empresaActualizada = await empresa.updateCompany(req.body.emailEmpresa, {ofertasEnProgreso: company.ofertasEnProgreso + 1 });
+                    
+                    
+                    res.status(200).send({"Oferta creada": Oferta})
+                    }
                 else {
                     let ofertaExistente = await oferta.getDealById(uid)
                     res.status(401).send({"Oferta ya existente":ofertaExistente})
@@ -85,9 +93,23 @@ class OfertaController {
 
     async EliminarOferta(req,res){
         if(req.body.uid != undefined){
+             
+            //crear copia de la oferta
+            let dealCopy = await oferta.getDealById(req.body.uid)
+
 
             let doc = await oferta.deleteDeal(req.body.uid)
-            if(doc){
+            if(doc){ // se debe actualizar el contador de oferta del usuario y de la empresa
+
+                //obtener el email de usuario y de la empresa a partir del uid de la copia de la oferta
+                let user = await usuario.getUserByEmail(dealCopy.emailUsuario)
+                let company = await empresa.getCompanyByEmail(dealCopy.emailEmpresa)
+                
+                //actualizar las ofertas del usuario y de la empresa
+                let userAct = await usuario.updateUser(dealCopy.emailUsuario, {ofertasActuales: user.ofertasActuales - 1});
+                let companyAct = await empresa.updateCompany(dealCopy.emailEmpresa, {ofertasEnProgreso: company.ofertasEnProgreso - 1});
+
+                //Enviar el status y mensaje de eliminacion
                 res.status(200).send({"Oferta eliminada con id: ":req.body.uid})
             }else{
                 res.status(401).send({"Oferta no encontrada":req.body.uid})
