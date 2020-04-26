@@ -22,6 +22,11 @@ class OfertaController {
         else res.status(401).send({"Error al buscar ofertas de la empresa": req.params.correo})
     }
 
+    async MostarOfertasdeUsuario(req,res){
+        let doc = await oferta.getDeals({emailUsuario: req.params.correo})
+        if(doc) res.status(200).send(doc)
+        else res.status(401).send({"Error al buscar ofertas del usuario":req.params.correo})
+    }
 
     async CrearOferta(req,res){
         let user = await usuario.getUserByEmail(req.body.emailUsuario);

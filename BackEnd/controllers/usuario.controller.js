@@ -5,7 +5,7 @@ class UsuarioController{
         let query = {} // parametros a buscar
         let options = {} // pagina  o limit
         let projection = {} // que quiero ver de la informacion
-        let doc = await usuario.getUsers();
+        let doc = await usuario.getUsers({});
         if(doc) res.status(200).send(doc);
         else{
             res.status(401).send("Error al buscar usuarios")

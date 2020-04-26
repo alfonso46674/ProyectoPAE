@@ -8,6 +8,8 @@ router.get('/:id', ofertaController.MostrarOfertaPorId)
 
 router.get('/empresa/:correo', ofertaController.MostrarOfertasdeEmpresa)
 
+router.get('/usuario/:correo', ofertaController.MostarOfertasdeUsuario)
+
 router.post('/', ofertaController.CrearOferta)
 
 router.put('/', ofertaController.ActualizarOferta)

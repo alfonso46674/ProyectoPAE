@@ -8,7 +8,7 @@ GET {{host}}/usuarios
 
 ###
 
-GET {{host}}/usuarios/Juan@1266688
+GET {{host}}/usuarios/Juan@1
 
 ###
 

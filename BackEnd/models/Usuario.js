@@ -43,8 +43,8 @@ class Usuario extends DB{
     }
 
     
-    async getUsers(){ // regresa todos los usuarios
-        return await super.query({},{},{});
+    async getUsers(query){ // regresa todos los usuarios
+        return await super.query(query,{},{});
     }
     
     async getUserByEmail(email){ // regresa usuario por email
