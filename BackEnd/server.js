@@ -10,9 +10,20 @@ const path = require('path')
 
 // const mongoose = require('./db/mongodb-connection')
 
+
+//rutas utilizadas para la base de datos
 const routerUsuario = require('./routes/usuario.route')
 const routerEmpresa = require("./routes/empresa.route")
 const routerOferta = require('./routes/oferta.router')
+
+//socket io
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+
+io.on('connection', function(socket){
+    const chat = require('./socketIO/chat')(socket, io);
+})
+
 
 app.use(express.json())
 
@@ -27,7 +38,7 @@ app.set('view engine', 'hbs');
 
 app.get('/',(req,res)=>{
     res.render('home')
-})
+});
 
 
     
@@ -39,4 +50,4 @@ app.get('/',(req,res)=>{
 
 
 
-app.listen(port, ()=>console.log("Running"))
+http.listen(port, ()=>console.log("Running"))
