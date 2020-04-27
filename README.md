@@ -9,5 +9,8 @@ mongoose
 cross-env
 multer
 
+passport-google-oauth
+passport
+
 ¿Cómo instalarlas?
  Ejemplo: npm i dotenv --save
