@@ -48,6 +48,10 @@ app.get('/',(req,res)=>{
     res.render('home')
 });
 
+app.get('/user',async (req,res)=>{
+    res.status(200).json({name:'john'})
+})
+
 
     
     app.use(passport.initialize());
@@ -68,6 +72,10 @@ app.get('/',(req,res)=>{
     app.use(passport.initialize());
     app.use(passport.session());
 
+    
 
 
-http.listen(port, ()=>console.log("Running"))
+
+// http.listen(port, ()=>console.log("Running"))
+
+module.exports = {app,http,port}

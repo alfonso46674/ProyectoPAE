@@ -1,6 +1,12 @@
 const usuario  = require('../models/Usuario')
 
 class UsuarioController{
+
+    async Prueba(req,res){
+        res.status(200).json({name:'john'})
+    }
+
+
     async MostarUsuarios(req,res){
         let query = {} // parametros a buscar
         let options = {} // pagina  o limit

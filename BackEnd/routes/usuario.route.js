@@ -1,17 +1,7 @@
 const router = require('express').Router()
 const usuarioController = require('../controllers/usuario.controller')
 
-let usuarioPrueba2 = {
-    uid: 2,
-    nombre: "Juan",
-    apellido: "Doe",
-    email: "Juan@1",
-    tipo: "Trabajador",
-    ofertasActuales: 0,
-    estado: "Disponible"
-}
-
-
+router.get('/hola', usuarioController.Prueba)
 
 router.get('/', usuarioController.MostarUsuarios)
 
