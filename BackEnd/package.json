@@ -6,7 +6,7 @@
   "scripts": {
     "test": " cross-env NODE_ENV=development jest",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
-    "start":"cross-env NODE_ENV=development node index.js"
+    "start": "cross-env NODE_ENV=development node index.js"
   },
   "jest": {
     "testEnvironment": "node"
