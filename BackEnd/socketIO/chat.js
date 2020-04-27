@@ -1,5 +1,4 @@
 const axios = require('axios')
-const randomString = require('randomstring')
 
 const deal = require('../models/Oferta')
 const user  = require('../models/Usuario')

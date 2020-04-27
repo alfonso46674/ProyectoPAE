@@ -1,5 +1,4 @@
 const express = require('express')
-const bodyParser = require('body-parser')
 const app = express()
 // const port = 3000
 const config = require('./config/config');
@@ -16,6 +15,7 @@ const routerUsuario = require('./routes/usuario.route')
 const routerEmpresa = require("./routes/empresa.route")
 const routerOferta = require('./routes/oferta.router')
 
+
 //socket io
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
@@ -25,13 +25,14 @@ io.on('connection', function(socket){
 })
 
 
+//multer
+const uploads = require('./routes/uploads')
+
 app.use(express.json())
-
-
 app.engine('hbs', hbs({
     extname: 'hbs', 
     defaultLayout: 'layout',
-     layoutsDir: path.join(__dirname, './views/layouts') 
+     layoutsDir: path.join(__dirname, './views/layouts')
    }));
 
 app.set('view engine', 'hbs');
@@ -46,7 +47,7 @@ app.get('/',(req,res)=>{
     app.use('/usuarios', routerUsuario)
     app.use('/empresas', routerEmpresa)
     app.use('/ofertas',routerOferta)
-
+    app.use(uploads)
 
 
 

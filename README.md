@@ -7,9 +7,7 @@ express
 express-handlebars
 mongoose
 cross-env
-ngx-socket-io
-socket.io
-axios
+multer
 
 ¿Cómo instalarlas?
  Ejemplo: npm i dotenv --save
