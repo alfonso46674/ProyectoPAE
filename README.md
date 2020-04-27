@@ -15,11 +15,11 @@ passport-google-oauth
 passport
 cookie-session
 
-jest // para hacer test
-supertest // para probar APIs
+jest        
+supertest 
 
 ¿Cómo instalarlas?
  Ejemplo: npm i dotenv --save
 
 Comando
-npm i dotenv express express-handlebars mongoose cross-env ngx-socket-io socket-io axios multer passport passport-google-oauth cookie-session jest --save
+npm i dotenv express express-handlebars mongoose cross-env ngx-socket-io socket-io axios multer passport passport-google-oauth cookie-session jest supertest --save

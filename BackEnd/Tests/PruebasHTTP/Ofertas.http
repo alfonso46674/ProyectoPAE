@@ -11,7 +11,7 @@ GET {{host}}/ofertas/1
 GET {{host}}/ofertas/empresa/Telcel@1
 
 ###
-GET {{host}}/ofertas/usuario/JP@M
+GET {{host}}/ofertas/usuario/Test@1
 
 ###
 POST {{host}}/ofertas

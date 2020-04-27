@@ -39,7 +39,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{host}}/usuarios/
+DELETE {{host}}/usuarios
 Content-Type: application/json
 
 {
