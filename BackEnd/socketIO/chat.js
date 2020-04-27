@@ -8,7 +8,7 @@ const url = 'http://localhost:3000' // usado para axios
 
 
 //canales
-const canalRegistro = 'hi';
+const canalRegistro = 'Inicio';
 
 exports = module.exports = function(socket,io){
     // socket.on(canalEmpresa, function(msg){
