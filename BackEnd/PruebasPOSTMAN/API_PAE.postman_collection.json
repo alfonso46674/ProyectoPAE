@@ -287,7 +287,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Telcel\",\r\n    \"password\":\"prueba\",\r\n    \"email\": \"Telcel@1\",\r\n    \"tipo\": \"Empresa\",\r\n    \"ofertasEnProgreso\": 0\r\n}",
+							"raw": "{\r\n    \"nombre\": \"AMAZON\",\r\n    \"password\":\"prueba\",\r\n    \"email\": \"Amazon@1\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
