@@ -8,5 +8,8 @@ express-handlebars
 mongoose
 cross-env
 
+passport-google-oauth
+passport
+
 ¿Cómo instalarlas?
  Ejemplo: npm i dotenv --save

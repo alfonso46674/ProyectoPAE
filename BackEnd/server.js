@@ -8,6 +8,13 @@ const {port} = config;
 const hbs = require('express-handlebars')
 const path = require('path')
 
+//passport
+const auth = require('./routes/auth.route');
+const profile = require('./routes/profile.route');
+require('./config/passport-setup')
+const passport = require('passport')
+const cookieSession = require('cookie-session');
+
 // const mongoose = require('./db/mongodb-connection')
 
 const routerUsuario = require('./routes/usuario.route')
@@ -31,10 +38,22 @@ app.get('/',(req,res)=>{
 
 
     
-    
+    app.use(passport.initialize());
+    app.use(passport.session());
     app.use('/usuarios', routerUsuario)
     app.use('/empresas', routerEmpresa)
     app.use('/ofertas',routerOferta)
+    app.use('/auth', auth);
+    app.use('/profile', profile);
+    //console.log(profile);
+
+    app.use(cookieSession({
+        maxAge: 24 * 60 * 60 * 1000,
+        keys: ['clave'] //clave para encriptar
+    }))
+
+    app.use(passport.initialize());
+    app.use(passport.session());
 
 
 
