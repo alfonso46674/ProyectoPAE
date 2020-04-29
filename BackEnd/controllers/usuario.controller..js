@@ -76,9 +76,6 @@ class UsuarioController{
             if(req.body.apellido != undefined){
                 datos.apellido = req.body.apellido
             }
-            if(req.body.email != undefined){
-                datos.email = req.body.email
-            }
             if(req.body.tipo != undefined){
                 datos.tipo = req.body.tipo
             }
@@ -94,8 +91,8 @@ class UsuarioController{
             // console.log({"Objeto datos": datos})
         }
         
-        if(req.body.email != undefined){
-            let doc = await usuario.updateUser(req.body.email, datos)
+        if(req.params.email != undefined){
+            let doc = await usuario.updateUser(req.params.email, datos)
             if(doc == true){
                 res.status(200).send({"Usuario actualizado":datos})
             }else{
@@ -108,18 +105,18 @@ class UsuarioController{
 
     async EliminarUsuario(req,res){
 
-        if(req.body.email != undefined ){
+        if(req.params.email != undefined ){
 
-            let doc = await usuario.deleteUser(req.body.email)
+            let doc = await usuario.deleteUser(req.params.email)
             console.log(doc);
             if(doc){
-                res.status(200).send({"Usuario eliminado":req.body.email})
+                res.status(200).send({"Usuario eliminado":req.params.email})
             }else{
-                res.status(401).send({"Usuario no encontrado":req.body.email})
+                res.status(401).send({"Usuario no encontrado":req.params.email})
             }
 
         }else{
-            res.status(400).send({"Falta email":req.body.email})
+            res.status(400).send({"Falta email":req.params.email})
         }
     }
 

@@ -10,6 +10,7 @@ passport.use(new GoogleStrategy({
     function(accessToken, refreshToken, profile, done) {
         console.log("working");
         console.log(profile);
+        done()
     }
 ,
     console.log(this.clientID)

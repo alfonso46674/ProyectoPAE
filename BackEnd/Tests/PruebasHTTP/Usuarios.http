@@ -16,22 +16,21 @@ POST {{host}}/usuarios/
 Content-Type: application/json
 
 {
-    "nombre":"Juan",
-    "apellido":"Doe",
-    "email":"Juan@1",
+    "nombre":"Alfonso",
+    "apellido":"Ramirez",
+    "email":"ARC@1",
     "password":"123"  
 }
 
 
 
 ###
-PUT {{host}}/usuarios/
+PUT {{host}}/usuarios/Juan@1266688
 Content-Type: application/json
 
 {
     "nombre":"Juan",
     "apellido":"Doe",
-    "email":"Juan@1266688",
     "tipo":"Trabajador",
     "ofertasActuales": 0,
     "estado":"Disponible",
@@ -39,11 +38,8 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{host}}/usuarios
+DELETE {{host}}/usuarios/Test@1
 Content-Type: application/json
 
-{
-    "email":"Juan@1"
-}
 
 

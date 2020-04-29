@@ -8,8 +8,8 @@ router.get('/:email', empresaController.MostrarEmpresaPorEmail)
 
 router.post('/', empresaController.CrearEmpresa)
 
-router.put('/', empresaController.ActualizarEmpresa)
+router.put('/:email', empresaController.ActualizarEmpresa)
 
-router.delete('/', empresaController.EliminarEmpresa)
+router.delete('/:email', empresaController.EliminarEmpresa)
 
 module.exports = router;

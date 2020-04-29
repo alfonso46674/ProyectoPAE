@@ -11,9 +11,9 @@ POST {{host}}/empresas
 Content-Type: application/json
 
 {
-    "nombre": "Apple",
+    "nombre": "Telcel",
     "password":"23456",
-    "email": "Ap@Store"
+    "email": "Telcel@1"
 }
 
 ###
@@ -30,9 +30,6 @@ Content-Type: application/json
 
 
 ###
-DELETE {{host}}/empresas
-Content-Type: application/json
+DELETE {{host}}/empresas/Test@Empresa
 
-{
-    "email":"Ap@Store"
-}
+

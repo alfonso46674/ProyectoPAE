@@ -51,9 +51,6 @@ class EmpresaController{
             if(req.body.password != undefined){
                 datos.password = req.body.password
             }
-            if(req.body.email != undefined){
-                datos.email = req.body.email
-            }
             if(req.body.tipo != undefined){
                 datos.tipo = req.body.tipo
             }
@@ -62,8 +59,8 @@ class EmpresaController{
             }
         }
 
-        if(req.body.email != undefined){
-            let doc = await empresa.updateCompany(req.body.email, datos)
+        if(req.params.email != undefined){
+            let doc = await empresa.updateCompany(req.params.email, datos)
             if(doc) res.status(200).send({"Empesa actualizada":datos})
             else res.status(401).send({"Empresa no encontrada / Error":datos})
         }else{
@@ -72,16 +69,16 @@ class EmpresaController{
     }
 
     async EliminarEmpresa(req,res){
-        if(req.body.email != undefined){
+        if(req.params.email != undefined){
 
-            let doc = await empresa.deleteCompany(req.body.email)
+            let doc = await empresa.deleteCompany(req.params.email)
             if(doc){
-                res.status(200).send({"Empresa eliminada":req.body.email})
+                res.status(200).send({"Empresa eliminada":req.params.email})
             }else{
-                res.status(401).send({"Empresa no encontrada":req.body.email})
+                res.status(401).send({"Empresa no encontrada":req.params.email})
             }
         }else{
-            res.status(400).send({"Falta email":req.body.email})
+            res.status(400).send({"Falta email":req.params.email})
         }
     }
 

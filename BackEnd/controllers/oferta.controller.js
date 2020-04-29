@@ -15,6 +15,11 @@ class OfertaController {
         else res.status(401).send({"Error al buscar oferta":req.params.id})
     }
 
+    async MostrarOfertaPoEmpresaPorUsuario(req,res){
+        let doc = await oferta.getDeals({emailEmpresa: req.params.emailEmpresa, emailUsuario: req.params.emailUsuario})
+        if(doc) res.status(200).send(doc)
+        else res.status(401).send("Error al buscar oferta")
+    }
 
     async MostrarOfertasdeEmpresa(req,res){
         let doc = await oferta.getDeals({emailEmpresa:req.params.correo})
@@ -78,12 +83,6 @@ class OfertaController {
         let datos = {}
 
         if(true){
-            if(req.body.emailUsuario != undefined){
-                datos.emailUsuario = req.body.emailUsuario
-            }
-            if(req.body.emailEmpresa != undefined){
-                datos.emailEmpresa = req.body.emailEmpresa
-            }
             if(req.body.salario != undefined){
                 datos.salario = req.body.salario
             }
@@ -95,7 +94,7 @@ class OfertaController {
             }
         }
 
-        let ofertaActualizar = await oferta.getDealByUserAndCompany(req.body.emailUsuario, req.body.emailEmpresa)
+        let ofertaActualizar = await oferta.getDealByUserAndCompany(req.params.emailUsuario, req.params.emailEmpresa)
         if(ofertaActualizar.length == 1){
             
             let doc = await oferta.updateDeal(ofertaActualizar[0].uid, datos)
@@ -105,13 +104,14 @@ class OfertaController {
     }
 
     async EliminarOferta(req,res){
-        if(req.body.uid != undefined){
+        if(req.params.emailEmpresa != undefined && req.params.emailUsuario != undefined){
              
             //crear copia de la oferta
-            let dealCopy = await oferta.getDealById(req.body.uid)
+            let dealCopy = await oferta.getDealByUserAndCompany(req.params.emailUsuario, req.params.emailEmpresa)
+             dealCopy = dealCopy[0]
+            console.log(dealCopy);
 
-
-            let doc = await oferta.deleteDeal(req.body.uid)
+            let doc = await oferta.deleteDeal(dealCopy.uid)
             if(doc){ // se debe actualizar el contador de oferta del usuario y de la empresa
 
                 //obtener el email de usuario y de la empresa a partir del uid de la copia de la oferta
@@ -123,13 +123,13 @@ class OfertaController {
                 let companyAct = await empresa.updateCompany(dealCopy.emailEmpresa, {ofertasEnProgreso: company.ofertasEnProgreso - 1});
 
                 //Enviar el status y mensaje de eliminacion
-                res.status(200).send({"Oferta eliminada con id: ":req.body.uid})
+                res.status(200).send({"Oferta eliminada: ":dealCopy})
             }else{
-                res.status(401).send({"Oferta no encontrada":req.body.uid})
+                res.status(401).send({"Oferta no encontrada":dealCopy})
             }
 
         }else{
-            res.status(400).send({"Falta uid de oferta":req.body.uid})
+            res.status(400).send("Faltan correos de empresa y de usuario para eliminar oferta")
         }
     }
 }

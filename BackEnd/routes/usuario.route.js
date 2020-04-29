@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const usuarioController = require('../controllers/usuario.controller')
+const usuarioController = require('../controllers/usuario.controller.')
 
 router.get('/hola', usuarioController.Prueba)
 
@@ -11,8 +11,8 @@ router.get('/:email', usuarioController.MostrarUsuarioEmail)
 
 router.post('/', usuarioController.CrearUsuario)
 
-router.put('/', usuarioController.ActualizarUsuario)
+router.put('/:email', usuarioController.ActualizarUsuario)
 
-router.delete('/', usuarioController.EliminarUsuario)
+router.delete('/:email', usuarioController.EliminarUsuario)
 
 module.exports = router;
