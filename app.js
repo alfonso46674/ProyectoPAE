@@ -31,6 +31,8 @@ io.on('connection', function(socket){
     const chat = require('./socketIO/chat')(socket, io);
 })
 
+//para mostrar estilo en home
+app.use(express.static('public'))
 
 //multer
 const uploads = require('./routes/uploads')
