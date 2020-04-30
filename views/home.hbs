@@ -6,3 +6,204 @@
         Guardar en servidor
     </button>
 </form>
+
+<h1>API. Actualizada el 30/04/20</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Endpoint</th>
+            <th>Metodo</th>
+            <th>Headers</th>
+            <th>Body</th>
+            <th>Comentarios</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{!-- ********* --}}
+        {{!-- USUARIO --}}
+        <tr>
+            <td scope="row">/usuarios</td>
+            <td>GET</td>
+            <td>De momento ninguno</td>
+            <td>N/A</td>
+            <td>Regresa todos los usuarios registrados</td>
+        </tr>
+        <tr>
+            <td scope="row">/usuarios/:email</td>
+            <td>GET</td>
+            <td>De momento ninguno</td>
+            <td>N/A</td>
+            <td >Regresa los datos del usuario buscado por email</td>
+        </tr>
+
+        <tr>
+            <td scope="row">/usuarios</td>
+            <td>POST</td>
+            <td>Content-Type: application/json</td>
+            <td>nombre, apellido, email, password</td>
+            <td>Crea un usuario.</td>
+        </tr>
+
+        <tr>
+            <td scope="row">/usuarios/:email</td>
+            <td>PUT</td>
+            <td>Content-Type: application/json</td>
+            <td>nombre, apellido, tipo, ofertasActuales, estado, password</td>
+            <td>Actualiza un usuario. Actualiza un usuario dependiendo de elementos del body 
+                que esten presentes
+            </td>
+        </tr>
+
+        <tr>
+            <td scope="row">/usuarios/:email</td>
+            <td>DELETE</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>Elimina un usuario por medio del email</td>
+        </tr>
+
+        <tr>
+            <td scope="row"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td scope="row"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {{!-- ********** --}}
+        {{!-- EMPRESA --}}
+        
+
+        <tr>
+            <td scope="row">/empresas</td>
+            <td>GET</td>
+            <td>De momento ninguno</td>
+            <td>N/A</td>
+            <td>Regresa todas las empresas registradas</td>
+        </tr>
+        <tr>
+            <td scope="row">/empresas/:email</td>
+            <td>GET</td>
+            <td>De momento ninguno</td>
+            <td>N/A</td>
+            <td >Regresa los datos de la empresa buscada por email</td>
+        </tr>
+
+        <tr>
+            <td scope="row">/empresas</td>
+            <td>POST</td>
+            <td>Content-Type: application/json</td>
+            <td>nombre, password, email</td>
+            <td>Crea una empresa.</td>
+        </tr>
+
+        <tr>
+            <td scope="row">/empresas/:email</td>
+            <td>PUT</td>
+            <td>Content-Type: application/json</td>
+            <td>nombre, password,tipo, ofertasEnProgreso</td>
+            <td>Actualiza una empresa dependiendo de elementos del body 
+                que esten presentes.
+            </td>
+        </tr>
+
+        <tr>
+            <td scope="row">/empresas/:email</td>
+            <td>DELETE</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>Elimina una empresa por medio del email</td>
+        </tr>
+
+        <tr>
+            <td scope="row"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td scope="row"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    {{!-- ************** --}}
+    {{!-- OFERTA --}}
+     
+        <tr>
+            <td scope="row">/ofertas</td>
+            <td>GET</td>
+            <td>De momento ninguno</td>
+            <td>N/A</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td scope="row">/ofertas/:id</td>
+            <td>GET</td>
+            <td>De momento ninguno</td>
+            <td>N/A</td>
+            <td>Regresa los datos de la oferta buscada por su id</td>
+        </tr>
+
+        <tr>
+            <td scope="row">/ofertas/:emailEmpresa/:emailUsuario</td>
+            <td>GET</td>
+            <td>de momento ninguno</td>
+            <td>N/A</td>
+            <td>Regresa todas las oferta que tenga el email de la empresa y del usuario.</td>
+        </tr>
+
+
+        <tr>
+            <td scope="row">/ofertas/empresa/:correo</td>
+            <td>GET</td>
+            <td>De momento ninguno</td>
+            <td>N/A</td>
+            <td>Regresa todas las ofertas que esten relacionadas con el correo de la empresa.</td>
+        </tr>
+
+        <tr>
+            <td scope="row">/ofertas/usuario/:correo</td>
+            <td>GET</td>
+            <td>De momento ninguno</td>
+            <td>N/A</td>
+            <td>Regresa todas las ofertas que esten relacionadas con el correo del usuario.</td>
+        </tr>
+
+        <tr>
+            <td scope="row">/ofertas</td>
+            <td>POST</td>
+            <td>Content-Type: application/json</td>
+            <td>EmailUsuario, emailEmpresa, salario, tiempoContratacion</td>
+            <td>Crea una oferta.</td>
+        </tr>
+
+        <tr>
+            <td scope="row">/ofertas/:emailEmpresa/:emailUsuario</td>
+            <td>PUT</td>
+            <td>Content-Type: application/json</td>
+            <td> salario, tiempoContratacion, estado</td>
+            <td>Actualiza una oferta dependiendo de los elementos del body presentes. </td>
+        </tr>
+
+        <tr>
+            <td scope="row">/ofertas/:emailEmpresa/:emailUsuario</td>
+            <td>DELETE</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>Elimina una oferta por medio del email de la empresa y del usuario.</td>
+        </tr>
+        {{!--  --}}
+    </tbody>
+</table>
