@@ -1,6 +1,20 @@
-<div class="form-group">
+<h1>Login HBS</h1>
+<form action="/login" method="POST">
+
+  <label for="lname">Correo:</label><br>
+  <input type="text" id="lname" name="email"><br><br>
+
+  <label for="fpass">Password:</label><br>
+  <input type="text" id="fpass" name="pass"><br>
+
+  <button type="submit">Login</button>
+
+</form> 
+
+
+{{!-- <div class="form-group">
     <label for=""></label>
     <input type="email" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="">
     <small id="emailHelpId" class="form-text text-muted">Help text</small>
     <button><a href="/auth/google/login">INICIAR CON GOOGLE</a></button>
-</div>
+</div> --}}
