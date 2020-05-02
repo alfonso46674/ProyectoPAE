@@ -1,0 +1,18 @@
+[
+
+  {
+    "nombre": "Juan",
+    "email":"Juan@1",
+    "password": "1234",
+    "estado": "JALISCO",
+    "hobbies": ["caminar"]
+  },
+  {
+    "nombre": "Carla",
+    "email":"Carla@1",
+    "password": "12344",
+    "estado": "CDMX",
+    "hobbies": ["nadar"]
+  }
+
+]

@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "PAE"
+    }
+  },
+  "defaultProject": "PAE",
+  "cli": {
+    "analytics": "bed48b48-c59f-435f-9d3a-40f1b9e6628e"
+  }
 }
