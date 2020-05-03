@@ -1,0 +1,45 @@
+@host = http://localhost:3000
+
+
+## Pruebas para Usuarios
+
+
+GET {{host}}/api/usuarios
+
+###
+
+GET {{host}}/usuarios/Juan@1
+
+###
+
+POST {{host}}/usuarios/
+Content-Type: application/json
+
+{
+    "nombre":"Alfonso",
+    "apellido":"Ramirez",
+    "email":"ARC@1",
+    "password":"123"  
+}
+
+
+
+###
+PUT {{host}}/usuarios/Juan@1266688
+Content-Type: application/json
+
+{
+    "nombre":"Juan",
+    "apellido":"Doe",
+    "tipo":"Trabajador",
+    "ofertasActuales": 0,
+    "estado":"Disponible",
+    "password":"12345ds"  
+}
+
+###
+DELETE {{host}}/usuarios/Test@1
+Content-Type: application/json
+
+
+
