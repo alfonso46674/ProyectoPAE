@@ -24,6 +24,12 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
 
+//socket io
+
+io.on('connection', function(socket){
+    const chat = require('./socketIO/chat')(socket, io);
+})
+
 //uso de las rutas
 app.use('/api/usuarios', routerUsuario)
 app.use('/api/empresas', routerEmpresa)
