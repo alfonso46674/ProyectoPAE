@@ -4,12 +4,12 @@
 GET {{host}}/ofertas
 
 ###
-GET {{host}}/ofertas/1
+GET {{host}}/ofertas/2
 
 ###
 GET {{host}}/ofertas/Test@Empresa/Test@1
 ###
-GET {{host}}/ofertas/empresa/Telcel@1
+GET {{host}}/ofertas/empresa/
 
 ###
 GET {{host}}/ofertas/usuario/Test@1

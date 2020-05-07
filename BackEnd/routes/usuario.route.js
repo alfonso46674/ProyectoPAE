@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const usuarioController = require('../controllers/usuario.controller.')
 
-router.get('/hola', usuarioController.Prueba)
+// router.get('/hola', usuarioController.Prueba)
 
 router.get('/', usuarioController.MostarUsuarios)
 
