@@ -1,0 +1,50 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<div id="registro">
+       <h3 class="text-center text-white pt-5"></h3>
+       <div class="container">
+           <div id="login-row" class="row justify-content-center align-items-center">
+               <div id="login-column" class="col-md-6">
+                   <div id="login-box" class="col-md-12">
+                       <form  #f="ngForm" (ngSubmit)="submit(f)" >
+                           <h3 class="text-center text-info">Iniciar sesión</h3>
+                           <div class="form-group">
+                               <label for="email" class="text-info">Email:</label><br>
+                               <input type="email" ngModel name="email" id="email" class="form-control" required>
+                           </div>
+                           <div class="form-group">
+                               <label for="password" class="text-info">Password:</label><br>
+                               <input type="text" ngModel name="password" id="password" class="form-control" required>
+                           </div>
+                           <div class="form-group">
+
+                               
+                               <input type="submit" id="" name="Submit" class="btn btn-info btn-md"
+                               value="Enviar" >
+                                  
+                           </div>
+                       </form>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+
+
+    <!-- <form action="">
+
+        <div class="form-group">
+          <label for="">Email</label>
+          <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="email">
+        </div>
+
+
+        <div class="form-group">
+          <label for="">Password</label>
+          <input type="password" class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+        </div>
+
+
+
+        
+
+    </form> -->
