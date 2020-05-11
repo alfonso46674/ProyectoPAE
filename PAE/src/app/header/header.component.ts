@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 
-
 @Component({
-  selector: 'app-header-no-logeado',
-  templateUrl: './header-no-logeado.component.html',
-  styleUrls: ['./header-no-logeado.component.scss']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
-export class HeaderNoLogeadoComponent implements OnInit {
-
+export class HeaderComponent implements OnInit {
   logueado = false;
 
   constructor(private authService: AuthService) { }

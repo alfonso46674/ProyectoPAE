@@ -58,6 +58,7 @@ export class AuthService {
                         this.saveToken(data.token); // guarda el token en el servicio a partir del post al backend
                         this.isLoggedIn(); // para que refresque el behavior logueado
                       }
+                      this.router.navigateByUrl('/');
                       return data;
                     })
                   );
@@ -69,5 +70,19 @@ export class AuthService {
     window.localStorage.removeItem('token');
     this.router.navigateByUrl('/');
     this.logueado.next(false);
+  }
+
+  public googleLogin(params){
+     return this.http.get(environment.url + '/api/google/redirect',{params})
+     .pipe(
+      map((data:any)=>{ // para decidir que hacer con la informacion del post antes de regresar el observable
+        if(data.token){
+          this.saveToken(data.token); // guarda el token en el servicio a partir del post al backend
+          this.isLoggedIn(); // para que refresque el behavior logueado
+        }
+        return data;
+      })
+    );
+
   }
 }

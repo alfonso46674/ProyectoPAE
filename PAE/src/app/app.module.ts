@@ -7,22 +7,22 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderNoLogeadoComponent } from './header-no-logeado/header-no-logeado.component';
 import { UsuarioMainComponent } from './Usuarios/usuario-main/usuario-main.component';
-import { HomeNoLogeadoComponent } from './home-no-logeado/home-no-logeado.component';
 import { LoginComponent } from './Usuarios/login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { OfertasComponent } from './Usuarios/ofertas/ofertas.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderNoLogeadoComponent,
     UsuarioMainComponent,
-    HomeNoLogeadoComponent,
     LoginComponent,
     NotFoundComponent,
-    OfertasComponent
+    OfertasComponent,
+    HomeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

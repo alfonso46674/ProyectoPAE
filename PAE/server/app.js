@@ -23,6 +23,7 @@ const authRouter = require('./routes/auth')
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
+app.use(express.static(__dirname + '/public')); // para usar las vistas generadas por angular en la carpeta public
 
 //socket io
 
@@ -36,8 +37,7 @@ app.use('/api/empresas', routerEmpresa)
 app.use('/api/ofertas',routerOferta)
 app.use('/api',authRouter);
 
- 
 
-
+app.get('*', (req,res)=>res.sendFile(__dirname+'/public/index.html'))
 
  module.exports = {app,http,port}

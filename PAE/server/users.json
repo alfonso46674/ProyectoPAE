@@ -1,18 +1,1 @@
-[
-
-  {
-    "nombre": "Juan",
-    "email":"Juan@1",
-    "password": "1234",
-    "estado": "JALISCO",
-    "hobbies": ["caminar"]
-  },
-  {
-    "nombre": "Carla",
-    "email":"Carla@1",
-    "password": "12344",
-    "estado": "CDMX",
-    "hobbies": ["nadar"]
-  }
-
-]
+[{"nombre":"Juan","email":"Juan@1","password":"1234","estado":"JALISCO","hobbies":["caminar"]},{"nombre":"Carla","email":"Carla@1","password":"12344","estado":"CDMX","hobbies":["nadar"]},{"email":"alfonso.4674@gmail.com","info":{"sub":"102950234872099417466","name":"Alfonso Ramirez","given_name":"Alfonso","family_name":"Ramirez","picture":"https://lh5.googleusercontent.com/-p9SwlXgQWgw/AAAAAAAAAAI/AAAAAAAAAAA/AAKWJJPU1uyeyrR_wPZTc31e6yzbTLE1Ig/photo.jpg","email":"alfonso.4674@gmail.com","email_verified":true,"locale":"es-419"}},{"email":"torrentdownload4321@gmail.com","info":{"sub":"115558519956187820851","name":"Alfonso R","given_name":"Alfonso","family_name":"R","picture":"https://lh3.googleusercontent.com/-3F3aTensTlI/AAAAAAAAAAI/AAAAAAAAAAA/AAKWJJN48ytKV3rHoL6WMxf6e41ReOM4Ig/photo.jpg","email":"torrentdownload4321@gmail.com","email_verified":true,"locale":"en"}},{"email":"alponchonator@gmail.com","info":{"sub":"100783057793497992397","name":"Poncho Ramirez","given_name":"Poncho","family_name":"Ramirez","picture":"https://lh3.googleusercontent.com/a-/AOh14GghUI2bS1UnjiKCDa4iKrLj70QnuvmiLC2yhNvu","email":"alponchonator@gmail.com","email_verified":true,"locale":"es-419"}},{"email":"mistermeco6969@gmail.com","info":{"sub":"115849380413055626696","name":"John Smith","given_name":"John","family_name":"Smith","picture":"https://lh4.googleusercontent.com/-yIuYtkHTbLI/AAAAAAAAAAI/AAAAAAAAAAA/AAKWJJNeaMysvkPbV6Pgpc8whZ49966jmQ/photo.jpg","email":"mistermeco6969@gmail.com","email_verified":true,"locale":"es"}}]
