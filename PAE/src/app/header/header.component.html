@@ -45,6 +45,10 @@
                 <a class="nav-link" href="#"  routerLink="/empresa/perfil">Perfil</a>
             </li>
 
+            <li *ngIf="logueado && tipoUsuario=='Empresa'" class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="#"  routerLink="/empresa/busqueda">Buscar Trabajadores</a>
+            </li>
+
 
             <!-- Rutas para admin -->
             <li *ngIf="logueado && tipoUsuario=='Admin'" class="nav-item" routerLinkActive="active">

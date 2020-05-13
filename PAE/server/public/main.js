@@ -362,6 +362,42 @@ AdminUsuariosComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
 
 /***/ }),
 
+/***/ "./src/app/Empresas/buscar-usuario/buscar-usuario.component.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/Empresas/buscar-usuario/buscar-usuario.component.ts ***!
+  \*********************************************************************/
+/*! exports provided: BuscarUsuarioComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuscarUsuarioComponent", function() { return BuscarUsuarioComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+
+class BuscarUsuarioComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+BuscarUsuarioComponent.ɵfac = function BuscarUsuarioComponent_Factory(t) { return new (t || BuscarUsuarioComponent)(); };
+BuscarUsuarioComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: BuscarUsuarioComponent, selectors: [["app-buscar-usuario"]], decls: 2, vars: 0, template: function BuscarUsuarioComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "buscar-usuario works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL0VtcHJlc2FzL2J1c2Nhci11c3VhcmlvL2J1c2Nhci11c3VhcmlvLmNvbXBvbmVudC5zY3NzIn0= */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](BuscarUsuarioComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-buscar-usuario',
+                templateUrl: './buscar-usuario.component.html',
+                styleUrls: ['./buscar-usuario.component.scss']
+            }]
+    }], function () { return []; }, null); })();
+
+
+/***/ }),
+
 /***/ "./src/app/Empresas/crear-oferta/crear-oferta.component.ts":
 /*!*****************************************************************!*\
   !*** ./src/app/Empresas/crear-oferta/crear-oferta.component.ts ***!
@@ -1069,6 +1105,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Admin_admin_usuarios_admin_usuarios_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Admin/admin-usuarios/admin-usuarios.component */ "./src/app/Admin/admin-usuarios/admin-usuarios.component.ts");
 /* harmony import */ var _registro_usuario_registro_usuario_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./registro-usuario/registro-usuario.component */ "./src/app/registro-usuario/registro-usuario.component.ts");
 /* harmony import */ var _registro_empresa_registro_empresa_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./registro-empresa/registro-empresa.component */ "./src/app/registro-empresa/registro-empresa.component.ts");
+/* harmony import */ var _Empresas_buscar_usuario_buscar_usuario_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./Empresas/buscar-usuario/buscar-usuario.component */ "./src/app/Empresas/buscar-usuario/buscar-usuario.component.ts");
+
 
 
 
@@ -1108,6 +1146,7 @@ const routes = [
             { path: 'crearOferta', component: _Empresas_crear_oferta_crear_oferta_component__WEBPACK_IMPORTED_MODULE_9__["CrearOfertaComponent"] },
             { path: 'ofertas', component: _Empresas_ofertas_actuales_ofertas_actuales_component__WEBPACK_IMPORTED_MODULE_10__["OfertasActualesComponent"] },
             { path: 'perfil', component: _Empresas_perfil_empresa_perfil_empresa_component__WEBPACK_IMPORTED_MODULE_11__["PerfilEmpresaComponent"] },
+            { path: 'busqueda', component: _Empresas_buscar_usuario_buscar_usuario_component__WEBPACK_IMPORTED_MODULE_17__["BuscarUsuarioComponent"] },
             { path: '**', component: _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_3__["NotFoundComponent"] }
         ] },
     // verificar rutas para administrador
@@ -1205,6 +1244,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Admin_admin_usuarios_admin_usuarios_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./Admin/admin-usuarios/admin-usuarios.component */ "./src/app/Admin/admin-usuarios/admin-usuarios.component.ts");
 /* harmony import */ var _registro_usuario_registro_usuario_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./registro-usuario/registro-usuario.component */ "./src/app/registro-usuario/registro-usuario.component.ts");
 /* harmony import */ var _registro_empresa_registro_empresa_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./registro-empresa/registro-empresa.component */ "./src/app/registro-empresa/registro-empresa.component.ts");
+/* harmony import */ var _Empresas_buscar_usuario_buscar_usuario_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./Empresas/buscar-usuario/buscar-usuario.component */ "./src/app/Empresas/buscar-usuario/buscar-usuario.component.ts");
+
 
 
 
@@ -1247,7 +1288,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         _Admin_admin_ofertas_admin_ofertas_component__WEBPACK_IMPORTED_MODULE_15__["AdminOfertasComponent"],
         _Admin_admin_usuarios_admin_usuarios_component__WEBPACK_IMPORTED_MODULE_16__["AdminUsuariosComponent"],
         _registro_usuario_registro_usuario_component__WEBPACK_IMPORTED_MODULE_17__["RegistroUsuarioComponent"],
-        _registro_empresa_registro_empresa_component__WEBPACK_IMPORTED_MODULE_18__["RegistroEmpresaComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+        _registro_empresa_registro_empresa_component__WEBPACK_IMPORTED_MODULE_18__["RegistroEmpresaComponent"],
+        _Empresas_buscar_usuario_buscar_usuario_component__WEBPACK_IMPORTED_MODULE_19__["BuscarUsuarioComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
         _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"]] }); })();
@@ -1269,6 +1311,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _Admin_admin_usuarios_admin_usuarios_component__WEBPACK_IMPORTED_MODULE_16__["AdminUsuariosComponent"],
                     _registro_usuario_registro_usuario_component__WEBPACK_IMPORTED_MODULE_17__["RegistroUsuarioComponent"],
                     _registro_empresa_registro_empresa_component__WEBPACK_IMPORTED_MODULE_18__["RegistroEmpresaComponent"],
+                    _Empresas_buscar_usuario_buscar_usuario_component__WEBPACK_IMPORTED_MODULE_19__["BuscarUsuarioComponent"],
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -1635,22 +1678,29 @@ function HeaderComponent_li_14_Template(rf, ctx) { if (rf & 1) {
 function HeaderComponent_li_15_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "li", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Ofertas");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Buscar Trabajadores");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 function HeaderComponent_li_16_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "li", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Usuarios");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Ofertas");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 function HeaderComponent_li_17_Template(rf, ctx) { if (rf & 1) {
-    const _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "li", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_li_17_Template_a_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r12); const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r11.logout(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Usuarios");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
+function HeaderComponent_li_18_Template(rf, ctx) { if (rf & 1) {
+    const _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "li", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 19);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_li_18_Template_a_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r13); const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r12.logout(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Logout");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -1670,7 +1720,7 @@ class HeaderComponent {
     }
 }
 HeaderComponent.ɵfac = function HeaderComponent_Factory(t) { return new (t || HeaderComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"])); };
-HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HeaderComponent, selectors: [["app-header"]], decls: 18, vars: 11, consts: [[1, "navbar", "navbar-expand-sm", "navbar-light", "bg-light"], ["routerLinkActive", "active", "routerLink", "/home", "href", "#", 1, "navbar-brand"], ["type", "button", "data-toggle", "collapse", "data-target", "#collapsibleNavId", "aria-controls", "collapsibleNavId", "aria-expanded", "false", "aria-label", "Toggle navigation", 1, "navbar-toggler", "d-lg-none"], [1, "navbar-toggler-icon"], ["id", "collapsibleNavId", 1, "collapse", "navbar-collapse"], [1, "navbar-nav", "mr-auto", "mt-2", "mt-lg-0"], ["class", "nav-item", "routerLinkActive", "active", 4, "ngIf"], ["routerLinkActive", "active", 1, "nav-item"], ["href", "#", "routerLink", "/login", 1, "nav-link"], ["href", "#", "routerLink", "/registroUsuario", 1, "nav-link"], ["href", "#", "routerLink", "/registroEmpresa", 1, "nav-link"], ["href", "#", "routerLink", "/usuario/ofertas", 1, "nav-link"], ["href", "#", "routerLink", "/usuario/perfil", 1, "nav-link"], ["href", "#", "routerLink", "/empresa/ofertas", 1, "nav-link"], ["href", "#", "routerLink", "/empresa/crearOferta", 1, "nav-link"], ["href", "#", "routerLink", "/empresa/perfil", 1, "nav-link"], ["href", "#", "routerLink", "/admin/ofertas", 1, "nav-link"], ["href", "#", "routerLink", "/admin/usuarios", 1, "nav-link"], ["href", "#", "routerLink", "", 1, "nav-link", 3, "click"]], template: function HeaderComponent_Template(rf, ctx) { if (rf & 1) {
+HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HeaderComponent, selectors: [["app-header"]], decls: 19, vars: 12, consts: [[1, "navbar", "navbar-expand-sm", "navbar-light", "bg-light"], ["routerLinkActive", "active", "routerLink", "/home", "href", "#", 1, "navbar-brand"], ["type", "button", "data-toggle", "collapse", "data-target", "#collapsibleNavId", "aria-controls", "collapsibleNavId", "aria-expanded", "false", "aria-label", "Toggle navigation", 1, "navbar-toggler", "d-lg-none"], [1, "navbar-toggler-icon"], ["id", "collapsibleNavId", 1, "collapse", "navbar-collapse"], [1, "navbar-nav", "mr-auto", "mt-2", "mt-lg-0"], ["class", "nav-item", "routerLinkActive", "active", 4, "ngIf"], ["routerLinkActive", "active", 1, "nav-item"], ["href", "#", "routerLink", "/login", 1, "nav-link"], ["href", "#", "routerLink", "/registroUsuario", 1, "nav-link"], ["href", "#", "routerLink", "/registroEmpresa", 1, "nav-link"], ["href", "#", "routerLink", "/usuario/ofertas", 1, "nav-link"], ["href", "#", "routerLink", "/usuario/perfil", 1, "nav-link"], ["href", "#", "routerLink", "/empresa/ofertas", 1, "nav-link"], ["href", "#", "routerLink", "/empresa/crearOferta", 1, "nav-link"], ["href", "#", "routerLink", "/empresa/perfil", 1, "nav-link"], ["href", "#", "routerLink", "/empresa/busqueda", 1, "nav-link"], ["href", "#", "routerLink", "/admin/ofertas", 1, "nav-link"], ["href", "#", "routerLink", "/admin/usuarios", 1, "nav-link"], ["href", "#", "routerLink", "", 1, "nav-link", 3, "click"]], template: function HeaderComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nav", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "UnlinkedOn");
@@ -1691,6 +1741,7 @@ HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](15, HeaderComponent_li_15_Template, 3, 0, "li", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](16, HeaderComponent_li_16_Template, 3, 0, "li", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](17, HeaderComponent_li_17_Template, 3, 0, "li", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](18, HeaderComponent_li_18_Template, 3, 0, "li", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -1705,6 +1756,8 @@ HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.logueado && ctx.tipoUsuario == "Trabajador");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.logueado && ctx.tipoUsuario == "Trabajador");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.logueado && ctx.tipoUsuario == "Empresa");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.logueado && ctx.tipoUsuario == "Empresa");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
