@@ -18,7 +18,8 @@ import { PerfilEmpresaComponent } from './Empresas/perfil-empresa/perfil-empresa
 import { PerfilUsuarioComponent } from './Usuarios/perfil-usuario/perfil-usuario.component';
 import { AdminOfertasComponent } from './Admin/admin-ofertas/admin-ofertas.component';
 import { AdminUsuariosComponent } from './Admin/admin-usuarios/admin-usuarios.component';
-import { RegistroComponent } from './registro/registro.component';
+import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
+import { RegistroEmpresaComponent } from './registro-empresa/registro-empresa.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { RegistroComponent } from './registro/registro.component';
     PerfilUsuarioComponent,
     AdminOfertasComponent,
     AdminUsuariosComponent,
-    RegistroComponent
+    RegistroUsuarioComponent,
+    RegistroEmpresaComponent,
   ],
   imports: [
     BrowserModule,

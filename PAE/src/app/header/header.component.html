@@ -8,18 +8,54 @@
     <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
+            <!-- Login y registro -->
             <li *ngIf="!logueado" class="nav-item" routerLinkActive="active">
-                <a  class="nav-link" href="#"  routerLink="/usuario/login" >Login</a>
+                <a  class="nav-link" href="#"  routerLink="/login" >Login</a>
             </li>
 
+            <li *ngIf="!logueado" class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="#" routerLink="/registroUsuario" >Registro Trabajador</a>
+            </li>
+
+            <li *ngIf="!logueado" class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="#" routerLink="/registroEmpresa" >Registro Empresa</a>
+            </li>
+            
+
+            <!-- Rutas para usuarios -->
             <li *ngIf="logueado && tipoUsuario=='Trabajador'" class="nav-item" routerLinkActive="active">
                 <a class="nav-link" href="#"  routerLink="/usuario/ofertas">Ver ofertas</a>
             </li>
 
-            <li *ngIf="!logueado" class="nav-item" routerLinkActive="active">
-                <a class="nav-link" href="#">Registro</a>
+            <li *ngIf="logueado && tipoUsuario=='Trabajador'" class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="#"  routerLink="/usuario/perfil">Perfil</a>
             </li>
 
+
+            <!-- Rutas para empresas -->
+            <li *ngIf="logueado && tipoUsuario=='Empresa'" class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="#"  routerLink="/empresa/ofertas">Ver ofertas</a>
+            </li>
+
+            <li *ngIf="logueado && tipoUsuario=='Empresa'" class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="#"  routerLink="/empresa/crearOferta">Crear oferta</a>
+            </li>
+
+            <li *ngIf="logueado && tipoUsuario=='Empresa'" class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="#"  routerLink="/empresa/perfil">Perfil</a>
+            </li>
+
+
+            <!-- Rutas para admin -->
+            <li *ngIf="logueado && tipoUsuario=='Admin'" class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="#"  routerLink="/admin/ofertas">Ofertas</a>
+            </li>
+
+            <li *ngIf="logueado && tipoUsuario=='Admin'" class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="#"  routerLink="/admin/usuarios">Usuarios</a>
+            </li>
+
+            <!-- Logout -->
             <li *ngIf="logueado" class="nav-item" routerLinkActive="active">
               <a class="nav-link" href="#"  routerLink="" (click)="logout()">Logout</a>
             </li>
