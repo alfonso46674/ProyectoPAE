@@ -15,11 +15,12 @@ const routerEmpresa = require('./routes/empresa.route')
 const routerOferta = require('./routes/oferta.router')
 
 const authRouter = require('./routes/auth')
+const uploadRouter = require('./routes/upload')
 
 
  
 //Midlewares
- app.use(cors()) // middleware para comunicar el server con el frontend
+app.use(cors()) // middleware para comunicar el server con el frontend
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
@@ -35,6 +36,7 @@ app.use('/api/usuarios', routerUsuario)
 app.use('/api/empresas', routerEmpresa)
 app.use('/api/ofertas',routerOferta)
 app.use('/api',authRouter);
+app.use(uploadRouter);
 
  
 
