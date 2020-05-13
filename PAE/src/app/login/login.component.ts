@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
       if(params.code){
         this.authService.googleLogin(params).subscribe((data)=>{
           if(this.authService.isLoggedIn()){
-            this.router.navigateByUrl('/usuario/ofertas')
+            this.router.navigateByUrl('/home')
           }
         })
       }
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   submit(form: NgForm){
-    console.log(form.value.email, form.value.password);
+    // console.log(form.value.email, form.value.password);
     this.authService.login(form.value.email, form.value.password)
         .subscribe((data)=>console.log(data), (err)=>console.log(err));
   }

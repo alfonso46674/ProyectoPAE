@@ -34,13 +34,14 @@ class Empresa extends DB{
         this._model = mongoose.model('empresas', this.schema)
     }
 
-    async getCompanies(){
-        return await super.query({},{},{})
+    async getCompanies(query){
+        return await super.query(query,{},{})
     }
 
     async getCompanyByEmail(email){
         return await super.queryOne({email},{},{})
     }
+
 
     async createCompany(Company){
         let doc = await this.getCompanyByEmail(Company.email)

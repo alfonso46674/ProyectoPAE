@@ -1,18 +1,3 @@
-<!-- <nav class="navbar navbar-expand-sm bg-light navbar-light">
-    <ul class="navbar-nav">
-      <li class="nav-item active" routerLinkActive="active">
-        <a class="nav-link" href="#" routerLink="/home"> Principal</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" href="#" routerLink="/login"> Login</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" href="#" routerLink="/about"> Acerca de</a>
-      </li>
-    </ul>
-  </nav>
-   -->
-
 
    <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <a class="navbar-brand"  routerLinkActive="active" routerLink="/home" href="#">UnlinkedOn</a>
@@ -24,25 +9,21 @@
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
             <li *ngIf="!logueado" class="nav-item" routerLinkActive="active">
-                <a  class="nav-link" href="#"  routerLink="/usuario/login" >Login Trabajador</a>
+                <a  class="nav-link" href="#"  routerLink="/usuario/login" >Login</a>
+            </li>
+
+            <li *ngIf="logueado && tipoUsuario=='Trabajador'" class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="#"  routerLink="/usuario/ofertas">Ver ofertas</a>
+            </li>
+
+            <li *ngIf="!logueado" class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="#">Registro</a>
             </li>
 
             <li *ngIf="logueado" class="nav-item" routerLinkActive="active">
-                <a class="nav-link" href="#"  routerLink="" (click)="logout()">Logout Trabajador</a>
+              <a class="nav-link" href="#"  routerLink="" (click)="logout()">Logout</a>
             </li>
-
-            <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" href="#"  routerLink="/usuario/ofertas">Login Empresa</a>
-            </li>
-
-            <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" href="#">Registro Trabajador</a>
-            </li>
-
-            <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" href="#">Registro Empresa</a>
-            </li>
-           
+            
         </ul>
         
     </div>

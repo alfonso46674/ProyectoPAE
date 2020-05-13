@@ -13,6 +13,7 @@ export class AuthService {
   // jwt.io
   // payload, agregar atributo exp con fecha suficientemente grande para que no expire
   token = '';
+  tipoUsuario = new BehaviorSubject<string>('');
   logueado = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -22,9 +23,26 @@ export class AuthService {
     this.token = token;
   }
 
+  private saveUserType(type: string){
+    localStorage.setItem('tipoUsuario', type);
+
+    if(type === 'Trabajador'){
+      this.tipoUsuario.next('Trabajador');
+    }
+    else if(type === 'Empresa'){
+      this.tipoUsuario.next('Empresa');
+    }
+    else if(type === 'Admin'){
+      this.tipoUsuario.next('Admin');
+    }
+    else{
+      this.tipoUsuario.next('');
+    }
+  }
+
   public isLoggedIn(): boolean{
     const tokenData = this.getTokenData();
-    console.log(tokenData);
+    // console.log(tokenData);
 
     if(tokenData){ // si existe puede que este logeado
       let resp = tokenData.exp > Date.now() / 1000; // verificar si no esta expirado el token
@@ -54,8 +72,10 @@ export class AuthService {
                   .post(environment.url + '/api/login', {email, password})
                   .pipe(
                     map((data:any)=>{ // para decidir que hacer con la informacion del post antes de regresar el observable
+                      // console.log(data);
                       if(data.token){
                         this.saveToken(data.token); // guarda el token en el servicio a partir del post al backend
+                        this.saveUserType(data.tipo);
                         this.isLoggedIn(); // para que refresque el behavior logueado
                       }
                       this.router.navigateByUrl('/');

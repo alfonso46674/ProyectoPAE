@@ -3,7 +3,7 @@ const empresa = require('../models/Empresa')
 class EmpresaController{
 
     async MostrarEmpresas(req,res){
-        let doc = await empresa.getCompanies()
+        let doc = await empresa.getCompanies({})
         if(doc) res.status(200).send(doc)
         else res.status(401).send("Error al buscar empresas")
     }

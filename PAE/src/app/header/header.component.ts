@@ -8,11 +8,13 @@ import { AuthService } from '../auth.service';
 })
 export class HeaderComponent implements OnInit {
   logueado = false;
+  tipoUsuario = '';
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
     this.authService.logueado.subscribe((val => this.logueado = val));
+    this.authService.tipoUsuario.subscribe((val => this.tipoUsuario = val));
   }
 
   logout(){
