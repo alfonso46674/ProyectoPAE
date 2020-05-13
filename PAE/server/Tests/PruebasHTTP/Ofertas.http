@@ -1,7 +1,7 @@
 @host = http://localhost:3000
 ##Pruebas para ofertas
 
-GET {{host}}/ofertas
+GET {{host}}/api/ofertas
 
 ###
 GET {{host}}/ofertas/2
@@ -9,10 +9,10 @@ GET {{host}}/ofertas/2
 ###
 GET {{host}}/ofertas/Test@Empresa/Test@1
 ###
-GET {{host}}/ofertas/empresa/
+GET {{host}}/api/ofertas/dif/empresa/Telcel@1
 
 ###
-GET {{host}}/ofertas/usuario/Test@1
+GET {{host}}/api/ofertas/dif/usuario/ARC@1
 
 ###
 POST {{host}}/ofertas

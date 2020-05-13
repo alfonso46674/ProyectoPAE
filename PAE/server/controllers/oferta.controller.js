@@ -15,7 +15,7 @@ class OfertaController {
         else res.status(401).send({"Error al buscar oferta":req.params.id})
     }
 
-    async MostrarOfertaPoEmpresaPorUsuario(req,res){
+    async MostrarOfertaPorEmpresaPorUsuario(req,res){
         let doc = await oferta.getDeals({emailEmpresa: req.params.emailEmpresa, emailUsuario: req.params.emailUsuario})
         if(doc) res.status(200).send(doc)
         else res.status(401).send("Error al buscar oferta")

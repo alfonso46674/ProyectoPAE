@@ -8,7 +8,7 @@ GET {{host}}/api/usuarios
 
 ###
 
-GET {{host}}/usuarios/Juan@1
+GET {{host}}/api/usuarios/alfonso.4674@gmail.com
 
 ###
 

@@ -4,13 +4,13 @@ const ofertaController = require('../controllers/oferta.controller')
 
 router.get('/', ofertaController.MostrarOfertas)
 
-router.get('/:id', ofertaController.MostrarOfertaPorId)
+// router.get('/:id', ofertaController.MostrarOfertaPorId)
 
-router.get('/:emailEmpresa/:emailUsuario', ofertaController.MostrarOfertaPoEmpresaPorUsuario)
+router.get('/:emailEmpresa/:emailUsuario', ofertaController.MostrarOfertaPorEmpresaPorUsuario)
 
-router.get('/empresa/:correo', ofertaController.MostrarOfertasdeEmpresa)
+router.get('/dif/empresa/:correo', ofertaController.MostrarOfertasdeEmpresa)
 
-router.get('/usuario/:correo', ofertaController.MostarOfertasdeUsuario)
+router.get('/dif/usuario/:correo', ofertaController.MostarOfertasdeUsuario)
 
 router.post('/', ofertaController.CrearOferta)
 

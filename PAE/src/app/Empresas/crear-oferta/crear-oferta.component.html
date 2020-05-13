@@ -1,39 +1,46 @@
 
-    <div id="registro">
-        <h3 class="text-center text-white pt-5"></h3>
-        <div class="container">
-            <div id="login-row" class="row justify-content-center align-items-center">
-                <div id="login-column" class="col-md-6">
-                    <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="" method="post">
-                            <h3 class="text-center text-info">Crear Oferta</h3>
-                            <div class="form-group">
-                                <label for="email" class="text-info">Email del trabajador:</label><br>
-                                <input type="email" name="email" id="email" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="Salario" class="text-info">Salario:</label><br>
-                                <input type="text" name="Salario" id="salary" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="tiempo" class="text-info">Tiempo de contratacion:</label><br>
-                                <input type="text" name="time" id="hire_time" class="form-control" required>
-                            </div>
 
-                            
+ <div id="registro">
+    <h3 class="text-center text-white pt-5"></h3>
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form #f="ngForm" (ngSubmit)="submit(f)">
+                        <h3 class="text-center text-info">Crear Oferta</h3>
+                        <div class="form-group">
+                            <label for="email" class="text-info">Email del trabajador:</label><br>
+                            <input type="email" ngModel name="emailUsuario"  class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label  class="text-info">Salario:</label><br>
+                            <input type="number" ngModel name="salario"  class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label  class="text-info">Tiempo de Contratación:</label><br>
+                            <input type="number"  ngModel name="tiempoContratacion"  class="form-control" required>
+                        </div>
+                        <div class="form-group">
 
-                                <div class="form-group">
-
-                                    <!-- <label for="remember-me" class="text-info"><span>Recordarme</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br> -->
-                                    <input type="submit" id="RegistroSubmit" name="submit" class="btn btn-info btn-md"
-                                        value="Enviar">
-                                    <!--href = "PaginaPrincipal.html"-->
-                                </div>
-
-                        </form>
-                    </div>
+                            <!-- <label for="remember-me" class="text-info"><span>Recordarme</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br> -->
+                            <input type="submit" id="RegistroSubmit" name="submit" class="btn btn-info btn-md"
+                            value="Enviar">
+                                <!--href = "PaginaPrincipal.html"-->
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+<!-- <div>
+    <p>Oferta creada</p>
+</div>
+
+<div>
+    <p>Error al crear oferta</p>
+</div> -->
+
+
 

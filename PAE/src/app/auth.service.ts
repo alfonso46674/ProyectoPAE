@@ -40,6 +40,11 @@ export class AuthService {
     }
   }
 
+  //Guarda el email del usuario actual ; podria causar conflicto con socket io si se hace de esta manera
+  saveCurrentUser(email:string){
+    localStorage.setItem('usuarioActual', email)
+  }
+
   public isLoggedIn(): boolean{
     const tokenData = this.getTokenData();
     // console.log(tokenData);
@@ -76,6 +81,7 @@ export class AuthService {
                       if(data.token){
                         this.saveToken(data.token); // guarda el token en el servicio a partir del post al backend
                         this.saveUserType(data.tipo);
+                        this.saveCurrentUser(email);
                         this.isLoggedIn(); // para que refresque el behavior logueado
                       }
                       this.router.navigateByUrl('/');
