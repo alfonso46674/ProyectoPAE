@@ -12,7 +12,7 @@ GET {{host}}/usuarios/Juan@1
 
 ###
 
-POST {{host}}/usuarios/
+POST {{host}}/api/usuarios/
 Content-Type: application/json
 
 {

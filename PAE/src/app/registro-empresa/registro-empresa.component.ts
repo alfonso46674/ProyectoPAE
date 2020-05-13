@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro-empresa',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroEmpresaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
   }
+
+  submit(form: NgForm){
+    // console.log(form.value);
+    this.http.post('http://localhost:3000/api/empresas', form.value).subscribe((res)=>console.log(res))
+    this.router.navigateByUrl('/login')
+  }
+
+  
 
 }
