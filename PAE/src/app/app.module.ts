@@ -20,6 +20,7 @@ import { AdminOfertasComponent } from './Admin/admin-ofertas/admin-ofertas.compo
 import { AdminUsuariosComponent } from './Admin/admin-usuarios/admin-usuarios.component';
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
 import { RegistroEmpresaComponent } from './registro-empresa/registro-empresa.component';
+import { BuscarUsuarioComponent } from './Empresas/buscar-usuario/buscar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { RegistroEmpresaComponent } from './registro-empresa/registro-empresa.co
     AdminUsuariosComponent,
     RegistroUsuarioComponent,
     RegistroEmpresaComponent,
+    BuscarUsuarioComponent,
   ],
   imports: [
     BrowserModule,
