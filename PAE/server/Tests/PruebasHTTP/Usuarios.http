@@ -16,9 +16,9 @@ POST {{host}}/api/usuarios/
 Content-Type: application/json
 
 {
-    "nombre":"Alfonso2",
-    "apellido":"Ramirez2",
-    "email":"ARCREPETIDO@1",
+    "nombre":"Admin",
+    "apellido":"AdminApellido",
+    "email":"admin@1",
     "password":"123"  
 }
 

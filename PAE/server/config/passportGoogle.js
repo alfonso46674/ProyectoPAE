@@ -38,11 +38,9 @@ passport.use(new GoogleStrategy({
             tipo: 'Trabajador',
             ofertasActuales: 0,
             estado: 'Disponible',
-            password: ' '
+            password: 'GooglePassword'
         })
-        console.log({usrDepuesCrear:usr});
         if(response == true){
-            console.log({proflileEmail:profile._json.email});
             let allUsers = await Usuario.getUsers({}) // si quito esto se rompe el codigo
             // console.log({todosUsuarios:allUsers});
             let Busquedausr = await Usuario.getUserByEmail(profile._json.email);
