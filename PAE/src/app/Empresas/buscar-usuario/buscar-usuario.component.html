@@ -1,1 +1,50 @@
-<p>buscar-usuario works!</p>
+<br>
+<br>
+<div class="row" id="nav">
+    <div class="col-4">
+        <input type="text" [(ngModel)]="busqueda" (keydown.enter)="buscar()"
+          class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+    </div> 
+    <div class="col-4">
+        <a name="" id="" class="btn btn-primary" role="button" (click)="buscar()">Buscar empleado</a>
+    </div>
+</div>
+
+<div class="form-check">
+    <label class="form-check-label">
+      <input type="checkbox" [(ngModel)]="order.bySal" (change)="ordenarSal()" class="form-check-input" name="" id="" value="checkedValue" >
+      Ordenar por salario (menor a mayor)
+    </label>
+</div>
+<div class="form-check">
+    <label class="form-check-label">
+      <input type="checkbox" [(ngModel)]="order.byExp" (change)="ordenarExp()" class="form-check-input" name="" id="" value="checkedValue" >
+      Ordenar por años de Experiencia (mayor a menor)
+    </label>
+</div>
+<br>
+<br>
+<div class=" mt-2">
+    <ul>
+        <ng-container *ngFor="let usuarios of filtrados;">
+            <li class="media border">
+             <img class="mr-3" src="{{src}}" alt="Generic placeholder image">
+             <div class="media-body">
+               <h3 class="mt-0 mb-1">{{usuarios.nombre + ' ' + usuarios.apellido}}</h3>
+               <p><b>email:</b> {{usuarios.email}}</p>
+               <p><b>Experiencia:</b> {{usuarios.aniosExperiencia}} años</p>
+               <p><b>Carrera:</b> {{usuarios.carrera}}</p>
+               <p><b>Titulación:</b> {{usuarios.titulacion}}</p>
+               <p><b>Ofertas:</b> {{usuarios.ofertasActuales}}</p>
+               <p><b>Salario deseado:</b> ${{usuarios.salarioDeseado}}</p>
+             </div>
+           </li>
+        </ng-container>
+       
+    </ul>
+
+    <div *ngIf="filtrados.length==0" class="alert alert-danger" role="alert">
+        <strong>Ningún producto concuerda con la búsqueda</strong>
+    </div>
+   
+</div>
