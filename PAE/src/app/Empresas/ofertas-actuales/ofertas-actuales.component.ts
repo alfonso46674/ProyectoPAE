@@ -11,7 +11,7 @@ export class OfertasActualesComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ofertas; // arreglo de las ofertas
-  correoUsuarioLogeado = window.localStorage.getItem('usuarioActual')
+  correoUsuarioLogeado = window.sessionStorage.getItem('usuarioActual')
   url = 'http://localhost:3000/api/ofertas/dif/empresa/'+ this.correoUsuarioLogeado;
 
 

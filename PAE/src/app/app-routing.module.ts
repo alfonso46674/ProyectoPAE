@@ -19,6 +19,7 @@ import { BuscarUsuarioComponent } from './Empresas/buscar-usuario/buscar-usuario
 import { EditarEmpresaComponent } from './Empresas/editar-empresa/editar-empresa.component';
 import { EditarOfertaComponent } from './Empresas/editar-oferta/editar-oferta.component';
 import { EditarUsuarioComponent } from './Usuarios/editar-usuario/editar-usuario.component';
+import { VerCompetenciaComponent } from './Empresas/ver-competencia/ver-competencia.component';
 
 
 
@@ -51,7 +52,7 @@ const routes: Routes = [
           {path: 'busqueda', component: BuscarUsuarioComponent},
           {path: 'editarPerfil', component: EditarEmpresaComponent},
           {path: 'editarOferta', component: EditarOfertaComponent},
-          
+          {path: 'verCompetencia', component: VerCompetenciaComponent},
           {path: '**', component: NotFoundComponent}
         ]},
 

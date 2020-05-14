@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 
 import {HttpClientModule} from '@angular/common/http';
+import {SocketIoModule, SocketIoConfig} from 'ngx-socket-io'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,10 @@ import { BuscarUsuarioComponent } from './Empresas/buscar-usuario/buscar-usuario
 import { EditarUsuarioComponent } from './Usuarios/editar-usuario/editar-usuario.component';
 import { EditarEmpresaComponent } from './Empresas/editar-empresa/editar-empresa.component';
 import { EditarOfertaComponent } from './Empresas/editar-oferta/editar-oferta.component';
+import { VerCompetenciaComponent } from './Empresas/ver-competencia/ver-competencia.component';
+import { environment } from 'src/environments/environment';
+
+const config: SocketIoConfig = {url: environment.url, options: {}};
 
 @NgModule({
   declarations: [
@@ -45,12 +50,14 @@ import { EditarOfertaComponent } from './Empresas/editar-oferta/editar-oferta.co
     EditarUsuarioComponent,
     EditarEmpresaComponent,
     EditarOfertaComponent,
+    VerCompetenciaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SocketIoModule.forRoot(config)
   ],
   providers: [],
   bootstrap: [AppComponent]

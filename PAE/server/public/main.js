@@ -656,7 +656,7 @@ class CrearOfertaComponent {
     submit(form) {
         this.datos = {
             emailUsuario: form.value.emailUsuario,
-            emailEmpresa: window.localStorage.getItem('usuarioActual'),
+            emailEmpresa: window.sessionStorage.getItem('usuarioActual'),
             salario: form.value.salario,
             tiempoContratacion: form.value.tiempoContratacion
         };
@@ -854,7 +854,7 @@ function OfertasActualesComponent_tr_22_Template(rf, ctx) { if (rf & 1) {
 class OfertasActualesComponent {
     constructor(http) {
         this.http = http;
-        this.correoUsuarioLogeado = window.localStorage.getItem('usuarioActual');
+        this.correoUsuarioLogeado = window.sessionStorage.getItem('usuarioActual');
         this.url = 'http://localhost:3000/api/ofertas/dif/empresa/' + this.correoUsuarioLogeado;
     }
     ngOnInit() {
@@ -942,7 +942,7 @@ __webpack_require__.r(__webpack_exports__);
 class PerfilEmpresaComponent {
     constructor(http) {
         this.http = http;
-        this.correoUsuarioLogeado = window.localStorage.getItem('usuarioActual');
+        this.correoUsuarioLogeado = window.sessionStorage.getItem('usuarioActual');
         this.url = 'http://localhost:3000/api/empresas/' + this.correoUsuarioLogeado;
     }
     ngOnInit() {
@@ -1018,6 +1018,92 @@ PerfilEmpresaComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
                 styleUrls: ['./perfil-empresa.component.scss']
             }]
     }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }]; }, null); })();
+
+
+/***/ }),
+
+/***/ "./src/app/Empresas/ver-competencia/ver-competencia.component.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/Empresas/ver-competencia/ver-competencia.component.ts ***!
+  \***********************************************************************/
+/*! exports provided: VerCompetenciaComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VerCompetenciaComponent", function() { return VerCompetenciaComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var src_app_socket_io_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/socket-io.service */ "./src/app/socket-io.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+
+
+
+
+
+function VerCompetenciaComponent_p_9_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const mensaje_r1 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](mensaje_r1);
+} }
+class VerCompetenciaComponent {
+    constructor(socketIoService) {
+        this.socketIoService = socketIoService;
+        this.msg = "";
+        this.listaMensajes = [];
+    }
+    ngOnDestroy() {
+        this.mensajesSubscription.unsubscribe();
+    }
+    ngOnInit() {
+        this.mensajesSubscription = this.socketIoService.
+            getMessage()
+            .subscribe((msg) => {
+            this.listaMensajes.push(msg);
+        });
+    }
+    enviarMensaje() {
+        this.socketIoService.sendMessage(this.msg);
+    }
+}
+VerCompetenciaComponent.ɵfac = function VerCompetenciaComponent_Factory(t) { return new (t || VerCompetenciaComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_socket_io_service__WEBPACK_IMPORTED_MODULE_1__["SocketIoService"])); };
+VerCompetenciaComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: VerCompetenciaComponent, selectors: [["app-ver-competencia"]], decls: 10, vars: 2, consts: [[1, "form-group"], ["for", ""], ["type", "text", "aria-describedby", "helpId", "placeholder", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "", "id", "", "role", "button", 1, "btn", "btn-primary", 3, "click"], ["class", "my-0", 4, "ngFor", "ngForOf"], [1, "my-0"]], template: function VerCompetenciaComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "ver-competencia works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "label", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Enviar");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "input", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function VerCompetenciaComponent_Template_input_ngModelChange_5_listener($event) { return ctx.msg = $event; });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "a", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function VerCompetenciaComponent_Template_a_click_6_listener() { return ctx.enviarMensaje(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "Enviar");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, VerCompetenciaComponent_p_9_Template, 2, 1, "p", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.msg);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.listaMensajes);
+    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgModel"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL0VtcHJlc2FzL3Zlci1jb21wZXRlbmNpYS92ZXItY29tcGV0ZW5jaWEuY29tcG9uZW50LnNjc3MifQ== */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](VerCompetenciaComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-ver-competencia',
+                templateUrl: './ver-competencia.component.html',
+                styleUrls: ['./ver-competencia.component.scss']
+            }]
+    }], function () { return [{ type: src_app_socket_io_service__WEBPACK_IMPORTED_MODULE_1__["SocketIoService"] }]; }, null); })();
 
 
 /***/ }),
@@ -1115,7 +1201,7 @@ function OfertasComponent_tr_18_Template(rf, ctx) { if (rf & 1) {
 class OfertasComponent {
     constructor(http) {
         this.http = http;
-        this.correoUsuarioLogeado = window.localStorage.getItem('usuarioActual');
+        this.correoUsuarioLogeado = window.sessionStorage.getItem('usuarioActual');
         this.url = 'http://localhost:3000/api/ofertas/dif/usuario/' + this.correoUsuarioLogeado;
     }
     ngOnInit() {
@@ -1195,7 +1281,7 @@ __webpack_require__.r(__webpack_exports__);
 class PerfilUsuarioComponent {
     constructor(http) {
         this.http = http;
-        this.correoUsuarioLogeado = window.localStorage.getItem('usuarioActual');
+        this.correoUsuarioLogeado = window.sessionStorage.getItem('usuarioActual');
         this.url = 'http://localhost:3000/api/usuarios/' + this.correoUsuarioLogeado;
     }
     ngOnInit() {
@@ -1213,7 +1299,7 @@ class PerfilUsuarioComponent {
     uploadImage(form) {
         let formData = new FormData();
         formData.append("image", this.image);
-        let correoActual = window.localStorage.getItem('usuarioActual'); // mandar el correo para actualizar
+        let correoActual = window.sessionStorage.getItem('usuarioActual'); // mandar el correo para actualizar
         formData.append("email", correoActual);
         this.http.post('http://localhost:3000/upload', formData).subscribe((res) => console.log("Subiendo imagen"));
     }
@@ -1372,6 +1458,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Empresas_editar_empresa_editar_empresa_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./Empresas/editar-empresa/editar-empresa.component */ "./src/app/Empresas/editar-empresa/editar-empresa.component.ts");
 /* harmony import */ var _Empresas_editar_oferta_editar_oferta_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./Empresas/editar-oferta/editar-oferta.component */ "./src/app/Empresas/editar-oferta/editar-oferta.component.ts");
 /* harmony import */ var _Usuarios_editar_usuario_editar_usuario_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./Usuarios/editar-usuario/editar-usuario.component */ "./src/app/Usuarios/editar-usuario/editar-usuario.component.ts");
+/* harmony import */ var _Empresas_ver_competencia_ver_competencia_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./Empresas/ver-competencia/ver-competencia.component */ "./src/app/Empresas/ver-competencia/ver-competencia.component.ts");
+
 
 
 
@@ -1419,6 +1507,7 @@ const routes = [
             { path: 'busqueda', component: _Empresas_buscar_usuario_buscar_usuario_component__WEBPACK_IMPORTED_MODULE_17__["BuscarUsuarioComponent"] },
             { path: 'editarPerfil', component: _Empresas_editar_empresa_editar_empresa_component__WEBPACK_IMPORTED_MODULE_18__["EditarEmpresaComponent"] },
             { path: 'editarOferta', component: _Empresas_editar_oferta_editar_oferta_component__WEBPACK_IMPORTED_MODULE_19__["EditarOfertaComponent"] },
+            { path: 'verCompetencia', component: _Empresas_ver_competencia_ver_competencia_component__WEBPACK_IMPORTED_MODULE_21__["VerCompetenciaComponent"] },
             { path: '**', component: _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_3__["NotFoundComponent"] }
         ] },
     // verificar rutas para administrador
@@ -1501,25 +1590,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./not-found/not-found.component */ "./src/app/not-found/not-found.component.ts");
-/* harmony import */ var _Usuarios_ofertas_ofertas_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Usuarios/ofertas/ofertas.component */ "./src/app/Usuarios/ofertas/ofertas.component.ts");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
-/* harmony import */ var _Empresas_crear_oferta_crear_oferta_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Empresas/crear-oferta/crear-oferta.component */ "./src/app/Empresas/crear-oferta/crear-oferta.component.ts");
-/* harmony import */ var _Empresas_ofertas_actuales_ofertas_actuales_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Empresas/ofertas-actuales/ofertas-actuales.component */ "./src/app/Empresas/ofertas-actuales/ofertas-actuales.component.ts");
-/* harmony import */ var _Empresas_perfil_empresa_perfil_empresa_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Empresas/perfil-empresa/perfil-empresa.component */ "./src/app/Empresas/perfil-empresa/perfil-empresa.component.ts");
-/* harmony import */ var _Usuarios_perfil_usuario_perfil_usuario_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Usuarios/perfil-usuario/perfil-usuario.component */ "./src/app/Usuarios/perfil-usuario/perfil-usuario.component.ts");
-/* harmony import */ var _Admin_admin_ofertas_admin_ofertas_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Admin/admin-ofertas/admin-ofertas.component */ "./src/app/Admin/admin-ofertas/admin-ofertas.component.ts");
-/* harmony import */ var _Admin_admin_usuarios_admin_usuarios_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./Admin/admin-usuarios/admin-usuarios.component */ "./src/app/Admin/admin-usuarios/admin-usuarios.component.ts");
-/* harmony import */ var _registro_usuario_registro_usuario_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./registro-usuario/registro-usuario.component */ "./src/app/registro-usuario/registro-usuario.component.ts");
-/* harmony import */ var _registro_empresa_registro_empresa_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./registro-empresa/registro-empresa.component */ "./src/app/registro-empresa/registro-empresa.component.ts");
-/* harmony import */ var _Empresas_buscar_usuario_buscar_usuario_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./Empresas/buscar-usuario/buscar-usuario.component */ "./src/app/Empresas/buscar-usuario/buscar-usuario.component.ts");
-/* harmony import */ var _Usuarios_editar_usuario_editar_usuario_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./Usuarios/editar-usuario/editar-usuario.component */ "./src/app/Usuarios/editar-usuario/editar-usuario.component.ts");
-/* harmony import */ var _Empresas_editar_empresa_editar_empresa_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./Empresas/editar-empresa/editar-empresa.component */ "./src/app/Empresas/editar-empresa/editar-empresa.component.ts");
-/* harmony import */ var _Empresas_editar_oferta_editar_oferta_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./Empresas/editar-oferta/editar-oferta.component */ "./src/app/Empresas/editar-oferta/editar-oferta.component.ts");
+/* harmony import */ var ngx_socket_io__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-socket-io */ "./node_modules/ngx-socket-io/__ivy_ngcc__/fesm2015/ngx-socket-io.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./not-found/not-found.component */ "./src/app/not-found/not-found.component.ts");
+/* harmony import */ var _Usuarios_ofertas_ofertas_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Usuarios/ofertas/ofertas.component */ "./src/app/Usuarios/ofertas/ofertas.component.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
+/* harmony import */ var _Empresas_crear_oferta_crear_oferta_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Empresas/crear-oferta/crear-oferta.component */ "./src/app/Empresas/crear-oferta/crear-oferta.component.ts");
+/* harmony import */ var _Empresas_ofertas_actuales_ofertas_actuales_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Empresas/ofertas-actuales/ofertas-actuales.component */ "./src/app/Empresas/ofertas-actuales/ofertas-actuales.component.ts");
+/* harmony import */ var _Empresas_perfil_empresa_perfil_empresa_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Empresas/perfil-empresa/perfil-empresa.component */ "./src/app/Empresas/perfil-empresa/perfil-empresa.component.ts");
+/* harmony import */ var _Usuarios_perfil_usuario_perfil_usuario_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Usuarios/perfil-usuario/perfil-usuario.component */ "./src/app/Usuarios/perfil-usuario/perfil-usuario.component.ts");
+/* harmony import */ var _Admin_admin_ofertas_admin_ofertas_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./Admin/admin-ofertas/admin-ofertas.component */ "./src/app/Admin/admin-ofertas/admin-ofertas.component.ts");
+/* harmony import */ var _Admin_admin_usuarios_admin_usuarios_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./Admin/admin-usuarios/admin-usuarios.component */ "./src/app/Admin/admin-usuarios/admin-usuarios.component.ts");
+/* harmony import */ var _registro_usuario_registro_usuario_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./registro-usuario/registro-usuario.component */ "./src/app/registro-usuario/registro-usuario.component.ts");
+/* harmony import */ var _registro_empresa_registro_empresa_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./registro-empresa/registro-empresa.component */ "./src/app/registro-empresa/registro-empresa.component.ts");
+/* harmony import */ var _Empresas_buscar_usuario_buscar_usuario_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./Empresas/buscar-usuario/buscar-usuario.component */ "./src/app/Empresas/buscar-usuario/buscar-usuario.component.ts");
+/* harmony import */ var _Usuarios_editar_usuario_editar_usuario_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./Usuarios/editar-usuario/editar-usuario.component */ "./src/app/Usuarios/editar-usuario/editar-usuario.component.ts");
+/* harmony import */ var _Empresas_editar_empresa_editar_empresa_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./Empresas/editar-empresa/editar-empresa.component */ "./src/app/Empresas/editar-empresa/editar-empresa.component.ts");
+/* harmony import */ var _Empresas_editar_oferta_editar_oferta_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./Empresas/editar-oferta/editar-oferta.component */ "./src/app/Empresas/editar-oferta/editar-oferta.component.ts");
+/* harmony import */ var _Empresas_ver_competencia_ver_competencia_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./Empresas/ver-competencia/ver-competencia.component */ "./src/app/Empresas/ver-competencia/ver-competencia.component.ts");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
 
 
 
@@ -1544,67 +1636,76 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+const config = { url: src_environments_environment__WEBPACK_IMPORTED_MODULE_25__["environment"].url, options: {} };
 class AppModule {
 }
-AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]] });
+AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]] });
 AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [], imports: [[
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"]
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
+            ngx_socket_io__WEBPACK_IMPORTED_MODULE_4__["SocketIoModule"].forRoot(config)
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
-        _login_login_component__WEBPACK_IMPORTED_MODULE_6__["LoginComponent"],
-        _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_7__["NotFoundComponent"],
-        _Usuarios_ofertas_ofertas_component__WEBPACK_IMPORTED_MODULE_8__["OfertasComponent"],
-        _home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"],
-        _header_header_component__WEBPACK_IMPORTED_MODULE_10__["HeaderComponent"],
-        _Empresas_crear_oferta_crear_oferta_component__WEBPACK_IMPORTED_MODULE_11__["CrearOfertaComponent"],
-        _Empresas_ofertas_actuales_ofertas_actuales_component__WEBPACK_IMPORTED_MODULE_12__["OfertasActualesComponent"],
-        _Empresas_perfil_empresa_perfil_empresa_component__WEBPACK_IMPORTED_MODULE_13__["PerfilEmpresaComponent"],
-        _Usuarios_perfil_usuario_perfil_usuario_component__WEBPACK_IMPORTED_MODULE_14__["PerfilUsuarioComponent"],
-        _Admin_admin_ofertas_admin_ofertas_component__WEBPACK_IMPORTED_MODULE_15__["AdminOfertasComponent"],
-        _Admin_admin_usuarios_admin_usuarios_component__WEBPACK_IMPORTED_MODULE_16__["AdminUsuariosComponent"],
-        _registro_usuario_registro_usuario_component__WEBPACK_IMPORTED_MODULE_17__["RegistroUsuarioComponent"],
-        _registro_empresa_registro_empresa_component__WEBPACK_IMPORTED_MODULE_18__["RegistroEmpresaComponent"],
-        _Empresas_buscar_usuario_buscar_usuario_component__WEBPACK_IMPORTED_MODULE_19__["BuscarUsuarioComponent"],
-        _Usuarios_editar_usuario_editar_usuario_component__WEBPACK_IMPORTED_MODULE_20__["EditarUsuarioComponent"],
-        _Empresas_editar_empresa_editar_empresa_component__WEBPACK_IMPORTED_MODULE_21__["EditarEmpresaComponent"],
-        _Empresas_editar_oferta_editar_oferta_component__WEBPACK_IMPORTED_MODULE_22__["EditarOfertaComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-        _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
+        _login_login_component__WEBPACK_IMPORTED_MODULE_7__["LoginComponent"],
+        _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_8__["NotFoundComponent"],
+        _Usuarios_ofertas_ofertas_component__WEBPACK_IMPORTED_MODULE_9__["OfertasComponent"],
+        _home_home_component__WEBPACK_IMPORTED_MODULE_10__["HomeComponent"],
+        _header_header_component__WEBPACK_IMPORTED_MODULE_11__["HeaderComponent"],
+        _Empresas_crear_oferta_crear_oferta_component__WEBPACK_IMPORTED_MODULE_12__["CrearOfertaComponent"],
+        _Empresas_ofertas_actuales_ofertas_actuales_component__WEBPACK_IMPORTED_MODULE_13__["OfertasActualesComponent"],
+        _Empresas_perfil_empresa_perfil_empresa_component__WEBPACK_IMPORTED_MODULE_14__["PerfilEmpresaComponent"],
+        _Usuarios_perfil_usuario_perfil_usuario_component__WEBPACK_IMPORTED_MODULE_15__["PerfilUsuarioComponent"],
+        _Admin_admin_ofertas_admin_ofertas_component__WEBPACK_IMPORTED_MODULE_16__["AdminOfertasComponent"],
+        _Admin_admin_usuarios_admin_usuarios_component__WEBPACK_IMPORTED_MODULE_17__["AdminUsuariosComponent"],
+        _registro_usuario_registro_usuario_component__WEBPACK_IMPORTED_MODULE_18__["RegistroUsuarioComponent"],
+        _registro_empresa_registro_empresa_component__WEBPACK_IMPORTED_MODULE_19__["RegistroEmpresaComponent"],
+        _Empresas_buscar_usuario_buscar_usuario_component__WEBPACK_IMPORTED_MODULE_20__["BuscarUsuarioComponent"],
+        _Usuarios_editar_usuario_editar_usuario_component__WEBPACK_IMPORTED_MODULE_21__["EditarUsuarioComponent"],
+        _Empresas_editar_empresa_editar_empresa_component__WEBPACK_IMPORTED_MODULE_22__["EditarEmpresaComponent"],
+        _Empresas_editar_oferta_editar_oferta_component__WEBPACK_IMPORTED_MODULE_23__["EditarOfertaComponent"],
+        _Empresas_ver_competencia_ver_competencia_component__WEBPACK_IMPORTED_MODULE_24__["VerCompetenciaComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+        _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
-        _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"]] }); })();
+        _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], ngx_socket_io__WEBPACK_IMPORTED_MODULE_4__["SocketIoModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
                 declarations: [
-                    _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
-                    _login_login_component__WEBPACK_IMPORTED_MODULE_6__["LoginComponent"],
-                    _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_7__["NotFoundComponent"],
-                    _Usuarios_ofertas_ofertas_component__WEBPACK_IMPORTED_MODULE_8__["OfertasComponent"],
-                    _home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"],
-                    _header_header_component__WEBPACK_IMPORTED_MODULE_10__["HeaderComponent"],
-                    _Empresas_crear_oferta_crear_oferta_component__WEBPACK_IMPORTED_MODULE_11__["CrearOfertaComponent"],
-                    _Empresas_ofertas_actuales_ofertas_actuales_component__WEBPACK_IMPORTED_MODULE_12__["OfertasActualesComponent"],
-                    _Empresas_perfil_empresa_perfil_empresa_component__WEBPACK_IMPORTED_MODULE_13__["PerfilEmpresaComponent"],
-                    _Usuarios_perfil_usuario_perfil_usuario_component__WEBPACK_IMPORTED_MODULE_14__["PerfilUsuarioComponent"],
-                    _Admin_admin_ofertas_admin_ofertas_component__WEBPACK_IMPORTED_MODULE_15__["AdminOfertasComponent"],
-                    _Admin_admin_usuarios_admin_usuarios_component__WEBPACK_IMPORTED_MODULE_16__["AdminUsuariosComponent"],
-                    _registro_usuario_registro_usuario_component__WEBPACK_IMPORTED_MODULE_17__["RegistroUsuarioComponent"],
-                    _registro_empresa_registro_empresa_component__WEBPACK_IMPORTED_MODULE_18__["RegistroEmpresaComponent"],
-                    _Empresas_buscar_usuario_buscar_usuario_component__WEBPACK_IMPORTED_MODULE_19__["BuscarUsuarioComponent"],
-                    _Usuarios_editar_usuario_editar_usuario_component__WEBPACK_IMPORTED_MODULE_20__["EditarUsuarioComponent"],
-                    _Empresas_editar_empresa_editar_empresa_component__WEBPACK_IMPORTED_MODULE_21__["EditarEmpresaComponent"],
-                    _Empresas_editar_oferta_editar_oferta_component__WEBPACK_IMPORTED_MODULE_22__["EditarOfertaComponent"],
+                    _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
+                    _login_login_component__WEBPACK_IMPORTED_MODULE_7__["LoginComponent"],
+                    _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_8__["NotFoundComponent"],
+                    _Usuarios_ofertas_ofertas_component__WEBPACK_IMPORTED_MODULE_9__["OfertasComponent"],
+                    _home_home_component__WEBPACK_IMPORTED_MODULE_10__["HomeComponent"],
+                    _header_header_component__WEBPACK_IMPORTED_MODULE_11__["HeaderComponent"],
+                    _Empresas_crear_oferta_crear_oferta_component__WEBPACK_IMPORTED_MODULE_12__["CrearOfertaComponent"],
+                    _Empresas_ofertas_actuales_ofertas_actuales_component__WEBPACK_IMPORTED_MODULE_13__["OfertasActualesComponent"],
+                    _Empresas_perfil_empresa_perfil_empresa_component__WEBPACK_IMPORTED_MODULE_14__["PerfilEmpresaComponent"],
+                    _Usuarios_perfil_usuario_perfil_usuario_component__WEBPACK_IMPORTED_MODULE_15__["PerfilUsuarioComponent"],
+                    _Admin_admin_ofertas_admin_ofertas_component__WEBPACK_IMPORTED_MODULE_16__["AdminOfertasComponent"],
+                    _Admin_admin_usuarios_admin_usuarios_component__WEBPACK_IMPORTED_MODULE_17__["AdminUsuariosComponent"],
+                    _registro_usuario_registro_usuario_component__WEBPACK_IMPORTED_MODULE_18__["RegistroUsuarioComponent"],
+                    _registro_empresa_registro_empresa_component__WEBPACK_IMPORTED_MODULE_19__["RegistroEmpresaComponent"],
+                    _Empresas_buscar_usuario_buscar_usuario_component__WEBPACK_IMPORTED_MODULE_20__["BuscarUsuarioComponent"],
+                    _Usuarios_editar_usuario_editar_usuario_component__WEBPACK_IMPORTED_MODULE_21__["EditarUsuarioComponent"],
+                    _Empresas_editar_empresa_editar_empresa_component__WEBPACK_IMPORTED_MODULE_22__["EditarEmpresaComponent"],
+                    _Empresas_editar_oferta_editar_oferta_component__WEBPACK_IMPORTED_MODULE_23__["EditarOfertaComponent"],
+                    _Empresas_ver_competencia_ver_competencia_component__WEBPACK_IMPORTED_MODULE_24__["VerCompetenciaComponent"],
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                    _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
+                    _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
                     _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
-                    _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"]
+                    _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
+                    ngx_socket_io__WEBPACK_IMPORTED_MODULE_4__["SocketIoModule"].forRoot(config)
                 ],
                 providers: [],
-                bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
+                bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
             }]
     }], null, null); })();
 
@@ -1639,7 +1740,7 @@ class AuthGuardServiceAdmin {
             return false;
         }
         else {
-            if (localStorage.getItem('tipoUsuario') === 'Admin') {
+            if (sessionStorage.getItem('tipoUsuario') === 'Admin') {
                 // console.log(localStorage.getItem('tipoUsuario'));
                 return true;
             }
@@ -1688,7 +1789,7 @@ class AuthGuardServiceCompany {
             return false;
         }
         else {
-            if (localStorage.getItem('tipoUsuario') === 'Empresa') {
+            if (sessionStorage.getItem('tipoUsuario') === 'Empresa') {
                 // console.log(localStorage.getItem('tipoUsuario'));
                 return true;
             }
@@ -1737,7 +1838,7 @@ class AuthGuardServiceUser {
             return false;
         }
         else {
-            if (localStorage.getItem('tipoUsuario') === 'Trabajador') {
+            if (sessionStorage.getItem('tipoUsuario') === 'Trabajador') {
                 // console.log(localStorage.getItem('tipoUsuario'));
                 return true;
             }
@@ -1792,11 +1893,12 @@ class AuthService {
         this.logueado = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](false);
     }
     saveToken(token) {
-        localStorage.setItem('token', token);
+        sessionStorage.setItem('token', token);
         this.token = token;
     }
     saveUserType(type) {
-        localStorage.setItem('tipoUsuario', type);
+        // localStorage.setItem('tipoUsuario', type);
+        sessionStorage.setItem('tipoUsuario', type);
         if (type === 'Trabajador') {
             this.tipoUsuario.next('Trabajador');
         }
@@ -1810,9 +1912,10 @@ class AuthService {
             this.tipoUsuario.next('');
         }
     }
-    //Guarda el email del usuario actual ; podria causar conflicto con socket io si se hace de esta manera
+    // Guarda el email del usuario actual
     saveCurrentUser(email) {
-        localStorage.setItem('usuarioActual', email);
+        // localStorage.setItem('usuarioActual', email);
+        sessionStorage.setItem('usuarioActual', email);
     }
     isLoggedIn() {
         const tokenData = this.getTokenData();
@@ -1855,7 +1958,7 @@ class AuthService {
     }
     logout() {
         this.token = '';
-        window.localStorage.removeItem('token');
+        window.sessionStorage.removeItem('token');
         this.router.navigateByUrl('/');
         this.logueado.next(false);
     }
@@ -1970,22 +2073,29 @@ function HeaderComponent_li_15_Template(rf, ctx) { if (rf & 1) {
 function HeaderComponent_li_16_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "li", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Ofertas");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Ver Ofertas de la Competencias");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 function HeaderComponent_li_17_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "li", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Usuarios");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Ofertas");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 function HeaderComponent_li_18_Template(rf, ctx) { if (rf & 1) {
-    const _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "li", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_li_18_Template_a_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r13); const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r12.logout(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Usuarios");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} }
+function HeaderComponent_li_19_Template(rf, ctx) { if (rf & 1) {
+    const _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "li", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_li_19_Template_a_click_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r14); const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r13.logout(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Logout");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -2005,7 +2115,7 @@ class HeaderComponent {
     }
 }
 HeaderComponent.ɵfac = function HeaderComponent_Factory(t) { return new (t || HeaderComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"])); };
-HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HeaderComponent, selectors: [["app-header"]], decls: 19, vars: 12, consts: [[1, "navbar", "navbar-expand-sm", "navbar-light", "bg-light"], ["routerLinkActive", "active", "routerLink", "/home", "href", "#", 1, "navbar-brand"], ["type", "button", "data-toggle", "collapse", "data-target", "#collapsibleNavId", "aria-controls", "collapsibleNavId", "aria-expanded", "false", "aria-label", "Toggle navigation", 1, "navbar-toggler", "d-lg-none"], [1, "navbar-toggler-icon"], ["id", "collapsibleNavId", 1, "collapse", "navbar-collapse"], [1, "navbar-nav", "mr-auto", "mt-2", "mt-lg-0"], ["class", "nav-item", "routerLinkActive", "active", 4, "ngIf"], ["routerLinkActive", "active", 1, "nav-item"], ["href", "#", "routerLink", "/login", 1, "nav-link"], ["href", "#", "routerLink", "/registroUsuario", 1, "nav-link"], ["href", "#", "routerLink", "/registroEmpresa", 1, "nav-link"], ["href", "#", "routerLink", "/usuario/ofertas", 1, "nav-link"], ["href", "#", "routerLink", "/usuario/perfil", 1, "nav-link"], ["href", "#", "routerLink", "/empresa/ofertas", 1, "nav-link"], ["href", "#", "routerLink", "/empresa/crearOferta", 1, "nav-link"], ["href", "#", "routerLink", "/empresa/perfil", 1, "nav-link"], ["href", "#", "routerLink", "/empresa/busqueda", 1, "nav-link"], ["href", "#", "routerLink", "/admin/ofertas", 1, "nav-link"], ["href", "#", "routerLink", "/admin/usuarios", 1, "nav-link"], ["href", "#", "routerLink", "", 1, "nav-link", 3, "click"]], template: function HeaderComponent_Template(rf, ctx) { if (rf & 1) {
+HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HeaderComponent, selectors: [["app-header"]], decls: 20, vars: 13, consts: [[1, "navbar", "navbar-expand-sm", "navbar-light", "bg-light"], ["routerLinkActive", "active", "routerLink", "/home", "href", "#", 1, "navbar-brand"], ["type", "button", "data-toggle", "collapse", "data-target", "#collapsibleNavId", "aria-controls", "collapsibleNavId", "aria-expanded", "false", "aria-label", "Toggle navigation", 1, "navbar-toggler", "d-lg-none"], [1, "navbar-toggler-icon"], ["id", "collapsibleNavId", 1, "collapse", "navbar-collapse"], [1, "navbar-nav", "mr-auto", "mt-2", "mt-lg-0"], ["class", "nav-item", "routerLinkActive", "active", 4, "ngIf"], ["routerLinkActive", "active", 1, "nav-item"], ["href", "#", "routerLink", "/login", 1, "nav-link"], ["href", "#", "routerLink", "/registroUsuario", 1, "nav-link"], ["href", "#", "routerLink", "/registroEmpresa", 1, "nav-link"], ["href", "#", "routerLink", "/usuario/ofertas", 1, "nav-link"], ["href", "#", "routerLink", "/usuario/perfil", 1, "nav-link"], ["href", "#", "routerLink", "/empresa/ofertas", 1, "nav-link"], ["href", "#", "routerLink", "/empresa/crearOferta", 1, "nav-link"], ["href", "#", "routerLink", "/empresa/perfil", 1, "nav-link"], ["href", "#", "routerLink", "/empresa/busqueda", 1, "nav-link"], ["href", "#", "routerLink", "/empresa/verCompetencia", 1, "nav-link"], ["href", "#", "routerLink", "/admin/ofertas", 1, "nav-link"], ["href", "#", "routerLink", "/admin/usuarios", 1, "nav-link"], ["href", "#", "routerLink", "", 1, "nav-link", 3, "click"]], template: function HeaderComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nav", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "UnlinkedOn");
@@ -2027,6 +2137,7 @@ HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](16, HeaderComponent_li_16_Template, 3, 0, "li", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](17, HeaderComponent_li_17_Template, 3, 0, "li", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](18, HeaderComponent_li_18_Template, 3, 0, "li", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](19, HeaderComponent_li_19_Template, 3, 0, "li", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -2041,6 +2152,8 @@ HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.logueado && ctx.tipoUsuario == "Trabajador");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.logueado && ctx.tipoUsuario == "Trabajador");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.logueado && ctx.tipoUsuario == "Empresa");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.logueado && ctx.tipoUsuario == "Empresa");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
@@ -2817,6 +2930,50 @@ RegistroUsuarioComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ�
 
 /***/ }),
 
+/***/ "./src/app/socket-io.service.ts":
+/*!**************************************!*\
+  !*** ./src/app/socket-io.service.ts ***!
+  \**************************************/
+/*! exports provided: SocketIoService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SocketIoService", function() { return SocketIoService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var ngx_socket_io__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-socket-io */ "./node_modules/ngx-socket-io/__ivy_ngcc__/fesm2015/ngx-socket-io.js");
+
+
+
+
+class SocketIoService {
+    constructor(socket) {
+        this.socket = socket;
+    }
+    sendMessage(msg) {
+        this.socket.emit('hi', msg);
+    }
+    getMessage() {
+        return rxjs__WEBPACK_IMPORTED_MODULE_1__["Observable"].create((observer) => {
+            this.socket.on('hi', (msg) => {
+                observer.next(msg);
+            });
+        });
+    }
+}
+SocketIoService.ɵfac = function SocketIoService_Factory(t) { return new (t || SocketIoService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](ngx_socket_io__WEBPACK_IMPORTED_MODULE_2__["Socket"])); };
+SocketIoService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: SocketIoService, factory: SocketIoService.ɵfac, providedIn: 'root' });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](SocketIoService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+        args: [{
+                providedIn: 'root'
+            }]
+    }], function () { return [{ type: ngx_socket_io__WEBPACK_IMPORTED_MODULE_2__["Socket"] }]; }, null); })();
+
+
+/***/ }),
+
 /***/ "./src/environments/environment.ts":
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -2881,6 +3038,17 @@ _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["platformBrowser"]().boot
 
 module.exports = __webpack_require__(/*! C:\Users\Alponcho\Documents\ITESO\6to Semestre\PAE\ProyectoPAE\PAE\src\main.ts */"./src/main.ts");
 
+
+/***/ }),
+
+/***/ 1:
+/*!********************!*\
+  !*** ws (ignored) ***!
+  \********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
 
 /***/ })
 

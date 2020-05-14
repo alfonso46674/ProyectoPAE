@@ -14,7 +14,7 @@ export class PerfilUsuarioComponent implements OnInit {
   constructor( private http: HttpClient) { }
 
   usuario;
-  correoUsuarioLogeado = window.localStorage.getItem('usuarioActual')
+  correoUsuarioLogeado = window.sessionStorage.getItem('usuarioActual')
   url = 'http://localhost:3000/api/usuarios/'+ this.correoUsuarioLogeado;
 
   ngOnInit(): void {
@@ -36,7 +36,7 @@ export class PerfilUsuarioComponent implements OnInit {
     let formData = new FormData();
     formData.append("image", this.image);
 
-    let correoActual = window.localStorage.getItem('usuarioActual'); // mandar el correo para actualizar
+    let correoActual = window.sessionStorage.getItem('usuarioActual'); // mandar el correo para actualizar
     formData.append("email",correoActual);
 
     this.http.post('http://localhost:3000/upload', formData).subscribe((res) => console.log("Subiendo imagen"));

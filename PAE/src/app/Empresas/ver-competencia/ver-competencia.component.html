@@ -1,0 +1,16 @@
+<p>ver-competencia works!</p>
+
+
+<div class="form-group">
+  <label for="">Enviar</label>
+  <input type="text"
+    class="form-control" [(ngModel)]="msg" aria-describedby="helpId" placeholder="">  
+</div>
+
+
+<a name="" id="" class="btn btn-primary"   (click)="enviarMensaje()" role="button">Enviar</a>
+
+
+<div>
+    <p class ="my-0" *ngFor="let mensaje of listaMensajes">{{mensaje}}</p>
+</div>

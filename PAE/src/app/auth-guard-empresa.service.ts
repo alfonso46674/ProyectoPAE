@@ -17,7 +17,7 @@ export class AuthGuardServiceCompany implements CanActivate {
       return false;
     }else{
 
-      if(localStorage.getItem('tipoUsuario') === 'Empresa'){
+      if(sessionStorage.getItem('tipoUsuario') === 'Empresa'){
         // console.log(localStorage.getItem('tipoUsuario'));
         return true;
       }

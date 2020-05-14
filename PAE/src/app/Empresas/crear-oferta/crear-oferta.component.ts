@@ -21,7 +21,7 @@ export class CrearOfertaComponent implements OnInit {
 
     this.datos = {
       emailUsuario : form.value.emailUsuario,
-      emailEmpresa : window.localStorage.getItem('usuarioActual'),  // obtener el usuario logueado de otra manera
+      emailEmpresa : window.sessionStorage.getItem('usuarioActual'),
       salario : form.value.salario,
       tiempoContratacion: form.value.tiempoContratacion
     };

@@ -11,7 +11,7 @@ export class PerfilEmpresaComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   empresa;
-  correoUsuarioLogeado = window.localStorage.getItem('usuarioActual')
+  correoUsuarioLogeado = window.sessionStorage.getItem('usuarioActual')
   url = 'http://localhost:3000/api/empresas/'+ this.correoUsuarioLogeado;
 
   ngOnInit(): void {

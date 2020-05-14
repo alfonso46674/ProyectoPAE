@@ -19,12 +19,13 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) { }
 
   private saveToken(token: string){
-    localStorage.setItem('token', token);
+    sessionStorage.setItem('token', token);
     this.token = token;
   }
 
   private saveUserType(type: string){
-    localStorage.setItem('tipoUsuario', type);
+    // localStorage.setItem('tipoUsuario', type);
+    sessionStorage.setItem('tipoUsuario', type);
 
     if(type === 'Trabajador'){
       this.tipoUsuario.next('Trabajador');
@@ -40,9 +41,10 @@ export class AuthService {
     }
   }
 
-  //Guarda el email del usuario actual ; podria causar conflicto con socket io si se hace de esta manera
+  // Guarda el email del usuario actual
   saveCurrentUser(email:string){
-    localStorage.setItem('usuarioActual', email)
+    // localStorage.setItem('usuarioActual', email);
+    sessionStorage.setItem('usuarioActual', email);
   }
 
   public isLoggedIn(): boolean{
@@ -93,7 +95,7 @@ export class AuthService {
 
   public logout(){
     this.token = '';
-    window.localStorage.removeItem('token');
+    window.sessionStorage.removeItem('token');
     this.router.navigateByUrl('/');
     this.logueado.next(false);
   }
