@@ -11,9 +11,9 @@ POST {{host}}/empresas
 Content-Type: application/json
 
 {
-    "nombre": "Telcel",
-    "password":"23456",
-    "email": "Telcel@1"
+    "nombre": "Mercado Libre",
+    "password":"123",
+    "email": "MercadoLibre@1"
 }
 
 ###
@@ -22,8 +22,8 @@ Content-Type: application/json
 
 {
     "nombre": "Apple",
-    "password":"23456",
-    "email": "Ap@Store",
+    "password":"123",
+    "email": "Apple@1",
     "tipo": "Empresa",
     "ofertasEnProgreso": 0
 }

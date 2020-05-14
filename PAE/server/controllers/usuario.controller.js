@@ -31,7 +31,7 @@ class UsuarioController{
 
      async CrearUsuario(req,res){
         
-        let {nombre, apellido, email,password} = req.body
+        let {nombre, apellido, email,password, carrera, aniosExperiencia, titulacion, salarioDeseado} = req.body
         
             let uid = await usuario.getUsersCount() + 1 // obtiene el uid el ultimo usuario agregado, y le suma 1
            
@@ -43,10 +43,14 @@ class UsuarioController{
                 tipo: "Trabajador",
                 ofertasActuales: 0,
                 estado: "Disponible",
-                password: password
+                password: password,
+                carrera: carrera,
+                aniosExperiencia: aniosExperiencia,
+                titulacion: titulacion,
+                salarioDeseado: salarioDeseado
             }
     
-            if( nombre && apellido && email && password){
+            if( nombre && apellido && email && password && carrera && aniosExperiencia && titulacion && salarioDeseado){
                 let doc = await usuario.createUser(User);
                 if(doc){
                     res.status(200).send({"Usuario creado":User})

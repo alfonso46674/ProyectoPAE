@@ -9,24 +9,30 @@ import { HttpClient } from '@angular/common/http';
 export class OfertasComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
-
-  ofertas = [];
+  
+  ofertas; // arreglo de las ofertas
   correoUsuarioLogeado = window.localStorage.getItem('usuarioActual')
   url = 'http://localhost:3000/api/ofertas/dif/usuario/'+ this.correoUsuarioLogeado;
 
   ngOnInit(): void {
-    
-    // this.http.get(this.url).subscribe((res)=> this.ofertas = res)
-    // console.log(this.ofertas);
 
-  }
-
-  refrescarDatos(){
     this.http.get(this.url).subscribe((res)=> {
-      // console.log(res)
-      this.ofertas[0] = res;
-    })
-    console.log(this.ofertas);
+      // console.log({tipo: typeof(res)});
+      // console.log((Object.values(res).length));
+
+      this.ofertas = Object.values(res);
+
+      console.log(this.ofertas);
+    });
+
   }
+
+  // refrescarDatos(){
+    // this.http.get(this.url).subscribe((res)=> {
+    //   // console.log(res)
+    //   this.ofertas = res;
+    // })
+    // console.log(this.ofertas);
+  // }
 
 }

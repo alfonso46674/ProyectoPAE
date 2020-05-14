@@ -103,9 +103,10 @@ export class AuthService {
      .pipe(
       map((data:any)=>{ // para decidir que hacer con la informacion del post antes de regresar el observable
         if(data.token){
-          console.log(data);
+          // console.log(data);
           this.saveToken(data.token); // guarda el token en el servicio a partir del post al backend
           this.saveUserType('Trabajador');
+          this.saveCurrentUser(data.email);
           this.isLoggedIn(); // para que refresque el behavior logueado
         }
         return data;

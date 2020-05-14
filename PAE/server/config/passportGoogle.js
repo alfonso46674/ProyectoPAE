@@ -38,7 +38,11 @@ passport.use(new GoogleStrategy({
             tipo: 'Trabajador',
             ofertasActuales: 0,
             estado: 'Disponible',
-            password: 'GooglePassword'
+            password: 'GooglePassword',
+            carrera: ' ',
+            aniosExperiencia: 0,
+            titulacion: ' ',
+            salarioDeseado: 0
         })
         if(response == true){
             let allUsers = await Usuario.getUsers({}) // si quito esto se rompe el codigo
@@ -68,7 +72,8 @@ function googleLogin(req,res){
         // console.log(user);
         if(user){
             let token = jwt.sign({email:user.email}, process.env.SECRET_KEY, {expiresIn:'1h'})
-            res.send({token})
+            let email = user.email
+            res.send({token,email})
         }else{
             res.status(401).send(info)
         }

@@ -1,7 +1,7 @@
-@host = http://localhost:3000
+@host = http://localhost:3000/api
 ##Pruebas para ofertas
 
-GET {{host}}/api/ofertas
+GET {{host}}/ofertas
 
 ###
 GET {{host}}/ofertas/2
@@ -9,18 +9,18 @@ GET {{host}}/ofertas/2
 ###
 GET {{host}}/ofertas/Test@Empresa/Test@1
 ###
-GET {{host}}/api/ofertas/dif/empresa/Telcel@1
+GET {{host}}/ofertas/dif/empresa/Amazon@1
 
 ###
-GET {{host}}/api/ofertas/dif/usuario/ARC@1
+GET {{host}}/ofertas/dif/usuario/ARC@1
 
 ###
 POST {{host}}/ofertas
 Content-Type: application/json
 
 {
-    "emailUsuario":"ARC@1",
-    "emailEmpresa":"Telcel@1",
+    "emailUsuario":"RA@1",
+    "emailEmpresa":"MercadoLibre@1",
     "salario":30000,
     "tiempoContratacion":3
 }

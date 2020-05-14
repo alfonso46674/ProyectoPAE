@@ -37,6 +37,22 @@ class Usuario extends DB{
             password:{
                 type: String,
                 required: true
+            },
+            carrera:{
+                type:String,
+                required: true
+            },
+            aniosExperiencia:{
+                type:Number,
+                required:true
+            },
+            titulacion:{
+                type:String,
+                required: true
+            },
+            salarioDeseado:{
+                type: Number,
+                required:true
             }
         });
         this._model = mongoose.model('usuarios', this.schema)
