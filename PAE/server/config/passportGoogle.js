@@ -29,7 +29,7 @@ passport.use(new GoogleStrategy({
     }else{ // no existe el usuario
         let nameGoogle = profile._json.name.split(" ")
         let uid = await Usuario.getUsersCount() + 1
-
+         
         let response = await Usuario.createUser({
             uid: uid,
             nombre: nameGoogle[0],
@@ -42,7 +42,9 @@ passport.use(new GoogleStrategy({
             carrera: ' ',
             aniosExperiencia: 0,
             titulacion: ' ',
-            salarioDeseado: 0
+            salarioDeseado: 0,
+            urlFoto : `https://randomuser.me/api/portraits/men/${uid}.jpg`
+
         })
         if(response == true){
             let allUsers = await Usuario.getUsers({}) // si quito esto se rompe el codigo
