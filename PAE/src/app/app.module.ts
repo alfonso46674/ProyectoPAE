@@ -21,6 +21,9 @@ import { AdminUsuariosComponent } from './Admin/admin-usuarios/admin-usuarios.co
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
 import { RegistroEmpresaComponent } from './registro-empresa/registro-empresa.component';
 import { BuscarUsuarioComponent } from './Empresas/buscar-usuario/buscar-usuario.component';
+import { EditarUsuarioComponent } from './Usuarios/editar-usuario/editar-usuario.component';
+import { EditarEmpresaComponent } from './Empresas/editar-empresa/editar-empresa.component';
+import { EditarOfertaComponent } from './Empresas/editar-oferta/editar-oferta.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,9 @@ import { BuscarUsuarioComponent } from './Empresas/buscar-usuario/buscar-usuario
     RegistroUsuarioComponent,
     RegistroEmpresaComponent,
     BuscarUsuarioComponent,
+    EditarUsuarioComponent,
+    EditarEmpresaComponent,
+    EditarOfertaComponent,
   ],
   imports: [
     BrowserModule,

@@ -34,7 +34,7 @@ class UsuarioController{
         let {nombre, apellido, email,password, carrera, aniosExperiencia, titulacion, salarioDeseado} = req.body
         
             let uid = await usuario.getUsersCount() + 1 // obtiene el uid el ultimo usuario agregado, y le suma 1
-           
+            
             let User={
                 uid:uid,
                 nombre: nombre,
@@ -48,7 +48,7 @@ class UsuarioController{
                 aniosExperiencia: aniosExperiencia,
                 titulacion: titulacion,
                 salarioDeseado: salarioDeseado,
-                urlFoto: ' '
+                urlFoto: `https://randomuser.me/api/portraits/men/${uid}.jpg`
             }
     
             if( nombre && apellido && email && password && carrera && aniosExperiencia && titulacion && salarioDeseado){

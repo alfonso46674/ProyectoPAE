@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from './usuario';
+import { HttpClient } from '@angular/common/http';
+import { BuscarUsuarioService } from './buscar-usuario.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-buscar-usuario',
@@ -7,24 +10,40 @@ import { Usuario } from './usuario';
   styleUrls: ['./buscar-usuario.component.scss']
 })
 export class BuscarUsuarioComponent implements OnInit {
-  usuarios: Usuario[];
-  filtrados: Usuario[];
+  usuarios;
+  filtrados;
   busqueda = '';
   src;
   order = {byExp : false, bySal : false};
-  constructor() {
-    this.usuarios = [new Usuario(1234, 'Isaac', 'Gauna', 'isaac@gmail.com', 'Gerente', 15, 'Disponible', 'NiceToMeetYou', 'Ingenieria en Sistemas', 2, 'Licenciatura', 19500),
-                     new Usuario(1567, 'Juan', 'Ramos', 'juan@gmail.com', 'Trabajador', 7, 'Disponble', 'NiceToMeetYouToo', 'Ingenieria en redes', 4, 'Maestria', 23000),
-                     new Usuario(4500, 'Gabriela', 'Galvan', 'gaby@gmail.com', 'Trabajador', 11, 'Disponible', 'IncludeMePls', 'Ingenieria en Sistemas', 4, 'Maestria', 21000)];
-    this.filtrados = this.usuarios.slice();
+  url = 'http://localhost:3000/api/usuarios'
+
+  // usuariosSubcription = new Subscription();
+
+  constructor(private servicio: BuscarUsuarioService, private http: HttpClient) {
+      
+    // this.usuarios = this.servicio.getUsers();
+    // this.servicio.usersSubject.subscribe((data) => {
+    //   console.log(data);
+    //   this.usuarios = data;
+    // });
+    // console.log(this.usuarios);
+    // this.filtrados = this.usuarios.slice();
+    // console.log(this.filtrados);
   }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void{
+      this.http.get(this.url).subscribe((res)=>{
+        this.usuarios = res;
+        this.filtrados = this.usuarios.slice();
+      })
+    }
 
-
+  
   buscar() {
-    this.filtrados = this.usuarios.filter(p => p.carrera.toUpperCase().includes(this.busqueda.toUpperCase())
+    this.filtrados = this.usuarios.filter(p => p.email.toUpperCase().includes(this.busqueda.toUpperCase())
+                                          || p.nombre.toUpperCase().includes(this.busqueda.toUpperCase())
+                                          || p.apellido.toUpperCase().includes(this.busqueda.toUpperCase())
+                                          ||  p.carrera.toUpperCase().includes(this.busqueda.toUpperCase())
                                           || p.aniosExperiencia.toString().includes(this.busqueda)
                                           || p.titulacion.toUpperCase().includes(this.busqueda.toUpperCase())
                                           || p.salarioDeseado.toString().includes(this.busqueda));
@@ -47,9 +66,12 @@ export class BuscarUsuarioComponent implements OnInit {
 
   ordenarExp() {
     if (this.order.byExp) {
-      this.filtrados.sort((a, b) => a.aniosExperiencia + b.aniosExperiencia);
+      this.filtrados.sort((a, b) => b.aniosExperiencia - a.aniosExperiencia);
     } else {
       this.buscar();
     }
 }
+
+
+
 }

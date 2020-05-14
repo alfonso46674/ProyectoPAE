@@ -28,7 +28,7 @@
     <ul>
         <ng-container *ngFor="let usuarios of filtrados;">
             <li class="media border">
-             <img class="mr-3" src="{{src}}" alt="Generic placeholder image">
+             <img class="mr-3" src="{{usuarios.urlFoto}}" alt="Usuario no proporciono imagen" height="120" width="140">
              <div class="media-body">
                <h3 class="mt-0 mb-1">{{usuarios.nombre + ' ' + usuarios.apellido}}</h3>
                <p><b>email:</b> {{usuarios.email}}</p>

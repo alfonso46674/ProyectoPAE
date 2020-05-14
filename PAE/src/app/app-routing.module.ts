@@ -16,6 +16,9 @@ import { AdminUsuariosComponent } from './Admin/admin-usuarios/admin-usuarios.co
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
 import { RegistroEmpresaComponent } from './registro-empresa/registro-empresa.component';
 import { BuscarUsuarioComponent } from './Empresas/buscar-usuario/buscar-usuario.component';
+import { EditarEmpresaComponent } from './Empresas/editar-empresa/editar-empresa.component';
+import { EditarOfertaComponent } from './Empresas/editar-oferta/editar-oferta.component';
+import { EditarUsuarioComponent } from './Usuarios/editar-usuario/editar-usuario.component';
 
 
 
@@ -35,6 +38,7 @@ const routes: Routes = [
     children:[
       {path: 'ofertas', component: OfertasComponent},
       {path: 'perfil', component: PerfilUsuarioComponent},
+      {path: 'editarPerfil', component: EditarUsuarioComponent},
       {path: '**', component: NotFoundComponent}
     ]},
 
@@ -45,6 +49,9 @@ const routes: Routes = [
           {path: 'ofertas', component: OfertasActualesComponent},
           {path: 'perfil', component: PerfilEmpresaComponent},
           {path: 'busqueda', component: BuscarUsuarioComponent},
+          {path: 'editarPerfil', component: EditarEmpresaComponent},
+          {path: 'editarOferta', component: EditarOfertaComponent},
+          
           {path: '**', component: NotFoundComponent}
         ]},
 

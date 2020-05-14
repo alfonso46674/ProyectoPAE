@@ -16,14 +16,14 @@ POST {{host}}/api/usuarios/
 Content-Type: application/json
 
 {
-    "nombre":"Ricardo",
-    "apellido":"Salas",
-    "email":"RS@1",
+    "nombre":"Alfonso",
+    "apellido":"Ramirez",
+    "email":"ARC@1",
     "password":"123",
     "carrera": "Ingenieria en Sistemas",
-    "aniosExperiencia": 10,
-    "titulacion": "Doctorado",
-    "salarioDeseado": 40000
+    "aniosExperiencia": 5,
+    "titulacion": "Licenciatura",
+    "salarioDeseado": 25000
 }
 
 
@@ -42,7 +42,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{host}}/usuarios/ARCREPETIDO@1
+DELETE {{host}}/api/usuarios/ARC@1
 Content-Type: application/json
 
 
