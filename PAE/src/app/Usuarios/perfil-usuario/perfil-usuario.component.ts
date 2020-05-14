@@ -13,7 +13,12 @@ export class PerfilUsuarioComponent implements OnInit {
 
   constructor( private http: HttpClient) { }
 
+  usuario;
+  correoUsuarioLogeado = window.localStorage.getItem('usuarioActual')
+  url = 'http://localhost:3000/api/usuarios/'+ this.correoUsuarioLogeado;
+
   ngOnInit(): void {
+    this.http.get(this.url).subscribe((res)=> this.usuario = res);
   }
 
   obtenerImage(event){
@@ -30,11 +35,15 @@ export class PerfilUsuarioComponent implements OnInit {
   uploadImage(form: NgForm){
     let formData = new FormData();
     formData.append("image", this.image);
-    this.http.post('http://localhost:3000/upload', formData).subscribe((res) => console.log("test"));
+
+    let correoActual = window.localStorage.getItem('usuarioActual'); // mandar el correo para actualizar
+    formData.append("email",correoActual);
+
+    this.http.post('http://localhost:3000/upload', formData).subscribe((res) => console.log("Subiendo imagen"));
 
   }
 
-  uploadLocalImage(form: NgForm){
+  uploadLocalImage(form: NgForm){ // Comentado en el html el codigo que lo hace funcionar
     let formData = new FormData();
     formData.append("image", this.image);
     this.http.post('http://localhost:3000/upload_local', formData).subscribe((res) => console.log("test"));

@@ -53,6 +53,10 @@ class Usuario extends DB{
             salarioDeseado:{
                 type: Number,
                 required:true
+            },
+            urlFoto:{
+                type: String,
+                required: true
             }
         });
         this._model = mongoose.model('usuarios', this.schema)
@@ -154,7 +158,7 @@ let usuarioPrueba = {
 
 // usuario.createUser(usuarioPrueba)
 
-// usuario.updateUser("Carlos@1",usuarioPrueba)
+// usuario.updateUser("RS@1",{urlFoto: "Prueba"})
 
 // usuario.getUsersCount()
 

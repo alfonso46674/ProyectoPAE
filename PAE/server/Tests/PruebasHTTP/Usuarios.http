@@ -29,7 +29,7 @@ Content-Type: application/json
 
 
 ###
-PUT {{host}}/usuarios/ARCREPETIDO@1
+PUT {{host}}/api/usuarios/RS@1
 Content-Type: application/json
 
 {

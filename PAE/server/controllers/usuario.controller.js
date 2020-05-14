@@ -47,7 +47,8 @@ class UsuarioController{
                 carrera: carrera,
                 aniosExperiencia: aniosExperiencia,
                 titulacion: titulacion,
-                salarioDeseado: salarioDeseado
+                salarioDeseado: salarioDeseado,
+                urlFoto: ' '
             }
     
             if( nombre && apellido && email && password && carrera && aniosExperiencia && titulacion && salarioDeseado){
@@ -91,6 +92,21 @@ class UsuarioController{
             }
             if(req.body.password != undefined){
                 datos.password = req.body.password
+            }
+            if(req.body.carrera != undefined){
+                datos.carrera = req.body.carrera
+            }
+            if(req.body.aniosExperiencia != undefined){
+                datos.aniosExperiencia = req.body.aniosExperiencia
+            }
+            if(req.body.titulacion != undefined){
+                datos.titulacion = req.body.titulacion
+            }
+            if(req.body.salarioDeseado != undefined){
+                datos.salarioDeseado = req.body.salarioDeseado
+            }
+            if(req.body.urlFoto != undefined){
+                datos.urlFoto = req.body.urlFoto
             }
             // console.log({"Objeto datos": datos})
         }

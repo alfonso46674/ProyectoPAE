@@ -2,13 +2,16 @@ const router = require('express').Router();
 const multer = require('multer');
 const path = require('path');
 const globby = require('globby');
+const Usuario = require('../models/Usuario');
+require('dotenv').config();
 
 //cloudinary
 const cloudinary = require('cloudinary');
+
 cloudinary.config({
-    cloud_name: 'is716159',
-    api_key: '115233797764534',
-    api_secret: 'viColZVBs79PtFSMUeYtPC22lj8'
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET
 })
 
 
@@ -34,6 +37,53 @@ const uploadImage = multer({
     fileFilter
 })
 
+
+
+
+router.post('/upload_local', uploadImage.single('image'), (req, res) => {
+    console.log(req.body);
+    if(req.error){
+        res.send(req.error);
+    } else{
+        res.send({"mensaje":"imagen guardada"})
+    }
+})
+
+router.post('/upload', uploadImage.single('image'), async (req, res) => {
+    // console.log({reqfile : req.file});
+    const result = await cloudinary.v2.uploader.upload(req.file.path);
+    // console.log(result);
+    console.log({ImagenGuardada: result.url});
+    // window.localStorage.setItem('urlCloudinary', result.url)
+    let doc = await Usuario.updateUser(req.body.email, {urlFoto: result.url});
+
+    
+
+
+    //let data = JSON.parse(fs.readFileSync('./repo/imageList.json'));
+    //let newData = String (result.url);
+    //data.push(newData);
+
+    //let save = fs.writeFileSync('./repo/imageList.json', JSON.stringify(data));
+
+    //await fs.unlink(req.file.path);
+    //res.redirect(303, '/upload_cloud');
+});
+
+//router.get('/imgTest', (req, res) => {
+//    res.sendFile(path.join(__dirname, '../repository/YT'))
+//})
+
+module.exports = router;
+
+
+
+
+
+
+
+
+
 //router.get('/upload', async (req,res) => { 
 
 //    try{
@@ -58,35 +108,3 @@ const uploadImage = multer({
     //}
 
 //});
-
-
-router.post('/upload_local', uploadImage.single('image'), (req, res) => {
-    console.log(req.body);
-    if(req.error){
-        res.send(req.error);
-    } else{
-        res.send({"mensaje":"imagen guardada"})
-    }
-})
-
-router.post('/upload', uploadImage.single('image'), async (req, res) => {
-    console.log({reqfile : req.file});
-    const result = await cloudinary.v2.uploader.upload(req.file.path);
-    console.log(result);
-    console.log(result.url);
-
-    //let data = JSON.parse(fs.readFileSync('./repo/imageList.json'));
-    //let newData = String (result.url);
-    //data.push(newData);
-
-    //let save = fs.writeFileSync('./repo/imageList.json', JSON.stringify(data));
-
-    //await fs.unlink(req.file.path);
-    //res.redirect(303, '/upload_cloud');
-});
-
-//router.get('/imgTest', (req, res) => {
-//    res.sendFile(path.join(__dirname, '../repository/YT'))
-//})
-
-module.exports = router;
