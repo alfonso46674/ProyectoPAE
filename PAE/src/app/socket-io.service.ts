@@ -10,13 +10,20 @@ export class SocketIoService {
   constructor(private socket: Socket) { }
 
 
-  sendMessage(msg){
-    this.socket.emit('hi',msg);
+  initialize(email){
+    this.socket.emit('Inicio', email);
   }
+
+  showMyOffers(){
+    this.socket.emit(sessionStorage.getItem('usuarioActual'), '' );
+  }
+
+
+
 
   getMessage(){
     return Observable.create((observer)=>{
-      this.socket.on('hi', (msg)=>{
+      this.socket.on(sessionStorage.getItem('usuarioActual'), (msg)=>{
         observer.next(msg);
       });
     });

@@ -8,7 +8,7 @@ GET {{host}}/api/usuarios
 
 ###
 
-GET {{host}}/api/usuarios/alfonso.4674@gmail.com
+GET {{host}}/api/usuarios/Admin@1
 
 ###
 
@@ -16,9 +16,9 @@ POST {{host}}/api/usuarios/
 Content-Type: application/json
 
 {
-    "nombre":"Alfonso",
-    "apellido":"Ramirez",
-    "email":"ARC@1",
+    "nombre":"Administrador",
+    "apellido":"PAE",
+    "email":"Admin@1",
     "password":"123",
     "carrera": "Ingenieria en Sistemas",
     "aniosExperiencia": 5,
@@ -29,16 +29,11 @@ Content-Type: application/json
 
 
 ###
-PUT {{host}}/api/usuarios/RS@1
+PUT {{host}}/api/usuarios/Admin@1
 Content-Type: application/json
 
-{
-    "nombre":"Juan",
-    "apellido":"Doe",
-    "tipo":"Trabajador",
-    "ofertasActuales": 0,
-    "estado":"Disponible",
-    "password":"12345ds"  
+{   
+    "tipo":"Administrador"  
 }
 
 ###

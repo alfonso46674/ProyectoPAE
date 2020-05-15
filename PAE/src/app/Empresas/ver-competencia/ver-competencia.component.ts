@@ -10,9 +10,9 @@ import { Subscription } from 'rxjs';
 export class VerCompetenciaComponent implements OnInit, OnDestroy {
 
   msg = "";
-  listaMensajes = [];
+  listaMensajes;
 
-
+   
   mensajesSubscription: Subscription;
 
   constructor(private socketIoService: SocketIoService) { }
@@ -25,13 +25,18 @@ export class VerCompetenciaComponent implements OnInit, OnDestroy {
     this.mensajesSubscription = this.socketIoService.
     getMessage()
     .subscribe((msg:string)=>{
-      this.listaMensajes.push(msg);
+      this.listaMensajes = msg;
+      console.log(this.listaMensajes);
     });
+
+
+    this.socketIoService.initialize(window.sessionStorage.getItem('usuarioActual'));
   }
 
 
-  enviarMensaje(){
-    this.socketIoService.sendMessage(this.msg);
+  verOfertasPropias(){
+    // console.log(window.sessionStorage.getItem('usuarioActual'));
+    this.socketIoService.showMyOffers();
   }
 
 

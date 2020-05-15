@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from './usuario';
 import { HttpClient } from '@angular/common/http';
 import { BuscarUsuarioService } from './buscar-usuario.service';
 import { Subscription } from 'rxjs';

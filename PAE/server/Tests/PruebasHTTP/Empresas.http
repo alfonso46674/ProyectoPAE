@@ -11,9 +11,9 @@ POST {{host}}/empresas
 Content-Type: application/json
 
 {
-    "nombre": "Mercado Libre",
+    "nombre": "Telcel",
     "password":"123",
-    "email": "MercadoLibre@1"
+    "email": "Telcel@1"
 }
 
 ###

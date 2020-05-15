@@ -2,12 +2,20 @@ const usuario  = require('../models/Usuario')
 
 class UsuarioController{
 
-    async Prueba(req,res){
-        res.status(200).json({name:'john'})
+
+    async MostarUsuarios(req,res){
+        let query = {} // parametros a buscar
+        let options = {} // pagina  o limit
+        let projection = {} // que quiero ver de la informacion
+        let doc = await usuario.getUsers({tipo:"Trabajador"});
+        if(doc) res.status(200).send(doc);
+        else{
+            res.status(401).send("Error al buscar usuarios")
+        }
     }
 
 
-    async MostarUsuarios(req,res){
+    async MostarUsuariosConAdministradores(req,res){
         let query = {} // parametros a buscar
         let options = {} // pagina  o limit
         let projection = {} // que quiero ver de la informacion
@@ -17,6 +25,7 @@ class UsuarioController{
             res.status(401).send("Error al buscar usuarios")
         }
     }
+
 
     async MostrarUsuarioEmail(req,res){
         let query = req.params.email // parametros a buscar
