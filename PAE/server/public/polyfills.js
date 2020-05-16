@@ -3033,7 +3033,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\HP\Documents\PAE\ProyectoPAE\PAE\src\polyfills.ts */"./src/polyfills.ts");
+module.exports = __webpack_require__(/*! C:\Users\Alponcho\Documents\ITESO\6to Semestre\PAE\ProyectoPAE\PAE\src\polyfills.ts */"./src/polyfills.ts");
 
 
 /***/ })
