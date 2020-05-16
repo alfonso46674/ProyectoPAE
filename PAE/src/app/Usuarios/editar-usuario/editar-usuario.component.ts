@@ -49,8 +49,8 @@ export class EditarUsuarioComponent implements OnInit {
   }
 
   submit(form: NgForm){
-    console.log(form.value);
-    console.log(this.url);
+    // console.log(form.value);
+    // console.log(this.url);
     this.http.put(this.url, form.value).subscribe((res=>console.log(res)))
     this.router.navigateByUrl('/usuario/perfil')
 
