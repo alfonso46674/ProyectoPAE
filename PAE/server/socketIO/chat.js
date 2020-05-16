@@ -115,7 +115,7 @@ exports = module.exports = function(socket,io){
     }
 
     async function mostrarOfertasDeEmpresa_PorModelo(correo){
-        let res = await deal.getDeals({emailEmpresa:correo})
+        let res = await deal.getDeals({emailEmpresa:correo,estado:"Activa"})
         if(res!=null){
             return eliminarPropiedades(res)
         }
@@ -123,7 +123,7 @@ exports = module.exports = function(socket,io){
     }
 
     async function mostrarOfertasDeUsuario_PorModelo(correo){
-        let res = await deal.getDeals({emailUsuario:correo})
+        let res = await deal.getDeals({emailUsuario:correo,estado:"Activa"})
         if(res!=null) return eliminarPropiedades(res)
         else return false
     }

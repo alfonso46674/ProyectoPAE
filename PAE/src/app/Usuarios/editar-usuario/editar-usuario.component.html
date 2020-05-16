@@ -1,1 +1,72 @@
-<p>editar-usuario works!</p>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+<div class="row">
+    <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+     <div class="well profile">
+        <div class="col-sm-12">
+            <div class="col-xs-12 col-sm-8">
+
+                <form #f="ngForm" (ngSubmit)="submit(f)">
+                    <p><strong>Nombre </strong></p>
+                    <input type="text" [(ngModel)]="usuario.nombre" name="nombre" class="form-control" required>
+
+                    <p><strong>Apellido </strong></p>
+                    <input type="text" [(ngModel)]="usuario.apellido" name="apellido" class="form-control" required>
+
+                    <p><strong>Contraseña </strong></p>
+                    <input type="text" [(ngModel)]="usuario.password" name="password" class="form-control" required>
+
+                    <p><strong>Carrera </strong></p>
+                    <input type="text" [(ngModel)]="usuario.carrera" name="carrera" class="form-control" required>
+
+                    <p><strong>Años de experiencia </strong></p>
+                    <input type="number" [(ngModel)]="usuario.aniosExperiencia" name="aniosExperiencia" class="form-control" required>
+
+                    <p><strong>Titulacion más alta </strong></p>
+                    <select [(ngModel)]="usuario.titulacion" name="titulacion" required>
+                        <option *ngFor="let item of titulacion">
+                            {{item}}
+                        </option>
+                    </select>
+
+
+                    <p><strong>Salario deseado </strong></p>
+                    <input type="number" [(ngModel)]="usuario.salarioDeseado" name="salarioDeseado" class="form-control" required>
+                    
+                    <br>
+                    <div class="form-group">
+
+                                <input type="submit"  name="submit" class="btn btn-info btn-md"
+                                value="Actualizar">
+                                    <!--href = "PaginaPrincipal.html"-->
+                            </div>
+                </form>
+                
+        
+            </div>  
+
+            <div class="col-xs-12 col-sm-4 text-center">
+                <img src="{{usuario.urlFoto}}" alt="">
+                
+                <form #f2="ngForm" (ngSubmit)="uploadImage(f2)">
+                    <div class="form-group">
+                        <input type="file" ngModel (change)="obtenerImage($event)"  class="form-control-file" name="image">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Change image</button>
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>    
+        
+        
+
+     </div>                 
+    </div>
+</div>
+

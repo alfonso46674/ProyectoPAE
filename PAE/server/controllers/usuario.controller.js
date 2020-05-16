@@ -2,7 +2,7 @@ const usuario  = require('../models/Usuario')
 
 class UsuarioController{
 
-
+    //SOLO MUETRA TRABAJADORES
     async MostarUsuarios(req,res){
         let query = {} // parametros a buscar
         let options = {} // pagina  o limit
@@ -14,7 +14,7 @@ class UsuarioController{
         }
     }
 
-
+    //MUESTRA TODOS LOS TIPOS DE USUARIOS
     async MostarUsuariosConAdministradores(req,res){
         let query = {} // parametros a buscar
         let options = {} // pagina  o limit

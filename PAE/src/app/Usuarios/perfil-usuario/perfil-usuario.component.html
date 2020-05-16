@@ -16,22 +16,21 @@
                 <p><strong>Estado:</strong> {{usuario.estado}}</p>
                 <p><strong>Contraseña:</strong> {{usuario.password}}</p>
                 <p><strong>Carrera: </strong>{{usuario.carrera}} </p>
-                <p><strong>Años de experiencia:</strong> {{usuario.aniosExperiencia}}</p>
+                <p><strong>Años de experiencia:</strong> {{usuario.aniosExperiencia}} años</p>
                 <p><strong>Titulación mas alta:</strong> {{usuario.titulacion}}</p>
                 <p><strong>Salario deseado:</strong> ${{usuario.salarioDeseado}}</p>
-            </div>             
+            </div>  
+
             <div class="col-xs-12 col-sm-4 text-center">
-                    <img src="{{usuario.urlFoto}}" alt="">
-                    <form #f2="ngForm" (ngSubmit)="uploadImage(f2)">
-                        <div class="form-group">
-                            <input type="file" ngModel (change)="obtenerImage($event)"  class="form-control-file" name="image">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Change image</button>
-                        <br>
-                        <br>
-                    </form>
+                <img src="{{usuario.urlFoto}}" alt="">
+                <button type="submit"  href="#"  routerLink="/usuario/editarPerfil" class="btn btn-primary">Editar Perfil</button>
             </div>
-        </div>            
+        </div>    
+        
+        
+
+
+
         <!-- <div class="col-xs-12 divider text-center">
             <div class="col-xs-12 col-sm-4 emphasis">
                 <form #f3="ngForm" (ngSubmit)="uploadLocalImage(f3)">

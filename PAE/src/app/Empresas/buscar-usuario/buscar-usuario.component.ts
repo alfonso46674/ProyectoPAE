@@ -13,7 +13,7 @@ export class BuscarUsuarioComponent implements OnInit {
   filtrados;
   busqueda = '';
   src;
-  order = {byExp : false, bySal : false};
+  order = {byExp : false, bySal : false, byDisp : false};
   url = 'http://localhost:3000/api/usuarios'
 
   // usuariosSubcription = new Subscription();
@@ -54,6 +54,16 @@ export class BuscarUsuarioComponent implements OnInit {
       this.ordenarExp();
     }
   }
+
+  disponibilidad(){
+    if(this.order.byDisp){
+      this.filtrados = this.usuarios.filter(p => p.estado == "Disponible");
+    }else{
+      this.buscar();
+    }
+    
+  }
+
 
   ordenarSal() {
       if (this.order.bySal) {

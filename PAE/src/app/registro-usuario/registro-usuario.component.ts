@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class RegistroUsuarioComponent implements OnInit {
 
+  titulacion = ['Licenciatura', 'Maestría', 'Doctorado'];
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {

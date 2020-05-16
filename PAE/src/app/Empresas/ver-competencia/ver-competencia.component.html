@@ -6,7 +6,7 @@
     <!-- Columna 1 -->
     <div class="col">
 
-      <h2>Ofertas de la competencia</h2>
+      <h2>Ofertas activas de la competencia</h2>
 
       <div class="row" id="nav">
         <div class="col-4">
@@ -22,6 +22,7 @@
           <p><b>Email de la competencia:</b> {{mensaje.emailEmpresa}}</p>
           <p><b>Salario ofrecido:</b> {{mensaje.salario}}</p>
           <p><b>Tiempo de contratacion ofrecido:</b> {{mensaje.tiempoContratacion}}</p>
+          <p><b>Estado actual:</b> {{mensaje.estado}}</p>
         </div>
 
 
@@ -32,7 +33,7 @@
 
     <!-- Columna 2 -->
     <div class="col">
-      <h2>Ofertas propias</h2> 
+      <h2>Ofertas activas propias</h2> 
 
       <a name="" id="" class="btn btn-primary"   (click)="verOfertasPropias()" role="button">Mostrar ofertas propias</a>
       <div *ngFor="let mensaje of OfertasPropias; let i = index">
@@ -40,6 +41,7 @@
         <p><b>Email del usuario:</b> {{mensaje.emailUsuario}}</p>
         <p><b>Salario ofrecido:</b> {{mensaje.salario}}</p>
         <p><b>Tiempo de contratacion ofrecido:</b> {{mensaje.tiempoContratacion}}</p>
+        <p><b>Estado actual:</b> {{mensaje.estado}}</p>
       </div>
     </div>
 

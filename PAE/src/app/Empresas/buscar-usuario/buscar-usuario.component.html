@@ -11,6 +11,14 @@
 </div>
 
 <div class="form-check">
+  <label class="form-check-label">
+    <input type="checkbox" [(ngModel)]="order.byDisp" (change)="disponibilidad()" class="form-check-input" name="" id="" value="checkedValue" >
+   Mostrar usuarios disponibles
+  </label>
+</div>
+
+
+<div class="form-check">
     <label class="form-check-label">
       <input type="checkbox" [(ngModel)]="order.bySal" (change)="ordenarSal()" class="form-check-input" name="" id="" value="checkedValue" >
       Ordenar por salario (menor a mayor)
@@ -37,6 +45,8 @@
                <p><b>Titulación:</b> {{usuarios.titulacion}}</p>
                <p><b>Ofertas:</b> {{usuarios.ofertasActuales}}</p>
                <p><b>Salario deseado:</b> ${{usuarios.salarioDeseado}}</p>
+               <p><b>Estado actual:</b> {{usuarios.estado}}</p>
+
              </div>
            </li>
         </ng-container>

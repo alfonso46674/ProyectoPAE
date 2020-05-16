@@ -5,6 +5,7 @@ const usuarioController = require('../controllers/usuario.controller')
 
 router.get('/', usuarioController.MostarUsuarios)
 
+router.get('/admin', usuarioController.MostarUsuariosConAdministradores)
 
 router.get('/:email', usuarioController.MostrarUsuarioEmail)
 

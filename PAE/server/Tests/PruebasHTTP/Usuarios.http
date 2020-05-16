@@ -4,7 +4,7 @@
 ## Pruebas para Usuarios
 
 
-GET {{host}}/api/usuarios
+GET {{host}}/api/usuarios/admin
 
 ###
 

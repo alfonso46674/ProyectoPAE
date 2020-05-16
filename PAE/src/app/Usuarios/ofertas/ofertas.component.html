@@ -14,7 +14,7 @@
           </thead>
           <tbody>
               <tr *ngFor="let prod of ofertas; let i = index">
-                  <td scope="row">{{prod.uid}}</td> <!--ID Oferta-->
+                  <td scope="row">{{i+1}}</td> <!--ID Oferta-->
                   <td>{{prod.emailEmpresa}}</td>             <!--Email Empresa-->
                   <td>{{prod.salario}}</td>             <!--Salario-->
                   <td>{{prod.tiempoContratacion}}</td>             <!--Tiempo Contratacion-->

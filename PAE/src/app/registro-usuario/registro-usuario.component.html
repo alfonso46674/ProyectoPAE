@@ -36,7 +36,11 @@
 
                             <div class="form-group">
                                 <label for="password" class="text-info">Grado más alto de titulación:</label><br>
-                                <input type="text" ngModel name="titulacion"  class="form-control" required>
+                                <select ngModel name="titulacion" required>
+                                    <option *ngFor="let item of titulacion">
+                                        {{item}}
+                                    </option>
+                                </select>
                             </div>
 
                             <div class="form-group">
