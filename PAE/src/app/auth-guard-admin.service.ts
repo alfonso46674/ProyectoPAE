@@ -17,7 +17,7 @@ export class AuthGuardServiceAdmin implements CanActivate {
       return false;
     }else{
 
-      if(sessionStorage.getItem('tipoUsuario') === 'Admin'){
+      if(sessionStorage.getItem('tipoUsuario') === 'Administrador'){
         // console.log(localStorage.getItem('tipoUsuario'));
         return true;
       }

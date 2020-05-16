@@ -9,34 +9,58 @@ import { Subscription } from 'rxjs';
 })
 export class VerCompetenciaComponent implements OnInit, OnDestroy {
 
-  msg = "";
-  listaMensajes;
-
+  correoUsuario;
+  OfertasPropias;
+  OfertasCompetencia;
    
-  mensajesSubscription: Subscription;
+  misOfertasSubscription: Subscription;
+  otrasOfertasSubscription: Subscription;
 
   constructor(private socketIoService: SocketIoService) { }
 
   ngOnDestroy():void{
-    this.mensajesSubscription.unsubscribe();
+    this.misOfertasSubscription.unsubscribe();
+    this.otrasOfertasSubscription.unsubscribe();
   }
 
   ngOnInit(): void {
-    this.mensajesSubscription = this.socketIoService.
-    getMessage()
+    this.misOfertasSubscription = this.socketIoService.
+    getOffers()
     .subscribe((msg:string)=>{
-      this.listaMensajes = msg;
-      console.log(this.listaMensajes);
+      this.OfertasPropias = msg;
+      console.log(this.OfertasPropias);
     });
 
+    // this.otrasOfertasSubscription = this.socketIoService.
+    // getOtherOffers()
+    // .subscribe((msg:string)=>{
+    //   this.OfertasCompetencia = msg;
+    //   console.log(this.OfertasCompetencia);
+    // });
+    
 
     this.socketIoService.initialize(window.sessionStorage.getItem('usuarioActual'));
+
   }
 
 
   verOfertasPropias(){
     // console.log(window.sessionStorage.getItem('usuarioActual'));
     this.socketIoService.showMyOffers();
+  }
+
+  mandarCorreoUsuario(){
+    console.log(this.correoUsuario);
+    this.socketIoService.showOtherOffers(this.correoUsuario);
+
+
+    this.otrasOfertasSubscription = this.socketIoService.
+    getOtherOffers()
+    .subscribe((msg)=>{
+      console.log(msg);
+      this.OfertasCompetencia = msg;
+      console.log(this.OfertasCompetencia);
+    });
   }
 
 

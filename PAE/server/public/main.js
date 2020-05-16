@@ -1041,7 +1041,54 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function VerCompetenciaComponent_div_16_Template(rf, ctx) { if (rf & 1) {
+function VerCompetenciaComponent_div_11_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "b");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "ID:");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "b");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "Email del usuario:");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "b");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Email de la competencia:");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "b");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Salario ofrecido:");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "b");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "Tiempo de contratacion ofrecido:");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const mensaje_r2 = ctx.$implicit;
+    const i_r3 = ctx.index;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", i_r3 + 1, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", mensaje_r2.emailUsuario, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", mensaje_r2.emailEmpresa, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", mensaje_r2.salario, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", mensaje_r2.tiempoContratacion, "");
+} }
+function VerCompetenciaComponent_div_17_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "p");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "b");
@@ -1069,41 +1116,58 @@ function VerCompetenciaComponent_div_16_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const mensaje_r1 = ctx.$implicit;
-    const i_r2 = ctx.index;
+    const mensaje_r4 = ctx.$implicit;
+    const i_r5 = ctx.index;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", i_r2 + 1, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", i_r5 + 1, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", mensaje_r1.emailUsuario, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", mensaje_r4.emailUsuario, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", mensaje_r1.salario, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", mensaje_r4.salario, "");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", mensaje_r1.tiempoContratacion, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", mensaje_r4.tiempoContratacion, "");
 } }
 class VerCompetenciaComponent {
     constructor(socketIoService) {
         this.socketIoService = socketIoService;
-        this.msg = "";
     }
     ngOnDestroy() {
-        this.mensajesSubscription.unsubscribe();
+        this.misOfertasSubscription.unsubscribe();
+        this.otrasOfertasSubscription.unsubscribe();
     }
     ngOnInit() {
-        this.mensajesSubscription = this.socketIoService.
-            getMessage()
+        this.misOfertasSubscription = this.socketIoService.
+            getOffers()
             .subscribe((msg) => {
-            this.listaMensajes = msg;
-            console.log(this.listaMensajes);
+            this.OfertasPropias = msg;
+            console.log(this.OfertasPropias);
         });
+        // this.otrasOfertasSubscription = this.socketIoService.
+        // getOtherOffers()
+        // .subscribe((msg:string)=>{
+        //   this.OfertasCompetencia = msg;
+        //   console.log(this.OfertasCompetencia);
+        // });
         this.socketIoService.initialize(window.sessionStorage.getItem('usuarioActual'));
     }
     verOfertasPropias() {
         // console.log(window.sessionStorage.getItem('usuarioActual'));
         this.socketIoService.showMyOffers();
     }
+    mandarCorreoUsuario() {
+        console.log(this.correoUsuario);
+        this.socketIoService.showOtherOffers(this.correoUsuario);
+        this.otrasOfertasSubscription = this.socketIoService.
+            getOtherOffers()
+            .subscribe((msg) => {
+            console.log(msg);
+            this.OfertasCompetencia = msg;
+            console.log(this.OfertasCompetencia);
+        });
+    }
 }
 VerCompetenciaComponent.ɵfac = function VerCompetenciaComponent_Factory(t) { return new (t || VerCompetenciaComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_socket_io_service__WEBPACK_IMPORTED_MODULE_1__["SocketIoService"])); };
-VerCompetenciaComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: VerCompetenciaComponent, selectors: [["app-ver-competencia"]], decls: 17, vars: 2, consts: [[1, "container"], [1, "row"], [1, "col"], ["id", "nav", 1, "row"], [1, "col-4"], ["type", "text", "aria-describedby", "helpId", "placeholder", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "", "id", "", "role", "button", 1, "btn", "btn-primary", 3, "click"], [4, "ngFor", "ngForOf"]], template: function VerCompetenciaComponent_Template(rf, ctx) { if (rf & 1) {
+VerCompetenciaComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: VerCompetenciaComponent, selectors: [["app-ver-competencia"]], decls: 18, vars: 3, consts: [[1, "container"], [1, "row"], [1, "col"], ["id", "nav", 1, "row"], [1, "col-4"], ["type", "text", "aria-describedby", "helpId", "placeholder", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "", "id", "", "role", "button", 1, "btn", "btn-primary", 3, "click"], [4, "ngFor", "ngForOf"]], template: function VerCompetenciaComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
@@ -1113,34 +1177,37 @@ VerCompetenciaComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "input", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function VerCompetenciaComponent_Template_input_ngModelChange_7_listener($event) { return ctx.msg = $event; });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function VerCompetenciaComponent_Template_input_ngModelChange_7_listener($event) { return ctx.correoUsuario = $event; });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "a", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function VerCompetenciaComponent_Template_a_click_9_listener() { return ctx.verOfertasPropias(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function VerCompetenciaComponent_Template_a_click_9_listener() { return ctx.mandarCorreoUsuario(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Mostrar ofertas");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, VerCompetenciaComponent_div_11_Template, 21, 5, "div", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "h2");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Ofertas propias");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "Ofertas propias");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "a", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function VerCompetenciaComponent_Template_a_click_14_listener() { return ctx.verOfertasPropias(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Mostrar ofertas propias");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "a", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function VerCompetenciaComponent_Template_a_click_15_listener() { return ctx.verOfertasPropias(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "Mostrar ofertas propias");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](16, VerCompetenciaComponent_div_16_Template, 17, 4, "div", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](17, VerCompetenciaComponent_div_17_Template, 17, 4, "div", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.msg);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.listaMensajes);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.correoUsuario);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.OfertasCompetencia);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.OfertasPropias);
     } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgModel"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL0VtcHJlc2FzL3Zlci1jb21wZXRlbmNpYS92ZXItY29tcGV0ZW5jaWEuY29tcG9uZW50LnNjc3MifQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](VerCompetenciaComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
@@ -1786,7 +1853,7 @@ class AuthGuardServiceAdmin {
             return false;
         }
         else {
-            if (sessionStorage.getItem('tipoUsuario') === 'Admin') {
+            if (sessionStorage.getItem('tipoUsuario') === 'Administrador') {
                 // console.log(localStorage.getItem('tipoUsuario'));
                 return true;
             }
@@ -1951,8 +2018,8 @@ class AuthService {
         else if (type === 'Empresa') {
             this.tipoUsuario.next('Empresa');
         }
-        else if (type === 'Admin') {
-            this.tipoUsuario.next('Admin');
+        else if (type === 'Administrador') {
+            this.tipoUsuario.next('Administrador');
         }
         else {
             this.tipoUsuario.next('');
@@ -2209,9 +2276,9 @@ HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.logueado && ctx.tipoUsuario == "Empresa");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.logueado && ctx.tipoUsuario == "Admin");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.logueado && ctx.tipoUsuario == "Administrador");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.logueado && ctx.tipoUsuario == "Admin");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.logueado && ctx.tipoUsuario == "Administrador");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.logueado);
     } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterLinkWithHref"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterLinkActive"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hlYWRlci9oZWFkZXIuY29tcG9uZW50LnNjc3MifQ== */"] });
@@ -2996,16 +3063,35 @@ __webpack_require__.r(__webpack_exports__);
 class SocketIoService {
     constructor(socket) {
         this.socket = socket;
+        this.correoTrabajador = "VACIO";
     }
     initialize(email) {
         this.socket.emit('Inicio', email);
     }
     showMyOffers() {
-        this.socket.emit(sessionStorage.getItem('usuarioActual'), '');
+        this.socket.emit(sessionStorage.getItem('usuarioActual'), 'ofertasMismaEmpresa');
     }
-    getMessage() {
+    showOtherOffers(correoUsuario) {
+        this.correoTrabajador = correoUsuario;
+        this.socket.emit(sessionStorage.getItem('usuarioActual'), correoUsuario);
+        this.socket.emit(correoUsuario);
+    }
+    getOffers() {
         return rxjs__WEBPACK_IMPORTED_MODULE_1__["Observable"].create((observer) => {
             this.socket.on(sessionStorage.getItem('usuarioActual'), (msg) => {
+                observer.next(msg);
+            });
+        });
+    }
+    getOtherOffers() {
+        // console.log("Other offers");
+        // if(this.correoTrabajador != "VACIO"){
+        console.log("Entre other offers");
+        // let correo = this.correoTrabajador;
+        // this.correoTrabajador = "VACIO";
+        return rxjs__WEBPACK_IMPORTED_MODULE_1__["Observable"].create((observer) => {
+            this.socket.on(this.correoTrabajador, (msg) => {
+                console.log(msg);
                 observer.next(msg);
             });
         });
