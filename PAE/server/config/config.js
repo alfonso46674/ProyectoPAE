@@ -1,9 +1,9 @@
-if (process.env.NODE_ENV === 'development') 
+// if (process.env.NODE_ENV === 'development') 
 require('dotenv').config();
 
 module.exports = { 
     port: process.env.PORT || 3000,
-     env: process.env.ENV || 'development',
+    //  env: process.env.ENV || 'development',
       dbUser: process.env.DB_USER,
        dbPassword: process.env.DB_PASSWORD,
         dbName: process.env.DB_NAME, 

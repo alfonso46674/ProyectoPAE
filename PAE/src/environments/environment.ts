@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: 'https://subastas-pae.herokuapp.com' //'http://localhost:3000'
+  url: 'http://localhost:3000'
 };
 
 /*
