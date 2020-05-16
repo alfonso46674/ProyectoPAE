@@ -30,7 +30,9 @@
     margin-left: 50px;
     margin-right: 200px;
     margin: 35px;
-    background-color: #909090;
+    //background-color: #909090;
+    
+    border: 10px black solid;
     border-radius: 25px;
 }
 
@@ -48,4 +50,8 @@
 
 .h3{
     font-weight: bold;
+}
+
+#exp{
+    background-color: gray;
 }
