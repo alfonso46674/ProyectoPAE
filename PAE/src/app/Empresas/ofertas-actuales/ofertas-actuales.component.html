@@ -1,4 +1,5 @@
-
+<br>
+<br><br><br>
       
 <section id="tabs" class="project-tab">
     <div class="container">
@@ -8,7 +9,7 @@
                     <div>
                         <table class="table" cellspacing="0">
                             <thead>
-                                <tr>
+                                <tr id="list">
                                     <th>ID</th>
                                     <!-- <th>Nombre</th> -->
                                     <!-- <th>Apellido</th> -->
@@ -21,12 +22,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let prod of ofertas; let i = index">
-                                    <td>{{prod.uid}}</td>                          <!--ID--> 
+                                <tr *ngFor="let prod of ofertas; let i = index" id="cont">
+                                    <td id="id">{{prod.uid}}</td>                          <!--ID--> 
                                     <td>{{prod.emailUsuario}}</td>                  <!--Email Usuario-->
-                                    <td>{{prod.salario}}</td>                        <!--salario-->
+                                    <td id="id">{{prod.salario}}</td>                        <!--salario-->
                                     <td>{{prod.tiempoContratacion}}</td>            <!--tiempo contratacion-->
-                                    <td>{{prod.estado}}</td>              <!--Estado-->
+                                    <td id="id">{{prod.estado}}</td>              <!--Estado-->
                                     <td><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Cambiar</a></td>                 <!--Tipo-->
                                 </tr>
                                 
