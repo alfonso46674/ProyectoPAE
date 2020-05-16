@@ -1,5 +1,5 @@
 <br>
-<br><br><br>
+<br><br>
       
 <section id="tabs" class="project-tab">
     <div class="container">
@@ -28,26 +28,21 @@
                                     <td >{{prod.password}}</td>                        
                                     <td id="id">{{prod.tipo}}</td>           
                                     <td >{{prod.ofertasEnProgreso}}</td>                   
-                                  <td><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Cambiar</a></td>                 <!--Tipo-->
+                                  <td id="id"><a class='btn btn-dark btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Cambiar</a></td>                 <!--Tipo-->
                                 </tr>
                                 
                             </tbody>
                         </table>
                     </div>
-                    
-                   
                         <div class="form-group">
-                            <label for="nombre" class="text-info">Email de la empresa a eliminar:</label><br>
+                            <br>
+                            <hr size="8">
+                            <label for="nombre" class="text-dark" id="finalid">Email de la empresa a eliminar:</label><br>
                             <input type="text"  [(ngModel)]="correoEmpresaEliminar" name="nombre" id="nombre" class="form-control">
                         </div>
-
-
                         <div class="form-group">
-                            <a name="" id="" class="btn btn-primary"   (click)="eliminarEmpresa()" role="button">Eliminar</a>
+                            <a name="" id="btnsish" class="btn btn-dark"   (click)="eliminarEmpresa()" role="button">Eliminar</a>
                         </div>
-
-                    
-                   
                 </div>
             </div>
         </div>

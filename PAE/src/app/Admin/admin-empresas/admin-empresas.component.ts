@@ -16,10 +16,10 @@ export class AdminEmpresasComponent implements OnInit {
   empresas;
   url = environment.url + '/api/empresas'
 
-  constructor(private http: HttpClient,private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
-    this.http.get(this.url).subscribe((res)=> {
+    this.http.get(this.url).subscribe((res) => {
       // console.log(res);
       // console.log({tipo: typeof(res)});
       // console.log((Object.values(res).length));
@@ -31,6 +31,6 @@ export class AdminEmpresasComponent implements OnInit {
 
 
   eliminarEmpresa(){
-    this.http.delete(this.url+ '/'+ this.correoEmpresaEliminar).subscribe();
+    this.http.delete(this.url + '/' + this.correoEmpresaEliminar).subscribe();
   }
 }

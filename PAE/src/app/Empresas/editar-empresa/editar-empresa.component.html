@@ -11,29 +11,28 @@
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
-	<div class="row">
-		<div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
-    	 <div class="well profile">
+		<div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6" id="lasttry">
+    	 <div >
+             <br>
+             <br>
             <div class="col-sm-12">
                 <div class="col-xs-12 col-sm-8">
 
                     <form #f="ngForm" (ngSubmit)="submit(f)">
-                        <p><strong>Nombre: </strong></p>
+                        <p id="overs"><strong>Nombre: </strong></p>
                         <input type="text" [(ngModel)]="empresa.nombre" name="nombre" class="form-control" required>
                         <br>
                         <br>
-                        <p><strong>Contraseña:</strong></p>
+                        <p id="overs"><strong>Contraseña:</strong></p>
                         <input type="text" [(ngModel)]="empresa.password" name="password" class="form-control" required>
                         
                         <div class="form-group">
 <br>
 <br>
-<br>
-                            <input type="submit"  name="submit" class="btn btn-info btn-md"
+                            <input type="submit"  name="submit" class="btn btn-dark btn-md"
                             value="Actualizar">
                         </div>
                     </form>
-                    
                 </div>             
                 <!-- <div class="col-xs-12 col-sm-4 text-center">
                         <img src="{{empresa.urlFoto}}" alt="">
@@ -46,4 +45,3 @@
             </div>
     	 </div>                 
 		</div>
-	</div>
