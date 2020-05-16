@@ -1,6 +1,13 @@
 #op{
     margin-left: 45px;
-    border-radius: 50%;
+    border-radius: 10px;
+}
+
+#op:hover{
+    background-color: #353535;
+    color: white;
+    margin-left: 20px;
+    margin-right: 850px;
 }
 
 #hi{
@@ -8,16 +15,37 @@
 }
 
 #nav{
-    margin-left: 40px;
+    margin-left: 60px;
 }
 
 #image{
     margin-left: 15px;
-    margin-top: 20px;
-    border-radius: 50%;
+    margin-top: 100px;
+    height: 100;
+    width: 40;
+    //border-radius: 50%;
 }
 
 #li{
-    padding-left: 1em;
+    margin-left: 50px;
+    margin-right: 200px;
+    margin: 35px;
+    background-color: #909090;
+    border-radius: 25px;
 }
 
+#smn{
+    //background-color: lightslategray;
+    text-align: left;
+    //margin-left: 50px;
+    //margin-right: 100px;
+}
+
+#smn:hover{
+    background-color: lightgrey;
+}
+
+
+.h3{
+    font-weight: bold;
+}

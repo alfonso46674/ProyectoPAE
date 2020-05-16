@@ -1,6 +1,13 @@
 #list{
     background-color: lightslategray;
     text-align: center;
+    background-color: rgb(60, 60, 60);
+    text-align: center;
+    //color: white;
+}
+
+#th{
+    color: white;
 }
 
 #id{
@@ -9,4 +16,8 @@
 
 #cont{
     text-align: center;
+}
+
+#nav-trabajadores-tab, #nav-empresas-tab{
+    color: black;
 }
