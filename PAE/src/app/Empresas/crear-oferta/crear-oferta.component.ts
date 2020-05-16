@@ -32,6 +32,7 @@ export class CrearOfertaComponent implements OnInit {
       // console.log(typeof(res));
       this.respuestaOferta = res;
       console.log(this.respuestaOferta['status']);
+      this.router.navigateByUrl('/empresa/ofertas')
     })
 
 

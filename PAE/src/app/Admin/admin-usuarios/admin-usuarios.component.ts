@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AdminUsuariosComponent implements OnInit {
 
-  
+  correoUsuarioEliminar;
   usuarios;
   url = environment.url + '/api/usuarios/admin'
   constructor(private http: HttpClient) { }
@@ -25,6 +25,8 @@ export class AdminUsuariosComponent implements OnInit {
     });
   }
 
- 
+ eliminarUsuario(){
+   this.http.delete(environment.url + '/api/usuarios/' + this.correoUsuarioEliminar).subscribe();
+ }
 
 }

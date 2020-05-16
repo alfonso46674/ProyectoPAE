@@ -10,7 +10,8 @@ import { environment } from 'src/environments/environment';
 export class AdminOfertasComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
-  
+  correoEmpresaEliminar;
+  correoUsuarioEliminar;
   ofertas; // arreglo de las ofertas
   
   url = environment.url +'/api/ofertas'
@@ -27,4 +28,8 @@ export class AdminOfertasComponent implements OnInit {
     });
   }
 
+
+  eliminarOferta(){
+    this.http.delete(this.url + '/' + this.correoEmpresaEliminar + '/' + this.correoUsuarioEliminar).subscribe();
+  }
 }
