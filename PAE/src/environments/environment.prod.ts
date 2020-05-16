@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  url: 'https://pae-subastas.herokuapp.com'
+  url: 'https://pae-subastas-proyecto.herokuapp.com'
 };
