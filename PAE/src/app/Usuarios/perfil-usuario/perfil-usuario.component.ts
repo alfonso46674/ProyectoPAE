@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-perfil-usuario',
@@ -15,7 +16,7 @@ export class PerfilUsuarioComponent implements OnInit {
 
   usuario;
   correoUsuarioLogeado = window.sessionStorage.getItem('usuarioActual')
-  url = 'http://localhost:3000/api/usuarios/'+ this.correoUsuarioLogeado;
+  url = environment.url +'/api/usuarios/'+ this.correoUsuarioLogeado;
 
   ngOnInit(): void {
     this.http.get(this.url).subscribe((res)=> this.usuario = res);
@@ -39,14 +40,14 @@ export class PerfilUsuarioComponent implements OnInit {
     let correoActual = window.sessionStorage.getItem('usuarioActual'); // mandar el correo para actualizar
     formData.append("email",correoActual);
 
-    this.http.post('http://localhost:3000/upload', formData).subscribe((res) => console.log("Subiendo imagen"));
+    this.http.post(environment.url + '/upload', formData).subscribe((res) => console.log("Subiendo imagen"));
 
   }
 
   uploadLocalImage(form: NgForm){ // Comentado en el html el codigo que lo hace funcionar
     let formData = new FormData();
     formData.append("image", this.image);
-    this.http.post('http://localhost:3000/upload_local', formData).subscribe((res) => console.log("test"));
+    this.http.post( environment.url + '/upload_local', formData).subscribe((res) => console.log("test"));
 
   }
 

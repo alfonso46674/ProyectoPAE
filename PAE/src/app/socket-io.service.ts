@@ -38,7 +38,7 @@ export class SocketIoService {
   getOtherOffers(){
     // console.log("Other offers");
     // if(this.correoTrabajador != "VACIO"){
-      console.log("Entre other offers");
+      // console.log("Entre other offers");
       // let correo = this.correoTrabajador;
       // this.correoTrabajador = "VACIO";
 

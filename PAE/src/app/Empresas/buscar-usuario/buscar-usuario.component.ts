@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BuscarUsuarioService } from './buscar-usuario.service';
 import { Subscription } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-buscar-usuario',
@@ -14,7 +15,7 @@ export class BuscarUsuarioComponent implements OnInit {
   busqueda = '';
   src;
   order = {byExp : false, bySal : false, byDisp : false};
-  url = 'http://localhost:3000/api/usuarios'
+  url = environment.url +'/api/usuarios'
 
   // usuariosSubcription = new Subscription();
 

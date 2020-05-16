@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-ofertas',
@@ -12,7 +13,7 @@ export class OfertasComponent implements OnInit {
   
   ofertas; // arreglo de las ofertas
   correoUsuarioLogeado = window.sessionStorage.getItem('usuarioActual')
-  url = 'http://localhost:3000/api/ofertas/dif/usuario/'+ this.correoUsuarioLogeado;
+  url = environment.url + '/api/ofertas/dif/usuario/'+ this.correoUsuarioLogeado;
 
   ngOnInit(): void {
 

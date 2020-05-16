@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-crear-oferta',
@@ -26,7 +27,7 @@ export class CrearOfertaComponent implements OnInit {
       tiempoContratacion: form.value.tiempoContratacion
     };
 
-    this.http.post('http://localhost:3000/api/ofertas', this.datos).subscribe((res)=>{
+    this.http.post(environment.url +'/api/ofertas', this.datos).subscribe((res)=>{
       // console.log(res)
       // console.log(typeof(res));
       this.respuestaOferta = res;

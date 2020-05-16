@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-registro-usuario',
@@ -17,7 +18,7 @@ export class RegistroUsuarioComponent implements OnInit {
   }
 
   submit(form: NgForm){
-    this.http.post('http://localhost:3000/api/usuarios', form.value).subscribe((res=>console.log(res)))
+    this.http.post(environment.url +'/api/usuarios', form.value).subscribe((res=>console.log(res)))
     this.router.navigateByUrl('/login')
   }
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject, BehaviorSubject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class BuscarUsuarioService {
 
 
 
-  url = 'http://localhost:3000/api/usuarios'
+  url = environment.url +'/api/usuarios'
 
   constructor(private http: HttpClient) {
     this.loadUsers();
