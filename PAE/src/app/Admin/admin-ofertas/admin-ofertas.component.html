@@ -1,39 +1,43 @@
-
-
-    <div class="tab-pane fade show active" id="nav-ofertas" role="tabpanel" aria-labelledby="nav-ofertas-tab">
-        <table class="table" cellspacing="0">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>ID Trabajador</th>
-                    <th>ID Empresa</th>
-                    <th>Salario</th>
-                    <th>Tiempo Contratacion</th>
-                    <th>Estado</th>
-                    <th>Accion</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>                          <!--ID--> 
-                    <td>1</td>                       <!--ID Trabajador-->
-                    <td>1</td>                        <!--ID Empresa-->
-                    <td>30000</td>            <!--Salario-->
-                    <td>2</td>                  <!--Tiempo Contratacion-->
-                    <td>Activa</td>              <!--Estado-->
-                    <td><a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Parar</a></td>       <!--Accion-->
-                </tr>
-                <tr>
-                    <td>1</td>                          <!--ID--> 
-                    <td>3</td>                       <!--ID Trabajador-->
-                    <td>2</td>                        <!--ID Empresa-->
-                    <td>50000</td>            <!--Salario-->
-                    <td>1</td>                  <!--Tiempo Contratacion-->
-                    <td>Terminada</td>              <!--Estado-->
-                    <td><a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Parar</a></td>        <!--Accion-->
-                </tr>
-               
-            </tbody>
-        </table>
+<br>
+<br><br><br>
+      
+<section id="tabs" class="project-tab">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tab-content" id="nav-tabContent">
+                    <div>
+                        <table class="table" cellspacing="0">
+                            <thead>
+                                <tr id="list">
+                                    <th>ID</th>
+                                    <!-- <th>Nombre</th> -->
+                                    <th>Email Empresa</th>
+                                    <th>Email Usuario</th>
+                                    <!-- <th>Ofertas Actuales</th> -->
+                                    <th>Salario Ofrecido</th>
+                                    <th>Tiempo de Contratación</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let prod of ofertas; let i = index" id="cont">
+                                    <td id="id">{{i+1}}</td>                          <!--ID--> 
+                                    <td>{{prod.emailEmpresa}}</td>                  <!--Email Empresa-->
+                                    <td id="id">{{prod.emailUsuario}}</td>                  <!--Email Usuario-->
+                                    <td>${{prod.salario}}</td>                        <!--salario-->
+                                    <td id="id">{{prod.tiempoContratacion}} años</td>            <!--tiempo contratacion-->
+                                    <td >{{prod.estado}}</td>              <!--Estado-->
+                                    <td><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Cambiar</a></td>                 <!--Tipo-->
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
     </div>
-   
+</section>

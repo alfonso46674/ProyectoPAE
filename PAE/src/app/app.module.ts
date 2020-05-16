@@ -27,6 +27,7 @@ import { EditarEmpresaComponent } from './Empresas/editar-empresa/editar-empresa
 import { EditarOfertaComponent } from './Empresas/editar-oferta/editar-oferta.component';
 import { VerCompetenciaComponent } from './Empresas/ver-competencia/ver-competencia.component';
 import { environment } from 'src/environments/environment';
+import { AdminEmpresasComponent } from './Admin/admin-empresas/admin-empresas.component';
 
 const config: SocketIoConfig = {url: environment.url, options: {}};
 
@@ -51,6 +52,7 @@ const config: SocketIoConfig = {url: environment.url, options: {}};
     EditarEmpresaComponent,
     EditarOfertaComponent,
     VerCompetenciaComponent,
+    AdminEmpresasComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-admin-usuarios',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminUsuariosComponent implements OnInit {
 
-  constructor() { }
+  
+  usuarios;
+  url = environment.url + '/api/usuarios/admin'
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.http.get(this.url).subscribe((res)=> {
+      // console.log(res);
+      // console.log({tipo: typeof(res)});
+      // console.log((Object.values(res).length));
+
+      this.usuarios = Object.values(res);
+      // console.log(this.ofertas);
+    });
   }
+
+ 
 
 }

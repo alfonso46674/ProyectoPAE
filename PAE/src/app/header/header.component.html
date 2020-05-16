@@ -63,6 +63,10 @@
                 <a class="nav-link" href="#"  routerLink="/admin/usuarios">Usuarios</a>
             </li>
 
+            <li *ngIf="logueado && tipoUsuario=='Administrador'" class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="#"  routerLink="/admin/empresas">Empresas</a>
+            </li>
+
             <!-- Logout -->
             <li *ngIf="logueado" class="nav-item" routerLinkActive="active">
               <a class="nav-link" href="#"  routerLink="" (click)="logout()">Logout</a>

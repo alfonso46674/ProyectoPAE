@@ -13,38 +13,40 @@
                                     <th>ID</th>
                                     <th>Nombre</th>
                                     <th>Email</th>
-                                    <th>Tipo</th>
-                                    <th>Ofertas Actuales</th>
-                                    <th>Estado</th>
                                     <th>Contraseña</th>
-                                    <th>Carrera</th>
-                                    <th>Años de experiencia</th>
-                                    <th>Titulación</th>
-                                    <th>Salario deseado</th>
+                                    <th>Tipo</th>
+                                    <th>Ofertas en Progreso</th>
                                     <th>Acciones</th>
 
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let prod of usuarios; let i = index" id="cont">
+                                <tr *ngFor="let prod of empresas; let i = index" id="cont">
                                     <td id="id">{{i+1}}</td>                          
-                                    <td>{{prod.nombre}} {{prod.apellido}}</td>                
+                                    <td>{{prod.nombre}}</td>                
                                     <td id="id">{{prod.email}}</td>                  
-                                    <td >{{prod.tipo}}</td>                        
-                                    <td id="id">{{prod.ofertasActuales}}</td>           
-                                    <td >{{prod.estado}}</td>      
-                                    <td id="id" >{{prod.password}}</td>              
-                                    <td >{{prod.carrera}}</td>              
-                                    <td id="id" >{{prod.aniosExperiencia}} años</td>              
-                                    <td >{{prod.titulacion}}</td>              
-                                    <td  id="id">${{prod.salarioDeseado}}</td>              
-
+                                    <td >{{prod.password}}</td>                        
+                                    <td id="id">{{prod.tipo}}</td>           
+                                    <td >{{prod.ofertasEnProgreso}}</td>                   
                                   <td><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Cambiar</a></td>                 <!--Tipo-->
                                 </tr>
                                 
                             </tbody>
                         </table>
                     </div>
+                    
+                   
+                        <div class="form-group">
+                            <label for="nombre" class="text-info">Email de la empresa a eliminar:</label><br>
+                            <input type="text"  [(ngModel)]="correoEmpresaEliminar" name="nombre" id="nombre" class="form-control">
+                        </div>
+
+
+                        <div class="form-group">
+                            <a name="" id="" class="btn btn-primary"   (click)="eliminarEmpresa()" role="button">Eliminar</a>
+                        </div>
+
+                    
                    
                 </div>
             </div>

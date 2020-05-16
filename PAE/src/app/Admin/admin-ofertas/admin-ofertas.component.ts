@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-admin-ofertas',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminOfertasComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+  
+  ofertas; // arreglo de las ofertas
+  
+  url = environment.url +'/api/ofertas'
+
 
   ngOnInit(): void {
+    this.http.get(this.url).subscribe((res)=> {
+      // console.log(res);
+      // console.log({tipo: typeof(res)});
+      // console.log((Object.values(res).length));
+
+      this.ofertas = Object.values(res);
+      // console.log(this.ofertas);
+    });
   }
 
 }

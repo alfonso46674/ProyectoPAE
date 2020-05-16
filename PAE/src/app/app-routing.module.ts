@@ -20,6 +20,7 @@ import { EditarEmpresaComponent } from './Empresas/editar-empresa/editar-empresa
 import { EditarOfertaComponent } from './Empresas/editar-oferta/editar-oferta.component';
 import { EditarUsuarioComponent } from './Usuarios/editar-usuario/editar-usuario.component';
 import { VerCompetenciaComponent } from './Empresas/ver-competencia/ver-competencia.component';
+import { AdminEmpresasComponent } from './Admin/admin-empresas/admin-empresas.component';
 
 
 
@@ -61,6 +62,7 @@ const routes: Routes = [
         children: [
           {path: 'ofertas', component: AdminOfertasComponent},
           {path: 'usuarios', component: AdminUsuariosComponent},
+          {path: 'empresas', component: AdminEmpresasComponent},
           {path: '**', component: NotFoundComponent}
         ]},
 
