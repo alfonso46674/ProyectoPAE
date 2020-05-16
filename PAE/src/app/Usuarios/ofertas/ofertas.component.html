@@ -24,7 +24,7 @@
                   <td id="id">{{prod.salario}}</td>             <!--Salario-->
                   <td>{{prod.tiempoContratacion}}</td>             <!--Tiempo Contratacion-->
                   <td id="id">{{prod.estado}}</td>             <!--Estado-->
-                  <td><a class='btn btn-dark btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Seleccionar</a></td>             <!--Acciones-->
+                  <td id="cambio"><a id="cambio" class='btn btn-dark btn-xs'  (click)="seleccionarOferta($event)"  ><span class="glyphicon glyphicon-edit"></span> Seleccionar</a></td>             <!--Acciones-->
               </tr>
               
 

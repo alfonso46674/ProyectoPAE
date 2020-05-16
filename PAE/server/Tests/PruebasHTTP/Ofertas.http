@@ -12,7 +12,7 @@ GET {{host}}/ofertas/Test@Empresa/Test@1
 GET {{host}}/ofertas/dif/empresa/Amazon@1
 
 ###
-GET {{host}}/ofertas/dif/usuario/ARC@1
+GET {{host}}/ofertas/dif/usuario/RA@1
 
 ###
 POST {{host}}/ofertas
