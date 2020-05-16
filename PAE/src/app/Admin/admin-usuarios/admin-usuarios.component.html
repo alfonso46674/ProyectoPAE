@@ -21,7 +21,7 @@
                                     <th>Años de experiencia</th>
                                     <th>Titulación</th>
                                     <th>Salario deseado</th>
-                                    <th>Acciones</th>
+                                    <!-- <th>Acciones</th> -->
 
                                 </tr>
                             </thead>
@@ -39,22 +39,23 @@
                                     <td >{{prod.titulacion}}</td>              
                                     <td  id="id">${{prod.salarioDeseado}}</td>              
 
-                                  <td><a class='btn btn-dark btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Cambiar</a></td>                 <!--Tipo-->
+                                  <!-- <td><a class='btn btn-dark btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Cambiar</a></td>                -->
                                 </tr>
                                 
                             </tbody>
                         </table>
                     </div>
 
-
+                    <br>
+                    <hr>
                     <div class="form-group">
-                        <label for="nombre" class="text-info">Email de la empresa a eliminar:</label><br>
+                        <label for="nombre" class="text-dark" id="finalid">Email de la empresa a eliminar:</label><br>
                         <input type="text"  [(ngModel)]="correoUsuarioEliminar" name="nombre" id="nombre" class="form-control">
                     </div>
 
 
                     <div class="form-group">
-                        <a name="" id="" class="btn btn-primary"   (click)="eliminarUsuario()" role="button">Eliminar</a>
+                        <a name="" id="cambio" class="btn btn-dark"   (click)="eliminarUsuario()" role="button">Eliminar</a>
                     </div>
 
                 

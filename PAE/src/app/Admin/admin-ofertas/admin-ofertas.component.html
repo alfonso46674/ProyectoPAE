@@ -18,7 +18,7 @@
                                     <th>Salario Ofrecido</th>
                                     <th>Tiempo de Contratación</th>
                                     <th>Estado</th>
-                                    <th>Acciones</th>
+                                    <!-- <th>Acciones</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -29,25 +29,26 @@
                                     <td>${{prod.salario}}</td>                        <!--salario-->
                                     <td id="id">{{prod.tiempoContratacion}} años</td>            <!--tiempo contratacion-->
                                     <td >{{prod.estado}}</td>              <!--Estado-->
-                                    <td id="id"><a class='btn btn-dark btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Cambiar</a></td>                 <!--Tipo-->
+                                    <!-- <td id="id"><a class='btn btn-dark btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Cambiar</a></td>                 -->
                                 </tr>
                                 
                             </tbody>
                         </table>
                     </div>
-                   
+                    <br>
+                    <hr>
                     <div class="form-group">
-                        <label for="nombre" class="text-info">Email de la empresa:</label><br>
+                        <label for="nombre" class="text-dark">Email de la empresa:</label><br>
                         <input type="text"  [(ngModel)]="correoEmpresaEliminar" name="nombre" id="nombre" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label for="nombre" class="text-info">Email del trabajador:</label><br>
+                        <label for="nombre" class="text-dark">Email del trabajador:</label><br>
                         <input type="text"  [(ngModel)]="correoUsuarioEliminar" name="nombre" id="nombre" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <a name="" id="" class="btn btn-primary"   (click)="eliminarOferta()" role="button">Eliminar Oferta</a>
+                        <a name="" id="cambio" class="btn btn-dark"   (click)="eliminarOferta()" role="button">Eliminar Oferta</a>
                     </div>
 
 
