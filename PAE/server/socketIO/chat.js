@@ -33,9 +33,9 @@ exports = module.exports = function(socket,io){
 
     socket.on(canalRegistro, async (correo)=>{
         
-        console.log("El cliente manda el siguiente correo de empresa: ",correo);
+        // console.log("El cliente manda el siguiente correo de empresa: ",correo);
         
-
+        
         
 
         // se verifica que exista la empresa con su correo
@@ -43,19 +43,21 @@ exports = module.exports = function(socket,io){
        
         
         if(doc){
-            
+            console.log("Canal Registro");
             socket.emit(canalRegistro, "Empresa verificada: " + correo)
 
-
+           
 
             // se crea una sala de empresa basada en su correo
              //Se muestran todas las ofertas que ha hecho la empresa a diferentes usuarios
-            console.log("canal Empresa",correo);
+            // console.log("canal Empresa",correo);
             
             socket.on(correo, async(msg)=>{
+
+                console.log("Adentro Canal empresa");
                 //Solamente muestra las ofertas si no se manda algun mensaje
-                if(msg == undefined || msg == ""){
-                    
+                if( msg == "ofertasMismaEmpresa"){
+                    console.log("Canal empresa sin mensaje");
                 let ofertasEmpresa = await mostrarOfertasDeEmpresa_PorModelo(correo)
                 
                 socket.emit(correo, ofertasEmpresa)
@@ -63,17 +65,19 @@ exports = module.exports = function(socket,io){
                 
                 //si se manda un mensaje, aqui se analiza
                 else{
-                    
+                    console.log("Canal empresa con mensaje" + msg);
                     let doc = await verificarUsuario_PorModelo(msg)
                     if(doc){ // significa que existe un usuario con ese correo
                        
                         //Se notifica que se creara una sala para ver las ofertas del usuario
-                        socket.emit(correo, "Sala creada para las ofertas del usuario: "+ msg);
+                        // socket.emit(correo, "Sala creada para las ofertas del usuario: "+ msg);
 
                        //Se crea una sala de usuario con el correo del usuario
                        //Muestra todas las ofertas que ha recibido ese usuario, sin importar la empresa
                         let correoUsuario = msg;
                         socket.on(correoUsuario, async()=>{
+
+                            console.log("Sala creada para usuario" + msg);
                             let ofertasUsuario = await mostrarOfertasDeUsuario_PorModelo(correoUsuario)
                             socket.emit(correoUsuario, ofertasUsuario)
                         })
@@ -82,7 +86,7 @@ exports = module.exports = function(socket,io){
 
 
                     }else{ // no existe un usuario con msg como su email
-                        socket.emit(correo, "No existe un usuario con este email: "+msg)
+                        socket.emit(correo, "Mensaje no valido: " + msg)
                     }
                 }
             })

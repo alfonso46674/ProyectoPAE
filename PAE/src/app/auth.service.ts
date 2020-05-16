@@ -33,8 +33,8 @@ export class AuthService {
     else if(type === 'Empresa'){
       this.tipoUsuario.next('Empresa');
     }
-    else if(type === 'Admin'){
-      this.tipoUsuario.next('Admin');
+    else if(type === 'Administrador'){
+      this.tipoUsuario.next('Administrador');
     }
     else{
       this.tipoUsuario.next('');
