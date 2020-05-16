@@ -1,12 +1,15 @@
 <br>
 <br>
+<br>
+<br>
+<br>
 <div class="row" id="nav">
     <div class="col-4">
         <input type="text" [(ngModel)]="busqueda" (keydown.enter)="buscar()"
-          class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+          class="form-control" name="" id="busqueda" aria-describedby="helpId" placeholder="">
     </div> 
     <div class="col-4">
-        <a name="" id="" class="btn btn-primary" role="button" (click)="buscar()">Buscar empleado</a>
+        <a name="" id="hi" class="btn btn-primary" role="button" (click)="buscar()">Buscar empleado</a>
     </div>
 </div>
 
@@ -24,7 +27,7 @@
       Ordenar por salario (menor a mayor)
     </label>
 </div>
-<div class="form-check">
+<div class="form-check" id="op">
     <label class="form-check-label">
       <input type="checkbox" [(ngModel)]="order.byExp" (change)="ordenarExp()" class="form-check-input" name="" id="" value="checkedValue" >
       Ordenar por años de Experiencia (mayor a menor)
@@ -35,8 +38,8 @@
 <div class=" mt-2">
     <ul>
         <ng-container *ngFor="let usuarios of filtrados;">
-            <li class="media border">
-             <img class="mr-3" src="{{usuarios.urlFoto}}" alt="Usuario no proporciono imagen" height="120" width="140">
+            <li class="media border" size="7" id="li">
+             <img class="mr-3" src="{{usuarios.urlFoto}}" alt="Usuario no proporciono imagen" height="120" width="140" id="image">
              <div class="media-body">
                <h3 class="mt-0 mb-1">{{usuarios.nombre + ' ' + usuarios.apellido}}</h3>
                <p><b>email:</b> {{usuarios.email}}</p>

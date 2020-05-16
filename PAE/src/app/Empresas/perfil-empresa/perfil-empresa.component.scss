@@ -19,16 +19,13 @@ figcaption.ratings a:hover
     }
 .divider 
 {
-    border-top:1px solid rgba(0,0,0,0.1);
+    border-top:5px solid darkgray;
     }
 .emphasis 
 {
     border-top: 4px solid transparent;
     }
-.emphasis:hover 
-{
-    border-top: 4px solid #1abc9c;
-    }
+
 .emphasis h2
 {
     margin-bottom:0;
