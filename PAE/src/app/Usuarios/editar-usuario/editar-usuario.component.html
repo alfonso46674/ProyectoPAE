@@ -1,3 +1,9 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -41,7 +47,7 @@
                     <br>
                     <div class="form-group">
 
-                                <input type="submit"  name="submit" class="btn btn-info btn-md"
+                                <input type="submit"  name="submit" class="btn btn-dark btn-md"
                                 value="Actualizar">
                             </div>
                 </form>
@@ -51,12 +57,13 @@
 
             <div class="col-xs-12 col-sm-4 text-center">
                 <img src="{{usuario.urlFoto}}" alt="">
-                
+                <br>
+                <br>
                 <form #f2="ngForm" (ngSubmit)="uploadImage(f2)">
                     <div class="form-group">
                         <input type="file" ngModel (change)="obtenerImage($event)"  class="form-control-file" name="image">
                     </div>
-                    <button type="submit" class="btn btn-primary">Change image</button>
+                    <button type="submit" class="btn btn-dark">Change image</button>
                     <br>
                     <br>
                 </form>

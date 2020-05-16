@@ -1,25 +1,30 @@
-
-      <h2>Ofertas</h2>
+<br>
+<br>
+<br>
+<br>
+     
+     <h2 id="title">Ofertas</h2>
+     <br>
       <!-- <a class='btn btn-info btn-xs' ngModel (click)="refrescarDatos()"><span class="glyphicon glyphicon-edit"></span> Refrescar</a> -->
-      <table class="table">
+      <table class="table" id="tab">
           <thead>
-              <tr>
-                  <th>ID Oferta</th> 
-                  <th>Nombre Empresa</th> 
-                  <th>Salario Ofrecido</th>
-                  <th>Tiempo Contratacion</th>
-                  <th>Estado</th>
-                  <th>Acciones</th>
+              <tr id="list">
+                  <th id="th">ID Oferta</th> 
+                  <th id="th">Nombre Empresa</th> 
+                  <th id="th">Salario Ofrecido</th>
+                  <th id="th">Tiempo Contratacion</th>
+                  <th id="th">Estado</th>
+                  <th id="th">Acciones</th>
               </tr>
           </thead>
           <tbody>
-              <tr *ngFor="let prod of ofertas; let i = index">
-                  <td scope="row">{{i+1}}</td> <!--ID Oferta-->
+              <tr *ngFor="let prod of ofertas; let i = index" id="cont">
+                  <td scope="row" id="id">{{i+1}} </td> <!--ID Oferta-->
                   <td>{{prod.emailEmpresa}}</td>             <!--Email Empresa-->
-                  <td>{{prod.salario}}</td>             <!--Salario-->
+                  <td id="id">{{prod.salario}}</td>             <!--Salario-->
                   <td>{{prod.tiempoContratacion}}</td>             <!--Tiempo Contratacion-->
-                  <td>{{prod.estado}}</td>             <!--Estado-->
-                  <td><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Seleccionar</a></td>             <!--Acciones-->
+                  <td id="id">{{prod.estado}}</td>             <!--Estado-->
+                  <td><a class='btn btn-dark btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Seleccionar</a></td>             <!--Acciones-->
               </tr>
               
 
